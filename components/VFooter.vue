@@ -25,7 +25,7 @@
                 />
             </NuxtLink>
             <NuxtLink
-                to="https://alpha.ohko.org/"
+                to="https://ohko.org/"
                 target="_blank"
                 class="p-1 mt-2 dark:text-primary-200 dark:hover:text-primary-400 text-primary-700 hover:text-primary-900"
             >
