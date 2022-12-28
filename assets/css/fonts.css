@@ -1,0 +1,18 @@
+/* Fonts */
+@font-face {
+    font-family: 'Fugaz One';
+    src: url('~/assets/fonts/FugazOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Fragment Mono';
+    src: url('~/assets/fonts/FragmentMono-Regular.ttf');
+}
+
+.font-fugaz {
+    font-family: 'Fugaz One', sans-serif;
+}
+
+.font-fragment {
+    font-family: 'Fragment Mono', monospace;
+}

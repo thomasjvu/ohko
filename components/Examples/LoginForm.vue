@@ -1,0 +1,73 @@
+<template>
+  <form @submit.prevent="login">
+    <VAlert v-if="error" type="error" class="mb-4"> Error: {{ error }} </VAlert>
+    <div v-if="loading" class="flex items-center justify-center flex-1">
+      <VLoading class="w-24 h-24 text-primary-600" />
+    </div>
+    <div class="space-y-4" v-if="!loading">
+      <VInput
+        v-model="email"
+        name="email"
+        type="email"
+        label="Email address"
+        placeholder="demo@ohko.org"
+        required
+      />
+      <VInput
+        v-model="password"
+        name="password"
+        type="password"
+        label="Password"
+        required
+      />
+      <div class="flex items-center justify-end space-x-4">
+        <VButton type="button" @click="loadDemoUser()">Load Demo User</VButton>
+        <VButton
+          type="submit"
+          variant="primary"
+          :disabled="!email || !password"
+        >
+          <span>Login</span>
+        </VButton>
+      </div>
+    </div>
+  </form>
+</template>
+
+<script setup>
+
+// Import the auth store from pinia
+import { useAuth } from '~~/store/auth'
+const auth = useAuth()
+
+const email = ref()
+const password = ref()
+const error = ref(null)
+const loading = ref(false)
+
+const config = useRuntimeConfig()
+
+function loadDemoUser() {
+  email.value = config.demoUsername
+  password.value = config.demoPassword
+}
+
+async function login() {
+  loading.value = true
+  error.value = null
+  try {
+    // Login
+    await auth.login({
+      email: email.value,
+      password: password.value,
+    })
+    // Clear the form
+    email.value = ''
+    password.value = ''
+  } catch (e) {
+    error.value = e.message
+  } finally {
+    loading.value = false
+  }
+}
+</script>

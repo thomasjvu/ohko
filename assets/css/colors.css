@@ -1,0 +1,26 @@
+/* Background Colors */
+.bg-dark {
+    background: #212121;
+}
+
+.bg-infrared {
+    background: #ff2147;
+}
+
+.bg-latte {
+    background: #fff8e7;
+}
+
+/* Text Colors */
+
+.dark {
+    color: #212121;
+}
+
+.infrared {
+    color: #ff2147;
+}
+
+.latte {
+    color: #fff8e7;
+}
