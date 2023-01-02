@@ -47,6 +47,5 @@ useHead({
 })
 
 // Upload
-
 const files = ref([])
 </script>

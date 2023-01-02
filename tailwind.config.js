@@ -17,7 +17,14 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.black,
+        black: colors.black,
+        white: colors.white,
         gray: colors.slate,
+        green: colors.green,
+        red: colors.red,
+        rose: colors.rose,
+        stone: colors.stone,
+        neutral: colors.neutral,
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

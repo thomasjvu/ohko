@@ -8,7 +8,7 @@
                 class="max-w-screen-sm sm:text-center sm:mx-auto flex items-center flex-col justify-center"
             >
                 <h1
-                    class="mb-4 text-7xl font-bold tracking-tight text-ghost font-fugaz sm:text-8xl sm:leading-none"
+                    class="mb-4 text-7xl font-bold font-fugaz sm:text-8xl text-black"
                 >
                     OHKO
                 </h1>
@@ -22,7 +22,7 @@
             </div>
             <div class="flex flex-col items-center" v-for="post in posts">
                 <div
-                    class="overflow-hidden transition-shadow duration-300 rounded m-5 text-center post-block border-solid border-5 border-gray-900 w-full"
+                    class="overflow-hidden transition-shadow duration-300 rounded m-5 text-center post-block border-solid border-5 border-gray-900 w-3/4 px-5"
                 >
                     <div class="py-5">
                         <p class="mb-2 text-xs font-semibold post-date">
@@ -31,10 +31,10 @@
                             }}
                         </p>
                         <NuxtLink
-                            :to="`/article/${post.id}`"
+                            :to="`/guide/${post.id}`"
                             class="inline-block mt-3 mb-3 text-red transition-colors duration-200 hover:text-red"
                             ><p
-                                class="text-2xl font-bold leading-5 text-ghost post-title"
+                                class="text-2xl font-bold leading-5 post-title"
                             >
                                 {{ post.title }}
                             </p></NuxtLink
@@ -53,7 +53,7 @@
 <script setup>
 const { getItems } = useDirectusItems()
 
-const posts = await getItems({ collection: 'articles' })
+const posts = await getItems({ collection: 'guides' })
 </script>
 
 <style>

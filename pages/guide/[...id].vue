@@ -1,8 +1,7 @@
 <template>
-    <div
-        class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
-    >
-        <div class="max-w-screen-sm sm:text-center sm:mx-auto">
+    <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
+        <VLogo />
+        <div class="sm:text-center sm:mx-auto mt-10">
             <div class="status mb-5">
                 <span id="post-draft" v-if="post.status === 'draft'">
                     Draft
@@ -17,9 +16,7 @@
                     Published
                 </span>
             </div>
-            <h2
-                class="mb-4 font-sans text-3xl font-bold tracking-tight text-white sm:text-6xl sm:leading-none"
-            >
+            <h2 class="mb-4 text-3xl font-bold sm:text-6xl font-fugaz">
                 {{ post.title }}
             </h2>
             <hr class="w-full my-8 border-gray-300" />
@@ -39,17 +36,28 @@
                     />
                 </section>
                 <div v-html="post.content"></div>
+                <section id="post-tags" class="post-tags mt-7 px-5 py-5">
+                    <span
+                        class="post-tag text-white rounded-md border-white border-2 mb-5 pb-5"
+                        >Tags: {{ post.tags }}</span
+                    >
+                </section>
             </div>
-            <section class="post-tags mt-7">
-                <span
-                    class="post-tag text-white rounded-md border-white border-2"
-                    >Tags: {{ post.tags }}</span
-                >
-                <!-- <div class="flex flex-col items-center" v-for="post in posts"> -->
-                <!--     <li> {{post.tags}} </li> -->
-                <!-- </div> -->
-            </section>
+
+            <!-- post meta -->
+            <div id="post-meta" class="flex justify-between items-center mt-5 mb-5">
+                <section id="post-author" class="px-5 py-5 font-fragment rounded-md bg-stone-900 text-neutral-50">
+                    <span>Created By: <br /> {{ post.user_created }}</span>
+                </section>
+                <section id="post-revenue" class="px-10 py-10 bg-green-500 rounded-md">
+                    <span class="font-fragment bold text-white"
+                        >$$$ Revenue</span
+                    >
+                </section>
+            </div>
         </div>
+        <VFooter />
+        <VCredits />
     </div>
 </template>
 
@@ -58,28 +66,15 @@ const { getItemById } = useDirectusItems()
 const route = useRoute()
 
 const post = await getItemById({
-    collection: 'articles',
+    collection: 'guides',
     id: route.params.id,
     title: route.params.title,
 })
 
-if (!post) throwError('No article found, 404')
+if (!post) throwError('No guide found, 404')
 </script>
 
 <style>
-/*
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-p {
-    margin: 10px 0px;
-}
-*/
 
 .status {
     display: flex;
@@ -107,7 +102,6 @@ p {
 
 .post-tag {
     background: #ff2147;
-    padding: 5px 10px;
     font-family: 'Fragment Mono', monospace;
 }
 </style>

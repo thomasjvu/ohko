@@ -1,4 +1,4 @@
-# OHKO Admin Panel
+# OHKO Frontend
 
-OHKO Admin Panel.
+OHKO Frontend Application built using Vue, Nuxtjs, and Directus...
 
