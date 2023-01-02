@@ -27,24 +27,24 @@
             <div
                 class="post-content bg-white px-10 py-10 rounded-md text-justify"
             >
-                <section
-                    class="featured-image flex items-center justify-center"
-                >
-                    <img
-                        v-bind:src="
-                            'https://app.ohko.org/assets/' + post.featured_image
-                        "
-                        alt="Featured Image"
-                        class="mb-5 border-2 border-black rounded-md"
-                    />
-                </section>
-                <div v-html="post.content"></div>
+                <!-- <section -->
+                <!--     class="featured-image flex items-center justify-center" -->
+                <!-- > -->
+                <!--     <img -->
+                <!--         v-bind:src=" -->
+                <!--             'https://app.ohko.org/assets/' + post.featured_image -->
+                <!--         " -->
+                <!--         alt="Featured Image" -->
+                <!--         class="mb-5 border-2 border-black rounded-md" -->
+                <!--     /> -->
+                <!-- </section> -->
+                <!-- <div v-html="post.content"></div> -->
             </div>
             <section class="post-tags mt-7">
-                <span
-                    class="post-tag text-white rounded-md border-white border-2"
-                    >Tags: {{ post.tags }}</span
-                >
+                <!-- <span -->
+                <!--     class="post-tag text-white rounded-md border-white border-2" -->
+                <!--     >Tags: {{ post.tags }}</span -->
+                <!-- > -->
                 <!-- <div class="flex flex-col items-center" v-for="post in posts"> -->
                 <!--     <li> {{post.tags}} </li> -->
                 <!-- </div> -->
@@ -58,12 +58,12 @@ const { getItemById } = useDirectusItems()
 const route = useRoute()
 
 const post = await getItemById({
-    collection: 'articles',
+    collection: 'guides',
     id: route.params.id,
     title: route.params.title,
 })
 
-if (!post) throwError('No article found, 404')
+if (!post) throwError('No guide found, 404')
 </script>
 
 <style>

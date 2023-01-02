@@ -9,14 +9,20 @@
         </NuxtLink>
         <VLogo />
         <h1 class="text-4xl font-bold dark:text-white text-center">
-            Create Post
+            Create Article
         </h1>
 
-        <form @submit.prevent="createPost">
-            <label for="title">Title:</label>
+        <form @submit.prevent="createArticle">
+            <label class="dark:text-white font-fragment text-left" for="title">Slug:</label>
+            <input v-model="slug" id="slug" type="text" />
+            <br />
+            <label class="dark:text-white font-fragment text-left" for="title">Title:</label>
             <input v-model="title" id="title" type="text" />
             <br />
-            <label for="content">Content:</label>
+            <label class="dark:text-white font-fragment" for="short_content">Short Content:</label>
+            <textarea v-model="short_content" id="short_content"></textarea>
+            <br />
+            <label class="dark:text-white font-fragment" for="content" readonly>Content:</label>
             <textarea v-model="content" id="content"></textarea>
             <br />
             <button type="submit" class="btn">Create Post</button>
@@ -33,6 +39,8 @@ const router = useRouter()
 
 const auth = useAuth()
 
+const token = useDirectusToken()
+
 // Set middleware
 definePageMeta({
     middleware: 'auth',
@@ -47,30 +55,38 @@ useHead({
 </script>
 
 <script>
-/*
+// import { directusSDK } from '@directus/sdk'
+
+function slugify(string) {
+    return string.toLowerCase().replace(/[^a-z0-9-]/g, '-')
+}
+
 // For Posting Content
 export default {
     data() {
         return {
             title: '',
-            content: ''
+            short_content: '',
+            content: '',
         }
     },
     methods: {
         createPost() {
             const client = new directusSDK({
-                url: 'https://app.ohko.org/api',
-                project: '_',
-                token: 'YOUR_API_TOKEN'
+                url: 'https://app.ohko.org/',
+                project: 'OHKO',
+                token: token
     })
 
-            const newPost = {
+            const newArticle = {
                 title: this.title,
+                slug: slugify(this.title),
+                short_content: this.short_content,
                 content: this.content,
                 status: 'published'
             }
 
-            client.create('posts', newPost).then(response => {
+            client.create('articles', newArticle).then(response => {
                 console.log(response)
             }).catch(error => {
                 console.error(error)
@@ -78,14 +94,30 @@ export default {
         }
     }
 }
-*/
 </script>
 
 <style>
+
 form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 15px;
     color: black;
+
+    font-family: "Fragment Mono", monospace;
+}
+label {
+    text-align: left;
 }
 input {
     color: black;
+    background: #e5e4e2;
+    width: 100%;
 }
+textarea {
+    width: 100%;
+}
+
 </style>

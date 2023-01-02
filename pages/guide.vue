@@ -22,16 +22,18 @@
             </div>
             <div class="flex flex-col items-center" v-for="post in posts">
                 <div
-                    class="overflow-hidden transition-shadow duration-300 rounded m-5 text-center post-block border-solid border-5 border-gray-900 w-full"
+                    class="overflow-hidden transition-shadow duration-300 rounded m-5 text-center post-block border-solid border-5 border-gray-900 w-3/4 px-5"
                 >
                     <div class="py-5">
                         <p class="mb-2 text-xs font-semibold post-date">
                             {{
-                                new Date(post.date_created).toLocaleDateString()
+                                new Date(
+                                    post.date_created
+                                ).toLocaleDateString()
                             }}
                         </p>
                         <NuxtLink
-                            :to="`/article/${post.id}`"
+                            :to="`/guide/${post.id}`"
                             class="inline-block mt-3 mb-3 text-red transition-colors duration-200 hover:text-red"
                             ><p
                                 class="text-2xl font-bold leading-5 text-ghost post-title"
@@ -46,14 +48,14 @@
                 </div>
             </div>
         </div>
-        <VFooter />
+    <VFooter />
     </div>
 </template>
 
 <script setup>
 const { getItems } = useDirectusItems()
 
-const posts = await getItems({ collection: 'articles' })
+const posts = await getItems({ collection: 'guides' })
 </script>
 
 <style>
