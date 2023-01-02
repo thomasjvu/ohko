@@ -10,7 +10,7 @@
           Explore. <br />What are you waiting for?
         </p>
         <VButton class="mt-2" @click="fetchArticles()" variant="primary">
-          Load Content</VButton
+          Load More</VButton
         >
       </div>
       <ul class="space-y-6" v-else-if="articles.length > 0">

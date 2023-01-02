@@ -9,8 +9,8 @@
       leave-to-class="opacity-0 "
       mode="out-in"
     >
-      <Icon name="pixelarticons:cloud-moon" style="color: white" v-if="isDark" class="mt-2 w-8 h-8" />
-      <Icon name="pixelarticons:cloud-sun" style="color: white" v-else-if="!isDark" class="mt-2 w-8 h-8" />
+      <Icon name="pixelarticons:cloud-moon" style="color: #f8f8ff" v-if="isDark" class="mt-2 w-8 h-8" />
+      <Icon name="pixelarticons:cloud-sun" style="color: black" v-else-if="!isDark" class="mt-2 w-8 h-8" />
     </transition>
   </button>
 </template>

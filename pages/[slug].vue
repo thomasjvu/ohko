@@ -5,7 +5,7 @@
       to="/"
     >
       <span class="mr-2 text-xl">←</span>
-      Back to Feed
+      Back to Article Feed
     </NuxtLink>
       <VLogo />
     <div class="relative pt-48 pb-10 overflow-hidden shadow-xl rounded-2xl">

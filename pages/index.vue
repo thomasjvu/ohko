@@ -3,7 +3,7 @@
         <VLogo />
         <ModalsMyAccount />
         <VDemoAlert />
-        <div class="flex justify-between gap-5">
+        <div class="flex justify-between gap-5 font-fragment">
             <NuxtLink to="/articles" class="w-1/4">
                 <section
                     class="category bg-neutral-900 dark:text-white text-center h-80 hover:shadow-xl hover:bg-neutral-800"
@@ -51,24 +51,19 @@ useHead({
 </script>
 
 <style>
-#categories {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 .category {
     padding: 25px;
     border-radius: 5px;
     border: 2px solid white;
 
     color: white;
-    font-family: 'Fragment Mono', monospace;
-    flex: 1;
-}
+    /* background: url('~/assets/img/pixel-art-heroes.png'); */
+    /* background-size: cover; */
 
-.null {
-    background: #333;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 </style>
