@@ -47,6 +47,7 @@ useHead({
 </script>
 
 <script>
+/*
 // For Posting Content
 export default {
     data() {
@@ -77,6 +78,7 @@ export default {
         }
     }
 }
+*/
 </script>
 
 <style>
