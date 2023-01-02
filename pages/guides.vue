@@ -8,7 +8,7 @@
                 class="max-w-screen-sm sm:text-center sm:mx-auto flex items-center flex-col justify-center"
             >
                 <h1
-                    class="mb-4 text-7xl font-bold tracking-tight text-ghost font-fugaz sm:text-8xl sm:leading-none"
+                    class="mb-4 text-7xl font-bold font-fugaz sm:text-8xl text-black"
                 >
                     OHKO
                 </h1>
@@ -27,16 +27,14 @@
                     <div class="py-5">
                         <p class="mb-2 text-xs font-semibold post-date">
                             {{
-                                new Date(
-                                    post.date_created
-                                ).toLocaleDateString()
+                                new Date(post.date_created).toLocaleDateString()
                             }}
                         </p>
                         <NuxtLink
                             :to="`/guide/${post.id}`"
                             class="inline-block mt-3 mb-3 text-red transition-colors duration-200 hover:text-red"
                             ><p
-                                class="text-2xl font-bold leading-5 text-ghost post-title"
+                                class="text-2xl font-bold leading-5 post-title"
                             >
                                 {{ post.title }}
                             </p></NuxtLink
@@ -48,7 +46,7 @@
                 </div>
             </div>
         </div>
-    <VFooter />
+        <VFooter />
     </div>
 </template>
 
@@ -59,17 +57,6 @@ const posts = await getItems({ collection: 'guides' })
 </script>
 
 <style>
-/* Background */
-body {
-    background-color: #070707;
-    opacity: 1;
-    background-image: linear-gradient(
-            rgba(255, 33, 70, 0.2) 1px,
-            transparent 1px
-        ),
-        linear-gradient(to right, rgba(255, 33, 70, 0.1) 1px, #070707 1px);
-    background-size: 20px 20px;
-}
 
 /* Post List */
 .post-block {

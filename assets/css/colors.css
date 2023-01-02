@@ -1,4 +1,8 @@
 /* Background Colors */
+
+.bg-platinum {
+    background: #e5e4e2;
+}
 .bg-dark {
     background: #212121;
 }
@@ -11,7 +15,13 @@
     background: #fff8e7;
 }
 
+.bg-dark-platinum {
+    background: #797979;
+}
+*/
+
 /* Text Colors */
+
 
 .dark {
     color: #212121;
@@ -24,3 +34,12 @@
 .latte {
     color: #fff8e7;
 }
+
+.platinum {
+    color: #e5e4e2;
+}
+
+.dark-platinum {
+    color: #797979;
+}
+

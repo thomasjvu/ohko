@@ -57,7 +57,6 @@ const posts = await getItems({ collection: 'articles' })
 </script>
 
 <style>
-
 /* Post List */
 .post-block {
     background: #f8f8ff;

@@ -1,51 +1,42 @@
 <template>
     <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
         <VLogo />
-            <ModalsMyAccount />
+        <ModalsMyAccount />
         <VDemoAlert />
-        <div
-            id="examples"
-            class="relative flex-1 divide divide-gray-800 dark:divide-gray-400"
-        >
-            <!-- <h2 -->
-            <!--     class="pb-6 text-3xl font-fugaz uppercase font-extrabold text-dark dark:text-white" -->
-            <!-- > -->
-            <!--     Home -->
-            <!-- </h2> -->
-            <!-- categories -->
-            <div class="flex justify-around gap-5">
+        <div class="flex justify-between gap-5">
+            <NuxtLink to="/articles" class="w-1/4">
                 <section
-                    class="category null dark:text-white w-screen text-center h-80 flex items-center hover:shadow-xl hover:bg-black"
+                    class="category bg-neutral-900 dark:text-white text-center h-80 hover:shadow-xl hover:bg-neutral-800"
                 >
-                    <h3 class="text-2xl">📰 Articles</h3>
+                <h3 class="text-2xl">📰 <br /> Articles</h3>
                 </section>
-                <section
-                    class="category null dark:text-white w-screen text-center h-80 flex items-center hover:shadow-xl hover:bg-black"
-                >
-                    <h3 class="text-2xl">🦮 Guides</h3>
-                </section>
-                <section
-                    class="category null dark:text-white w-sceren text-center h-80 flex items-center hover:shadow-xl hover:bg-black"
-                >
-                    <h3 class="text-2xl">⭐ Reviews</h3>
-                </section>
-                <section
-                    class="category null dark:text-white w-screen text-center h-80 flex items-center hover:shadow-xl hover:bg-black"
-                >
-                    <h3 class="text-2xl">💩 Memes</h3>
-                </section>
-            </div>
-            <ExamplesContent id="content" class="py-12" />
-            <!-- Create Content -->
-            <NuxtLink to="/create-content">
-                <div class="create dark:text-white w-full text-center mt-10">
-                    <h3>Create</h3>
-                    <p class="mb-2">It's in your blood.</p>
-                    <a class="btn">Create Content</a>
-                </div>
             </NuxtLink>
-            <!-- User Modal -->
+            <NuxtLink to="/guides" class="w-1/4">
+                <section
+                    class="category bg-neutral-900 dark:text-white text-center h-80 hover:shadow-xl hover:bg-neutral-800"
+                >
+                <h3 class="text-2xl">🦮 <br /> Guides</h3>
+                </section>
+            </NuxtLink>
+            <NuxtLink to="/reviews" class="w-1/4">
+                <section
+                    class="category bg-neutral-900 dark:text-white text-center h-80 hover:shadow-xl hover:bg-neutral-800"
+                >
+                <h3 class="text-2xl">⭐ <br /> Reviews</h3>
+                </section>
+            </NuxtLink>
+            <NuxtLink to="/memes" class="w-1/4">
+                <section
+                    class="category bg-neutral-900 dark:text-white text-center h-80 hover:shadow-xl hover:bg-neutral-800"
+                >
+                <h3 class="text-2xl">💩 <br /> Memes</h3>
+                </section>
+            </NuxtLink>
         </div>
+        <ExamplesContent id="content" class="py-12" />
+        <!-- Create Content -->
+        <ExamplesCreateContent />
+        <!-- User Modal -->
         <VFooter />
         <VCredits />
     </div>
@@ -60,21 +51,24 @@ useHead({
 </script>
 
 <style>
-.null {
-    background: #333;
+#categories {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .category {
-    padding: 50px;
+    padding: 25px;
     border-radius: 5px;
+    border: 2px solid white;
 
     color: white;
     font-family: 'Fragment Mono', monospace;
+    flex: 1;
 }
-.create {
-    padding: 75px;
-    border: 2px dashed #ff2147;
-    border-radius: 10px;
 
-    font-family: 'Fragment Mono', monospace;
+.null {
+    background: #333;
 }
+
 </style>
