@@ -24,7 +24,7 @@
       </div>
     </div>
     <h2 class="text-sm font-extrabold uppercase drop-shadow-sm">Created By @{{ article.user_created }}</h2>
-    <div class="article text-black dark:text-white" v-html="article.content" />
+    <div class="article" v-html="article.content" />
   <VFooter />
   <VCredits />
   </div>
