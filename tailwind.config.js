@@ -25,6 +25,18 @@ module.exports = {
                 rose: colors.rose,
                 stone: colors.stone,
                 neutral: colors.neutral,
+                'torch-red': {
+                    50: '#fff1f3',
+                    100: '#ffdfe4',
+                    200: '#ffc5cf',
+                    300: '#ff9dae',
+                    400: '#ff647f',
+                    500: '#ff2147',
+                    600: '#ed153a',
+                    700: '#c80d2d',
+                    800: '#a50f29',
+                    900: '#881428',
+                },
             },
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],

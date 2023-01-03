@@ -27,8 +27,8 @@
                     id="inner-post-container"
                     class="flex items-center justify-between gap-5"
                 >
-                    <section></section>
-                    <section id="image-container" class="w-2/3">
+                    <!-- Featured Image -->
+                    <section id="image-container" class="w-3/5">
                         <img
                             class="object-cover w-full rounded"
                             v-bind:src="
@@ -37,7 +37,7 @@
                             "
                         />
                     </section>
-                    <div class="py-5">
+                    <section class="py-5 w-1/3">
                         <p class="mb-2 text-xs font-semibold post-date">
                             {{
                                 new Date(post.date_created).toLocaleDateString()
@@ -50,11 +50,42 @@
                                 {{ post.title }}
                             </p></NuxtLink
                         >
+                        <!-- Content Description -->
                         <p class="mb-2 text-ghost">
                             {{ post.short_content }}
                         </p>
                         <p class="mb-2 infrared">/{{ post.slug }}</p>
-                    </div>
+                        <!-- Reaction Counts -->
+                        <section class="reactions flex justify-center">
+                            <section
+                                class="font-fragment flex flex-col items-center"
+                            >
+                                <Icon
+                                    name="pixelarticons:mood-happy"
+                                    size="2rem"
+                                />
+                                <span>5</span>
+                            </section>
+                            <section
+                                class="font-fragment flex flex-col items-center"
+                            >
+                                <Icon
+                                    name="pixelarticons:mood-neutral"
+                                    size="2rem"
+                                />
+                                <span>3</span>
+                            </section>
+                            <section
+                                class="font-fragment flex flex-col items-center"
+                            >
+                                <Icon
+                                    name="pixelarticons:mood-sad"
+                                    size="2rem"
+                                />
+                                <span>1</span>
+                            </section>
+                        </section>
+                    </section>
                 </section>
             </div>
         </div>

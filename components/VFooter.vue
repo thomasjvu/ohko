@@ -4,7 +4,7 @@
     >
         <div class="p-8">
             <NuxtLink to="/">
-                <h3 class="text-4xl font-extrabold text-black dark:text-white font-fugaz">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-black dark:text-white font-fugaz">
                     OHKO { One-hit Knockout! } 
                 </h3>
             </NuxtLink>
@@ -14,14 +14,14 @@
                 <NuxtLink to="https://twitter.com/ohko_org" target="_blank"
                     >@OHKO_ORG</NuxtLink
                 >
-                <p>© 2023 OHKO. All Rights Reserved</p>
+                <p>©2023 OHKO. All Rights Reserved.</p>
             </div>
         </div>
 
         <div class="flex items-center justify-end p-4 space-x-2">
             <NuxtLink to="/login">
                 <Icon
-                    name="pixelarticons:human-handsup"
+                    name="pixelarticons:user"
                     color="#ff2147"
                     width="1.75rem"
                     height="1.75rem"
