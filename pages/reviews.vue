@@ -1,9 +1,7 @@
 <template>
     <VHeader />
     <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
-        <div
-            class="max-w-screen-sm sm:text-center sm:mx-auto flex items-center flex-col justify-center"
-        >
+        <div class="max-w-screen-sm sm:text-center sm:mx-auto flex items-center flex-col justify-center">
             <h1
                 id="page-title"
                 class="mb-4 font-fugaz font-bold uppercase text-7xl sm:text-8xl text-black dark:text-white"
