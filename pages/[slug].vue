@@ -1,11 +1,12 @@
 <template>
+    <VHeader />
     <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
     <NuxtLink
       class="flex items-center font-fragment font-bold uppercase text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-200"
       to="/"
     >
       <span class="mr-2 text-xl">←</span>
-      Back to Feed
+      Back to Article Feed
     </NuxtLink>
       <VLogo />
     <div class="relative pt-48 pb-10 overflow-hidden shadow-xl rounded-2xl">
