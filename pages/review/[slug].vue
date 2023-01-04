@@ -98,18 +98,15 @@ const {
 )
 
 useHead({
-    title: review.value.title,
+    title: review.title,
 })
+
 </script>
 
 <style>
 #post-title {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #212121;
-}
-
-#short-content {
-
 }
 
 #rating {

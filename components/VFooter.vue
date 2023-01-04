@@ -1,6 +1,6 @@
 <template>
     <footer
-        class="relative md:flex md:justify-between rounded-md border-2 border-black dark:border-white shadow-md"
+        class="relative md:flex md:justify-between rounded-md shadow-md"
     >
         <div class="p-8">
             <NuxtLink to="/">
@@ -36,4 +36,7 @@
 </script>
 
 <style>
+footer {
+    border: 2px solid #ff2147;
+}
 </style>
