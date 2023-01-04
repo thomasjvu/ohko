@@ -1,9 +1,8 @@
 <template>
-        <NuxtLink to="/create-content">
+        <NuxtLink to="/create/article">
             <div class="create dark:text-white w-full text-center mt-10">
-                <h3>Create</h3>
-                <p class="mb-2">It's in your blood.</p>
-                <a class="btn">Create Content</a>
+                <h3 class="mb-5">Create Content</h3>
+                <button class="btn">New Article</button>
             </div>
         </NuxtLink>
 </template>

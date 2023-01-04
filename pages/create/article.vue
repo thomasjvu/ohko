@@ -7,32 +7,19 @@
         >
             New Article
         </h1>
-        <CreatePostBlog />
+        <CreatePostArticle />
         <VFooter />
     </div>
 </template>
 
 <script setup>
-/*
-const { createItems } = useDirectusItems()
+// Set Auth Middleware
+definePageMeta({
+    middleware: 'auth',
+})
 
-
-const createArticles = async () => {
-    try {
-        let items = [
-            {
-                title: "testitem",
-                content: "testcontent",
-                status: "published",
-            },
-            ]
-        await createItems({ collection: "posts", items })
-    } catch (e) {}
-}
-*/
-
+// Set Page Title
 const title = 'Create Article'
-
 useHead({
     title: title + ' | OHKO',
 })

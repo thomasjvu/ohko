@@ -21,6 +21,7 @@
         </label>
         <br />
         <button type="submit" class="bg-white dark:bg-black rounded text-black dark:text-white p-3 border dark:border-white">Create Blog Post</button>
+        <VUpload />
     </form>
 </template>
 
