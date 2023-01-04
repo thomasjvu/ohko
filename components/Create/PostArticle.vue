@@ -38,7 +38,7 @@
 import { Directus } from '@directus/sdk'
 
 // const config = useRuntimeConfig()
-const directus = new Directus('http://app.ohko.org')
+const directus = new Directus('https://app.ohko.org')
 const articles = directus.items('articles')
 
 export default {
@@ -57,7 +57,6 @@ export default {
         description: this.description,
         content: this.content,
         featured_image: '63ec6be1-3796-4ef5-9d1f-4e7f9e877605'
-
         // status: "Published",
       };
       await articles.createOne(postData);
