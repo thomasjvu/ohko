@@ -8,6 +8,7 @@
         <NuxtLink class="menu-link" to="/guides">Guides</NuxtLink>
         <NuxtLink class="menu-link" to="/memes">Memes</NuxtLink>
         <NuxtLink class="menu-link" to="/store">Store</NuxtLink>
+        <NuxtLink id="login-menu-link" class="menu-link" to="/login">Login</NuxtLink>
     </section>
 </template>
 
@@ -18,6 +19,10 @@
 .menu-link:hover {
     color: #ff2147;
     text-decoration: line-through;
+}
+
+#login-menu-link {
+    color: #ff2147;
 }
 </style>
 

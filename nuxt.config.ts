@@ -24,6 +24,7 @@ export default defineNuxtConfig({
         'nuxt-directus',
     ],
 
+
     directus: {
         url: process.env.DIRECTUS_URL,
     },

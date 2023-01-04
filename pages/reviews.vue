@@ -10,10 +10,7 @@
         </div>
         <!-- Post Blocks -->
         <div class="flex flex-col items-center font-fragment" v-for="post in posts">
-            <div
-                id="post-block"
-                class="overflow-hidden transition-shadow duration-300 rounded-md text-left bg-white dark:bg-black border-2 border-black w-full py-10 px-5 shadow-xl"
-            >
+            <div id="post-block" class="overflow-hidden transition-shadow duration-300 rounded-md text-left bg-white dark:bg-black border-2 border-black w-full py-10 px-5 shadow-xl">
                 <section id="inner-post-container" class="flex items-center justify-between gap-5">
                     <!-- Featured Image -->
                     <section id="image-container" class="w-5/12">
@@ -25,18 +22,17 @@
                             {{ new Date(post.date_created).toLocaleDateString() }}
                         </p>
                         <NuxtLink :to="`/review/${post.slug}`" class="inline-block mt-3 mb-3 text-red transition-colors duration-200 font-fugaz"
-                            ><h3
-                                class="text-2xl font-bold leading-5 post-title text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500"
-                            >
+                            ><h3 class="text-2xl font-bold leading-5 post-title text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500">
                                 {{ post.title }}
                             </h3></NuxtLink
                         >
                         <!-- Content Description -->
                         <p class="mb-2 text-black">
-                            {{ post.short_content }}
+                            {{ post.description }}
                         </p>
+                        <!-- Content Slug -->
                         <p class="mb-2 infrared">/{{ post.slug }}</p>
-                        <!-- Reaction Counts -->
+                        <!-- Content Reaction Counts -->
                         <section class="reactions flex">
                             <section class="font-fragment flex flex-col items-center">
                                 <Icon name="pixelarticons:mood-happy" size="2rem" />

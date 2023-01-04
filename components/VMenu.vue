@@ -16,7 +16,7 @@
                 size="3rem"
             ></Icon>
         </section>
-        <VLogoTransparent />
+        <!-- <VLogoTransparent /> -->
         <nav class="font-fragment">
             <VAccountLinks />
             <VMenuLinks />
