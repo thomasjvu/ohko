@@ -1,13 +1,13 @@
 <template>
     <section class="social-links">
         <a href="https://twitter.com/OHKO_ORG" target="_blank">
-            <Icon class="social-icon text-black dark:text-white" name="akar-icons:twitter-fill"></Icon>
+            <Icon class="social-icon text-neutral-900 dark:text-neutral-100" name="akar-icons:twitter-fill"></Icon>
         </a>
         <a href="#" target="_blank">
-            <Icon class="social-icon text-black dark:text-white" name="akar-icons:twitch-fill"></Icon>
+            <Icon class="social-icon text-neutral-900 dark:text-neutral-100" name="akar-icons:twitch-fill"></Icon>
         </a>
         <a href="https://discord.gg/cxj4WE9Xmj" target="_blank">
-            <Icon class="social-icon text-black dark:text-white" name="akar-icons:discord-fill"></Icon>
+            <Icon class="social-icon text-neutral-900 dark:text-neutral-100" name="akar-icons:discord-fill"></Icon>
         </a>
     </section>
 </template>

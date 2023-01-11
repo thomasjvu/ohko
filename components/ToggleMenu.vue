@@ -2,12 +2,13 @@
     <section id="menu-btn-container" class="">
         <Icon
             id="menu-icon"
+            class="text-neutral-900 dark:text-neutral-100"
             name="pixelarticons:align-justify"
             @click="toggleMenu"
             size="3rem"
         ></Icon>
     </section>
-    <div v-if="showMenu" id="menu" class="bg-neutral-400 dark:bg-stone-900">
+    <div v-if="showMenu" id="menu" class="bg-neutral-400 dark:bg-neutral-900 dark:text-neutral-100">
         <section class="close-btn-container">
             <Icon
                 id="close-icon"
@@ -19,8 +20,8 @@
         <!-- <VLogoTransparent /> -->
         <nav class="font-fragment">
             <VAccountLinks />
-            <VMenuLinks />
-            <VSocialLinks />
+            <ToggleMenuLinks />
+            <SocialLinks />
         </nav>
     </div>
 </template>
@@ -69,12 +70,11 @@ export default {
 
 #close-icon,
 #menu-icon {
-    color: #ff2147;
     cursor: pointer;
 }
 #close-icon:hover,
 #menu-icon:hover {
-    color: #797979;
+    color: #ff2147;
 }
 
 #menu {

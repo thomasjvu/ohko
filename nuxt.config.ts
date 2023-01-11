@@ -13,6 +13,8 @@ export default defineNuxtConfig({
         '~/assets/css/style.css',
         '~/assets/css/colors.css',
         '~/assets/css/fonts.css',
+        'vuetify/lib/styles/main.sass',
+        '@mdi/font/css/materialdesignicons.min.css'
     ],
 
     modules: [
@@ -49,10 +51,13 @@ export default defineNuxtConfig({
 
     //   Currently still needed
     build: {
-        transpile: ['@heroicons/vue', '@headlessui/vue'],
+        transpile: ['@heroicons/vue', '@headlessui/vue', 'vuetify'],
     },
 
     vite: {
+        define: {
+            'process.env.DEBUG': false,
+        },
         optimizeDeps: {
             include: [
                 '@heroicons/vue/20/solid',

@@ -30,6 +30,8 @@
         "prettier": "^2.7.1"
     },
     "dependencies": {
-        "vue3-carousel": "^0.2.9"
+        "@mdi/font": "^7.1.96",
+        "sass": "^1.57.1",
+        "vuetify": "^3.1.1"
     }
 }
