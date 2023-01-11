@@ -41,7 +41,7 @@ export default {
     },
       methods: {
         async createUser() {
-            await users.invites.send(this.email, '2d1dcc36-7af3-40c2-9397-28c52d113183') 
+            await users.invites.send(this.email, '80fd4803-2000-450b-90cc-d0a444c7a916') 
             
           window.location.replace('/signup');
         }

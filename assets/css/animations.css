@@ -1,0 +1,7 @@
+/* Grow Animation */
+.grow {
+  transition: transform .7s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}

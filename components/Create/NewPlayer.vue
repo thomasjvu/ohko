@@ -1,6 +1,6 @@
 <template>
     <form
-        @submit.prevent="createUser"
+        @submit.prevent="createPlayer"
         class="flex flex-col font-fragment gap-2"
     >
         <label>
@@ -49,10 +49,11 @@ export default {
         }
     },
     methods: {
-        createUser() {
+        createPlayer() {
             this.formRequest()
                 .then((result) => {
                     console.log('Congrats! You have been signed-up.')
+                    window.location.replace('/login');
                 })
                 .catch((error) => {
                     console.error(
@@ -67,6 +68,7 @@ export default {
                     email: this.email,
                     password: this.password,
                     role: '80fd4803-2000-450b-90cc-d0a444c7a916',
+                    avatar: 'f6e3a207-f7e5-46ac-b1f7-c743c9ffa153'
                 },
             })
         },

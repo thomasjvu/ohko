@@ -5,7 +5,23 @@
  * Neutral :
  * Red :
  * Green : 
- ******************* /
+ *******************/
+
+
+:root {
+
+    --white: #ffffff;
+    --ghost: #f3f3f3;
+    --platinum: #e5e4e2;
+    --latte: #fff8e7;
+
+    --dark-platinum: #797979;
+    --dark: #212121;
+    --darker: #111111;
+    --black: #000000;
+
+    --infrared: #ff2147;
+}
 
 /* Background Colors */
 

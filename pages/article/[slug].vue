@@ -7,8 +7,7 @@
             <span class="mr-2 text-xl">←</span>
             Back to Articles
         </NuxtLink>
-        <VLogo />
-        <div class="relative pt-48 pb-10 overflow-hidden shadow-xl rounded-2xl">
+        <div class="relative pt-96 pb-10 overflow-hidden shadow-xl rounded-2xl">
             <img
                 class="absolute inset-0 object-cover w-full h-full"
                 :src="fileUrl(article.featured_image)"
@@ -20,17 +19,21 @@
             <div class="relative px-8">
                 <div
                     class="relative text-lg font-medium ghost font-fugaz md:flex-grow"
-                >
-                    <h1 id="post-title" class="text-6xl font-bold drop-shadow-sm">
-                        {{ article.title }}
-                    </h1>
-                </div>
+                ></div>
             </div>
         </div>
-        <section id="short-content" class="px-5 py-5 bg-infrared rounded-md darker font-fragment shadow-lg">
+        <h1
+            id="post-title"
+            class="text-5xl sm:text-6xl font-bold drop-shadow-sm"
+        >
+            {{ article.title }}
+        </h1>
+        <section
+            id="short-content"
+            class="px-5 py-5 bg-neutral-900 dark:bg-neutral-400 rounded-md darker font-fragment shadow-lg"
+        >
             <p class="text-sm font-extrabold drop-shadow-sm">
-            {{ article.description }}
-            {{ article.featured_image }}
+                {{ article.description }}
             </p>
         </section>
         <h4 class="text-sm font-extrabold uppercase drop-shadow-sm">
@@ -42,9 +45,6 @@
             class="font-fragment leading-loose"
             v-html="article.content"
         />
-
-
-        <VFooter />
     </div>
 </template>
 
@@ -87,7 +87,6 @@ const {
 useHead({
     title: article.title,
 })
-
 </script>
 
 <style>

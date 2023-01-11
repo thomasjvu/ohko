@@ -29,7 +29,7 @@ const isModalOpen = ref(false)
 
 <style>
 #profile-icon {
-    color: #ff2147;
+    color: var(--black);
     cursor: pointer;
 }
 </style>

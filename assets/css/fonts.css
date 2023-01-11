@@ -9,10 +9,19 @@
     src: url('~/assets/fonts/FragmentMono-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Silver';
+    src: url('~/assets/fonts/Silver.ttf');
+}
+
 .font-fugaz {
     font-family: 'Fugaz One', sans-serif;
 }
 
 .font-fragment {
     font-family: 'Fragment Mono', monospace;
+}
+
+.font-silver {
+    font-family: 'Silver', 'Fragment Mono', 'Lucida Console',  monospace;
 }
