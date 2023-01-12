@@ -48,13 +48,9 @@ const {
     },
     {
         transform: (data) => data.data[0],
-        pick: ['title', 'content', 'description', 'featured_image', 'user_created', 'tags', 'slug', 'id'],
+        pick: ['title', 'content', 'description', 'featured_image', 'user_created', 'slug'],
     }
 )
-
-useHead({
-    title: article.title,
-})
 </script>
 
 <style></style>
