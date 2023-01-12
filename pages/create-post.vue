@@ -7,7 +7,7 @@
             <span class="mr-2 text-xl">←</span>
             Back to Home Page
         </NuxtLink>
-        <VLogo />
+        <Logo />
         <h1 class="text-4xl font-bold dark:text-white text-center">
             Create Article
         </h1>

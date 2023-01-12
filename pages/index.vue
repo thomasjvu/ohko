@@ -1,14 +1,13 @@
 <template>
     <div>
         <Hero />
-        <AlertsDemoAlert />
+        <AlertsDemo />
         <div class="flex flex-col sm:flex-row justify-between gap-5 font-fragment">
         </div>
         <FeaturedArticles />
         <FeaturedArtworks />
         <FeaturedCosplays />
-        <!-- <ExamplesContent id="content" class="py-12" /> -->
-        <!-- User Modal -->
+        <ExamplesContent id="content" class="py-12" />
     </div>
 </template>
 

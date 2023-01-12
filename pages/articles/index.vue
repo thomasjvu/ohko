@@ -51,6 +51,8 @@
             </section>
         </div>
     </div>
+    <LoadArticles />
+    <!-- End of Post Blocks -->
 </template>
 
 <script setup>
