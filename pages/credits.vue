@@ -8,7 +8,7 @@
         <h3>Images</h3>
         <p>Some of the images on this website is rendered by Midjourney.</p>
         <h4>Other Images</h4>
-        <p>As a website that hosts user-generated content (UGC)...enter text here.</p>
+        <p>As a website that hosts user-generated content (UGC)...enter text here. Quick Update test.</p>
     </div>
 </template>
 
