@@ -10,8 +10,8 @@
 }
 
 @font-face {
-    font-family: 'Silver';
-    src: url('~/assets/fonts/Silver.ttf');
+    font-family: 'Monogram';
+    src: url('~/assets/fonts/Monogram.ttf');
 }
 
 .font-fugaz {
@@ -22,6 +22,6 @@
     font-family: 'Fragment Mono', monospace;
 }
 
-.font-silver {
-    font-family: 'Silver', 'Fragment Mono', 'Lucida Console',  monospace;
+.font-monogram {
+    font-family: 'Monogram', 'Fragment Mono', 'Lucida Console',  monospace;
 }

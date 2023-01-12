@@ -1,11 +1,11 @@
 <template>
     <section class="featured-section">
-        <h2 class="featured-title text-5xl font-silver font-bold">Featured Cosplays</h2>
+        <h2 class="featured-title text-7xl font-monogram font-bold">Featured Cosplays</h2>
             <section class="carousel">
-                <slide>
+                <section>
                     <img class="rounded-md w-64" src="https://res.cloudinary.com/dlcz9y0nv/image/upload/v1673418842/nami-ai.png_vhr0tj.png">
                     <h4 class="font-fragment text-center">Content Description</h4>
-                </slide>
+                </section>
                 <section>
                     <img class="rounded-md w-64" src="https://res.cloudinary.com/dlcz9y0nv/image/upload/v1673418842/nami-ai.png_vhr0tj.png">
                     <h4 class="font-fragment text-center">Content Description</h4>
@@ -20,7 +20,7 @@
                 </section>
             </section>
             <section class="more-section">
-                <h3 class="featured-subtitle text-4xl font-silver font-bold">More Cosplays</h3>
+                <h3 class="featured-subtitle text-4xl font-monogram font-bold">More Cosplays</h3>
                 <section>
                     <section class="more-content">
                         <section>

@@ -1,51 +1,30 @@
 <template>
-    <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
-        <NuxtLink
-            class="flex items-center font-fragment font-bold uppercase text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-200"
-            to="/articles"
-        >
-            <span class="mr-2 text-xl">←</span>
-            Back to Articles
-        </NuxtLink>
-        <div class="relative pt-96 pb-10 overflow-hidden shadow-xl rounded-2xl">
-            <img
-                class="absolute inset-0 object-cover w-full h-full"
-                :src="fileUrl(article.featured_image)"
-            />
-            <div class="absolute inset-0 bg-primary-500 mix-blend-multiply" />
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-600 via-primary-600 opacity-80"
-            />
-            <div class="relative px-8">
-                <div
-                    class="relative text-lg font-medium ghost font-fugaz md:flex-grow"
-                ></div>
-            </div>
+    <NuxtLink
+        class="flex items-center font-fragment font-bold uppercase text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-200"
+        to="/articles"
+    >
+        <span class="mr-2 text-xl">←</span>
+        Back to Articles
+    </NuxtLink>
+    <div class="relative pt-96 pb-10 overflow-hidden shadow-xl rounded-2xl">
+        <img class="absolute inset-0 object-cover w-full h-full" :src="fileUrl(article.featured_image)" />
+        <div class="absolute inset-0 bg-primary-500 mix-blend-multiply" />
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-600 via-primary-600 opacity-80" />
+        <div class="relative px-8">
+            <div class="relative text-lg font-medium ghost font-fugaz md:flex-grow"></div>
         </div>
-        <h1
-            id="post-title"
-            class="text-5xl sm:text-6xl font-bold drop-shadow-sm"
-        >
-            {{ article.title }}
-        </h1>
-        <section
-            id="short-content"
-            class="px-5 py-5 bg-neutral-900 dark:bg-neutral-400 rounded-md darker font-fragment shadow-lg"
-        >
-            <p class="text-sm font-extrabold drop-shadow-sm">
-                {{ article.description }}
-            </p>
-        </section>
-        <h4 class="text-sm font-extrabold uppercase drop-shadow-sm">
-            Created By @{{ article.user_created }}
-        </h4>
-
-        <section
-            id="author-article"
-            class="font-fragment leading-loose"
-            v-html="article.content"
-        />
     </div>
+    <h1 id="post-title" class="text-5xl sm:text-6xl font-bold drop-shadow-sm">
+        {{ article.title }}
+    </h1>
+    <section id="short-content" class="px-5 py-5 bg-neutral-900 dark:bg-neutral-400 rounded-md darker font-fragment shadow-lg">
+        <p class="text-sm font-extrabold drop-shadow-sm">
+            {{ article.description }}
+        </p>
+    </section>
+    <h4 class="text-sm font-extrabold uppercase drop-shadow-sm">Created By @{{ article.user_created }}</h4>
+
+    <section id="author-article" class="font-fragment leading-loose" v-html="article.content" />
 </template>
 
 <script setup>
@@ -65,22 +44,11 @@ const {
 } = await useAsyncData(
     path,
     () => {
-        return $directus
-            .items('articles')
-            .readByQuery({ filter: { slug: { _eq: params.slug } }, limit: 1 })
+        return $directus.items('articles').readByQuery({ filter: { slug: { _eq: params.slug } }, limit: 1 })
     },
     {
         transform: (data) => data.data[0],
-        pick: [
-            'title',
-            'content',
-            'description',
-            'featured_image',
-            'user_created',
-            'tags',
-            'slug',
-            'id',
-        ],
+        pick: ['title', 'content', 'description', 'featured_image', 'user_created', 'tags', 'slug', 'id'],
     }
 )
 
@@ -89,9 +57,4 @@ useHead({
 })
 </script>
 
-<style>
-#post-title {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #212121;
-}
-</style>
+<style></style>
