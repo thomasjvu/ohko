@@ -14,7 +14,7 @@
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-create" href="/create">Create</a>
+                    <a class="font-fragment side-create" href="/create/article">Create</a>
                 </li>
                 <!-- <li> -->
                 <!--     <a class="font-fragment side-more" href="/explore" -->
@@ -22,7 +22,7 @@
                 <!--     > -->
                 <!-- </li> -->
                 <li>
-                    <a class="font-fragment side-cat" href="/art">Art</a>
+                    <a class="font-fragment side-cat" href="#">Art</a>
                 </li>
                 <li>
                     <a class="font-fragment side-cat" href="/articles"
@@ -30,23 +30,23 @@
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="/guides">Guides</a>
+                    <a class="font-fragment side-cat" href="#">Guides</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="/memes">Memes</a>
+                    <a class="font-fragment side-cat" href="#">Memes</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="/reviews"
+                    <a class="font-fragment side-cat" href="#"
                         >Reviews</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="/cosplays"
+                    <a class="font-fragment side-cat" href="#"
                         >Cosplay</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="/cosplays"
+                    <a class="font-fragment side-cat" href="#"
                         >Fan-Fiction</a
                     >
                 </li>

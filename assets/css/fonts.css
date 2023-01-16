@@ -14,6 +14,11 @@
     src: url('~/assets/fonts/Monogram.ttf');
 }
 
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('~/assets/fonts/vcr-osd-mono.ttf');
+}
+
 .font-fugaz {
     font-family: 'Fugaz One', sans-serif;
 }
@@ -24,4 +29,8 @@
 
 .font-monogram {
     font-family: 'Monogram', 'Fragment Mono', 'Lucida Console',  monospace;
+}
+
+.font-VCR {
+    font-family: 'VCR OSD Mono', 'Fragment Mono', 'Lucida Console',  monospace;
 }

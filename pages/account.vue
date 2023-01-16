@@ -1,6 +1,5 @@
 <template>
-    <VHeader />
-    <div class="relative max-w-6xl px-6 pt-12 pb-12 mx-auto space-y-8">
+    <div class="">
         <div class="space-y-12">
             <!-- User Data -->
             <div class="">
@@ -31,8 +30,6 @@
                     <!-- <p>{{ user.followers }}</p> -->
                 </div>
             </div>
-            <!-- Create Content -->
-            <ExamplesCreateContent />
             <!-- End of User Data -->
             <h2 class="text-5xl font-fugaz text-center">Ready to Create?</h2>
             <div
@@ -79,6 +76,13 @@
                     </section>
                 </NuxtLink>
             </div>
+            <!-- File Upload -->
+            <FileUpload />
+            <!-- Create Content -->
+            <CreatePostArticle />
+            <!-- GET LoggedIn Users Articles -->
+            <!-- GET LoggedIn Users Media -->
+            <!-- GET LoggedIn Users etc. -->
             <!-- Login Button -->
             <!-- Logout Button -->
             <VButton variant="primary" @click="auth.logout()" class="w-1/4">

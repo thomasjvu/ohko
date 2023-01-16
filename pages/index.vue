@@ -8,6 +8,7 @@
         <FeaturedArtworks />
         <FeaturedCosplays />
         <ExamplesContent id="content" class="py-12" />
+        <FileUpload />
     </div>
 </template>
 

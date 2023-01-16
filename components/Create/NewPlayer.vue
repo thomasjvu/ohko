@@ -4,6 +4,21 @@
         class="flex flex-col font-fragment gap-2"
     >
         <label>
+            Username
+            <input
+                v-model="username"
+                type="text"
+                class="w-full rounded text-black"
+                ref="username"
+                id="username"
+                required
+            />
+            <p class="">
+                Confirm Username:
+                <span class="input-value">{{ username }}</span>
+            </p>
+        </label>
+        <label>
             Email
             <input
                 v-model="email"
@@ -44,6 +59,7 @@
 export default {
     data() {
         return {
+            username: '',
             email: '',
             password: '',
         }
@@ -65,6 +81,7 @@ export default {
             return await $fetch('https://app.ohko.org/users', {
                 method: 'POST',
                 body: {
+                    username: this.username,
                     email: this.email,
                     password: this.password,
                     role: '80fd4803-2000-450b-90cc-d0a444c7a916',

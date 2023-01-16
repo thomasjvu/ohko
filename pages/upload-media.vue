@@ -12,7 +12,7 @@
             Create Content
         </h1>
         <p class="font-fragment text-center">Currently, users can only upload images.</p>
-        <VUpload
+        <FileUpload
             v-model="files"
             :size-limit-mb="3"
             accept="image/png, image/jpeg"
@@ -30,11 +30,13 @@
 </template>
 
 <script setup>
+/*
 import { useAuth } from '~~/store/auth'
 
 const router = useRouter()
 
 const auth = useAuth()
+*/
 
 // Set middleware
 definePageMeta({

@@ -1,5 +1,4 @@
 <template>
-    <VHeader />
     <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
         <h1
             id="page-title"
@@ -8,7 +7,6 @@
             New Post
         </h1>
         <CreatePost />
-        <VFooter />
     </div>
 </template>
 

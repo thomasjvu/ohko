@@ -29,5 +29,8 @@
         "pinia": "^2.0.24",
         "postcss": "^8.4.18",
         "prettier": "^2.7.1"
+    },
+    "dependencies": {
+        "@nuxtclub/slugify": "^1.2.1"
     }
 }
