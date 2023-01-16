@@ -19,14 +19,18 @@
         "@vueuse/core": "^9.5.0",
         "@vueuse/nuxt": "^9.5.0",
         "autoprefixer": "10.4.13",
+        "esbuild": "^0.16.17",
         "eslint": "^8.27.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.2.1",
         "nuxt": "^3.0.0",
+        "nuxt-directus": "^3.2.2",
         "nuxt-icon": "^0.1.8",
         "pinia": "^2.0.24",
         "postcss": "^8.4.18",
-        "prettier": "^2.7.1",
-        "nuxt-directus": "^3.2.2"
+        "prettier": "^2.7.1"
+    },
+    "dependencies": {
+        "@nuxtclub/slugify": "^1.2.1"
     }
 }

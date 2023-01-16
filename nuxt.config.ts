@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     //   },
 
     css: [
+        '~/assets/css/animations.css',
         '~/assets/css/style.css',
         '~/assets/css/colors.css',
         '~/assets/css/fonts.css',
@@ -48,10 +49,13 @@ export default defineNuxtConfig({
 
     //   Currently still needed
     build: {
-        transpile: ['@heroicons/vue', '@headlessui/vue'],
+        transpile: ['@heroicons/vue'],
     },
 
     vite: {
+        define: {
+            'process.env.DEBUG': false,
+        },
         optimizeDeps: {
             include: [
                 '@heroicons/vue/20/solid',

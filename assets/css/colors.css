@@ -3,58 +3,20 @@
  * *****************
  * Stone :
  * Neutral :
- * Red :
- * Green : 
- ******************* /
+ *******************/
 
-/* Background Colors */
 
-.bg-platinum {
-    background: #e5e4e2;
-}
-.bg-dark {
-    background: #212121;
-}
+:root {
+    --white: #ffffff;
+    --ghost: #f3f3f3;
+    --platinum: #e5e4e2;
+    --latte: #fff8e7;
 
-.bg-infrared {
-    background: #ff2147;
-}
+    --dark-platinum: #797979;
+    --dark: #212121;
+    --darker: #111111;
+    --black: #000000;
 
-.bg-latte {
-    background: #fff8e7;
+    --infrared: #ff2147;
 }
 
-.bg-dark-platinum {
-    background: #797979;
-}
-
-.bg-ghost {
-    background: #f8f8ff;
-}
-
-/* Text Colors */
-
-
-.dark {
-    color: #212121;
-}
-
-.infrared {
-    color: #ff2147;
-}
-
-.latte {
-    color: #fff8e7;
-}
-
-.platinum {
-    color: #e5e4e2;
-}
-
-.dark-platinum {
-    color: #797979;
-}
-
-.ghost {
-    color: #f8f8ff;
-}
