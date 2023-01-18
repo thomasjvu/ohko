@@ -4,7 +4,7 @@
       </div>
       <div
         v-else-if="articles.length === 0"
-        class="relative mt-10 block w-full px-12 py-16 text-center border-2 border-gray-300 border-dashed rounded-lg dark:border-gray-700 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        class="relative mt-10 block w-full px-12 py-16 text-center border-2 border-gray-900 border-dashed rounded-lg dark:border-gray-700 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
       >
         <p class="block mt-2 font-fragment font-medium text-gray-900 dark:text-gray-200">
           Explore. <br />What are you waiting for?
@@ -16,7 +16,7 @@
       <ul class="space-y-6" v-else-if="articles.length > 0">
         <li v-for="article in articles" :key="article.slug">
           <ExamplesPageCard class="mt-10"
-            :path="`/${article.slug}`"
+            :path="`/articles/${article.slug}`"
             :image="fileUrl(article.featured_image)"
             :title="article.title"
             :description="`/${article.slug}`"

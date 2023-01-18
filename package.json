@@ -31,6 +31,7 @@
         "prettier": "^2.7.1"
     },
     "dependencies": {
-        "@nuxtclub/slugify": "^1.2.1"
+        "@nuxtclub/slugify": "^1.2.1",
+        "@tinymce/tinymce-vue": "^5.0.0"
     }
 }

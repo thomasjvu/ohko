@@ -54,6 +54,7 @@ const props = defineProps({
     background: #ff2147;
     padding: 5px 10px;
 
+    cursor: pointer;
     border-radius: 5px;
 
     font-family: 'Fragment Mono', monospace;

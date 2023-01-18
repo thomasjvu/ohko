@@ -13,7 +13,7 @@
         </div>
     </div>
     <section id="post-description-container" class="p-5 mt-5 mb-5 bg-neutral-400 rounded-md darker font-fragment shadow-lg text-black">
-        <p class="text-lg">
+        <p class="text-3xl">
             {{ post.description }}
         </p>
     </section>
@@ -21,7 +21,7 @@
         {{ post.title }}
     </h1>
 
-    <section id="" class="font-fragment leading-loose text-xl sm:text-2xl dark:text-neutral-200" v-html="post.content" />
+    <section id="post-content" class="font-fragment leading-loose text-2xl dark:text-neutral-200" v-html="post.content" />
     <!-- End of Post Content -->
     <!-- Start of Post Meta -->
     <section class="post-meta flex flex-col items-center gap-5 mt-20">
@@ -72,5 +72,6 @@ const {
 </script>
 
 <style>
-
 </style>
+
+
