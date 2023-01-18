@@ -84,8 +84,8 @@ export default {
                     username: this.username,
                     email: this.email,
                     password: this.password,
-                    role: '80fd4803-2000-450b-90cc-d0a444c7a916',
-                    avatar: 'f6e3a207-f7e5-46ac-b1f7-c743c9ffa153'
+                    role: '5c7daea1-e1b1-45f1-9e1b-b03eacd90adf',
+                    avatar: 'a121da83-d975-4443-bc9b-26f21d2e3083'
                 },
             })
         },

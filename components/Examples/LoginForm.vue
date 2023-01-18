@@ -4,8 +4,9 @@
     <div v-if="loading" class="flex items-center justify-center flex-1">
       <VLoading class="w-24 h-24 text-primary-600" />
     </div>
-    <div class="space-y-4" v-if="!loading">
+    <div class="space-y-4 text-2xl" v-if="!loading">
       <VInput
+        class="text-2xl"
         v-model="email"
         name="email"
         type="email"
@@ -14,6 +15,7 @@
         required
       />
       <VInput
+        class="text-2xl"
         v-model="password"
         name="password"
         type="password"
@@ -21,7 +23,7 @@
         required
       />
       <div class="flex items-center justify-end space-x-4">
-        <VButton type="button" @click="loadDemoUser()">Load Demo User</VButton>
+        <!-- <VButton type="button" @click="loadDemoUser()">Load Demo User</VButton> -->
         <VButton
           type="submit"
           variant="primary"
@@ -71,3 +73,6 @@ async function login() {
   }
 }
 </script>
+
+<style>
+</style>

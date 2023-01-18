@@ -10,7 +10,7 @@
         <!--     /> -->
         <!--     User Created -->
         <!-- </label> -->
-        <label class="text-2xl dark:text-neutral-100 font-VCR">
+        <label class="text-2xl dark:text-neutral-100 font-fragment">
             Title:
             <input
                 v-model="title"
@@ -25,7 +25,7 @@
                 Your "Title" is...: <span class="input-value">{{ title }}</span>
             </p>
         </label>
-        <label class="text-2xl dark:text-neutral-100 font-VCR">
+        <label class="text-2xl dark:text-neutral-100 font-fragment">
             Slug
             <input
                 type="text"
@@ -41,7 +41,7 @@
             </p>
         </label>
         <br />
-        <label class="text-2xl dark:text-neutral-100 font-VCR">
+        <label class="text-2xl dark:text-neutral-100 font-fragment">
             Description
             <input
                 type="text"
@@ -53,16 +53,16 @@
                 required
             />
         </label>
-        <label class="text-2xl dark:text-neutral-100 font-VCR">
+        <label class="text-2xl dark:text-neutral-100 font-fragment">
             Content:
-            <textarea
-                v-model="content"
-                class="w-full rounded text-black"
-                ref="content"
-                id="content"
-                autocomplete="off"
-                required
-            ></textarea>
+            <!-- <Editor -->
+            <!--     v-model="content" class="w-full rounded text-black" ref="content" id="content" required -->
+            <!--     api-key="no-api-key" -->
+            <!--     :init="{ -->
+            <!--         plugins: 'lists link image table code help wordcount', -->
+            <!--     }" -->
+            <!-- /> -->
+            <textarea v-model="content" class="w-full rounded text-black" ref="content" id="content" autocomplete="off" required></textarea>
         </label>
         <!-- <label class="text-2xl dark:text-neutral-100 font-VCR"> -->
         <!--     Featured Image: -->
@@ -76,18 +76,24 @@
         <!--         /> -->
         <!-- </label> -->
         <br />
-        <button
-            id="submit-button"
-            type="submit"
-            class="bg-white dark:bg-black rounded-md text-black dark:text-white p-3 border dark:border-white"
-        >
+        <button id="submit-button" type="submit" class="bg-white dark:bg-black rounded-md text-black dark:text-white p-3 border dark:border-white font-fragment text-3xl">
             Create Article
         </button>
     </form>
 </template>
 
 <script setup>
+import Editor from '@tinymce/tinymce-vue'
+import { storeToRefs } from 'pinia'
+import { useAuth } from '~~/store/auth'
 
+const auth = useAuth()
+const { fileUrl } = useFiles()
+const { isLoggedIn, user } = storeToRefs(auth)
+
+definePageMeta({
+    middleware: 'auth',
+})
 </script>
 
 <script>
@@ -96,6 +102,10 @@ import { Directus } from '@directus/sdk'
 // const config = useRuntimeConfig()
 const directus = new Directus('https://app.ohko.org')
 const articles = directus.items('articles')
+
+// Use Token
+// const token = useDirectusToken()
+// console.log('token', token)
 
 export default {
     data() {
@@ -113,8 +123,9 @@ export default {
                 slug: this.slug,
                 description: this.description,
                 content: this.content,
-                featured_image: 'f8f03ddc-80ed-411b-9d3b-4613c315ef03',
-                status: "published"
+                user_created: this.user,
+                featured_image: 'd55d9019-0e42-444e-8243-88aa91ef3629',
+                status: 'published',
             }
             await articles.createOne(postData)
             window.location.replace('/articles')
@@ -129,10 +140,10 @@ export default {
 }
 
 #submit-button {
-    background: #ff2147;
+    background: #797979;
 }
 #submit-button:hover {
     color: white;
-    background: #797979;
+    background: #ff2147;
 }
 </style>

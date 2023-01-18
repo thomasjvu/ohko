@@ -20,3 +20,6 @@
     --infrared: #ff2147;
 }
 
+.infrared {
+    color: var(--infrared);
+}

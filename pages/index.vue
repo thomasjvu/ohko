@@ -7,12 +7,11 @@
         <FeaturedArticles />
         <FeaturedArtworks />
         <FeaturedCosplays />
-        <ExamplesContent id="content" class="py-12" />
-        <FileUpload />
     </div>
 </template>
 
 <script setup>
+
 const title = 'Home'
 
 useHead({
