@@ -61,7 +61,7 @@ export const useAuth = defineStore('auth', {
         this.$reset()
 
         // Send the user back to the login page
-        router.push('/')
+        router.push('/login')
       } catch (e) {
         console.log(e)
         throw new Error('Issue logging out')

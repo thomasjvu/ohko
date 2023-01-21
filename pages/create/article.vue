@@ -10,7 +10,7 @@
                 <h2 class="text-4xl text-center font-VCR dark:text-neutral-100 uppercase">Ready to create some greatness?</h2>
                 <br />
             </section>
-        <Authenticate />
+<!--        <Authenticate /> -->
         <CreatePostArticle />
     </div>
 </template>

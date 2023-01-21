@@ -1,7 +1,8 @@
 <template>
-    <div class="">
+    <div>
         <Logo />
-        <ExamplesAuthorize id="authentication" class="py-12" />
+        <h1 class="text-center uppercase font-VCR text-5xl sm:text-6xl mt-10 dark:text-neutral-100">Login </h1>
+        <LoginForm />
     </div>
 </template>
 

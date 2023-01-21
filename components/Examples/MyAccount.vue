@@ -2,7 +2,7 @@
     <div class="space-y-12">
         <!-- Login Form -->
         <div class="">
-            <ExamplesLoginForm v-if="!isLoggedIn" />
+            <Authenticate v-if="!isLoggedIn" />
             <div v-if="isLoggedIn" class="flex flex-col items-center">
                 <div class="flex items-center justify-center">
                     <img

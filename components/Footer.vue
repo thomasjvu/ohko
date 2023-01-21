@@ -1,14 +1,17 @@
 <template>
     <footer class="relative md:flex md:justify-between rounded-md shadow-md">
-
         <!-- Left-Side -->
         <div class="p-8">
             <NuxtLink to="/">
                 <h3
-                    class="text-2xl sm:text-3xl font-extrabold text-black font-fugaz"
+                    class="text-2xl sm:text-3xl font-extrabold text-black font-VCR"
                 >
-                    OHKO { One-hit K.O! }
+                OHKO | One-Hit Knockout! 
                 </h3>
+                <h4 class="text-xl font-fragment font-extrabold">
+                    Earn <span class="green">$$$</span> for Creating Video Game
+                    Content
+                </h4>
             </NuxtLink>
             <div class="mt-4 text-neutral-900 font-bold font-fragment">
                 <NuxtLink to="https://twitter.com/ohko_org" target="_blank"
@@ -21,7 +24,11 @@
         <!-- Right-Side -->
         <div class="flex items-center justify-end p-4 space-x-2">
             <ModalsMyProfile />
-            <NuxtLink to="https://ohko.org/" target="_blank" class="p-1 mt-2 dark:text-black">
+            <NuxtLink
+                to="https://ohko.org/"
+                target="_blank"
+                class="p-1 mt-2 dark:text-black"
+            >
                 <Icon name="pixelarticons:coin" size="1.75rem" />
             </NuxtLink>
             <ExamplesDarkModeToggle />
@@ -34,6 +41,5 @@
 <style>
 footer {
     background: #ff2147;
-    border: 2px solid #ff2147;
 }
 </style>

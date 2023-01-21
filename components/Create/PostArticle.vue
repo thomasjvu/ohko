@@ -91,6 +91,8 @@ const auth = useAuth()
 const { fileUrl } = useFiles()
 const { isLoggedIn, user } = storeToRefs(auth)
 
+console.log('loggedin user', user)
+
 definePageMeta({
     middleware: 'auth',
 })
@@ -123,7 +125,6 @@ export default {
                 slug: this.slug,
                 description: this.description,
                 content: this.content,
-                user_created: this.user,
                 featured_image: 'd55d9019-0e42-444e-8243-88aa91ef3629',
                 status: 'published',
             }

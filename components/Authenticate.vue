@@ -1,49 +1,60 @@
 <template>
+    <form @submit.prevent="login">
+        <VAlert v-if="error" type="error" class="mb-4">
+            Error: {{ error }}
+        </VAlert>
+        <div v-if="loading" class="flex items-center justify-center flex-1">
+            <VLoading class="w-24 h-24 text-primary-600" />
+        </div>
+        <div class="space-y-4 text-2xl" v-if="!loading">
+            <VInput
+                class="text-input text-2xl"
+                v-model="email"
+                name="email"
+                type="email"
+                label="Email address"
+                placeholder="demo@ohko.org"
+                required
+            />
+            <VInput
+                class="text-2xl"
+                v-model="password"
+                name="password"
+                type="password"
+                label="Password"
+                required
+            />
+            <div class="flex items-center justify-end space-x-4">
+                <!-- <VButton type="button" @click="loadDemoUser()">Load Demo User</VButton> -->
+                <VButton
+                    type="submit"
+                    variant="primary"
+                    :disabled="!email || !password"
+                >
+                    <span>Login</span>
+                </VButton>
+            </div>
+        </div>
+    </form>
 </template>
 
-<script>
+<script setup>
 import { Directus } from '@directus/sdk';
 
 const directus = new Directus('https://app.ohko.org');
+const { login } = useDirectusAuth()
 
-async function start() {
-	// AUTHENTICATION
+const onSubmit = async () => {
+  try {
+    await login({ email: "", password: "" });
+  } catch (e) {}
+};
 
-	let authenticated = false;
-
-	// Try to authenticate with token if exists
-	await directus.auth
-		.refresh()
-		.then(() => {
-			authenticated = true;
-		})
-		.catch(() => {});
-
-	// Let's login in case we don't have token or it is invalid / expired
-	while (!authenticated) {
-		const email = window.prompt('Please reauthenticate! Email:');
-		const password = window.prompt('Please reauthenticate! Password:');
-
-		await directus.auth
-			.login({ email, password })
-			.then(() => {
-				authenticated = true;
-			})
-			.catch(() => {
-				window.alert('Invalid credentials');
-			});
-	}
-
-	// GET DATA
-
-	// After authentication, we can fetch data from any collections that the user has permissions to.
-	// const privateData = await directus.items('some_private_collection').readByQuery({ sort: ['id'] });
-
-	console.log(publicData.data);
-}
-
-start();
 </script>
 
-<style>
+<style scoped>
+.text-input {
+    font-size: 4rem;
+};
+
 </style>

@@ -23,12 +23,14 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         'nuxt-icon',
         'nuxt-directus',
+        '@nuxt/content',
     ],
 
+    content: {},
 
     directus: {
         url: process.env.DIRECTUS_URL,
-        token: process.env.DIRECTUS_TOKEN
+        token: process.env.DIRECTUS_TOKEN,
     },
 
     runtimeConfig: {
