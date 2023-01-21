@@ -1,7 +1,7 @@
 <template>
     <div class="profile-card">
         <div class="profile-image">
-            <img class="profile-image__border" src="../assets/img-border.png" />
+            <img class="profile-image__border" src="" />
             <img class="profile-image__img" />
         </div>
         <div class="profile-info">
