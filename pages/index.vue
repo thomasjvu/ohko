@@ -4,7 +4,6 @@
         <AlertsDemo />
         <div class="flex flex-col sm:flex-row justify-between gap-5 font-fragment">
         </div>
-        <FeaturedArt />
         <FeaturedArticles />
         <FeaturedArtworks />
         <FeaturedCosplays />
