@@ -6,17 +6,17 @@
                 <h3
                     class="text-2xl sm:text-3xl font-extrabold text-black font-VCR"
                 >
-                OHKO | One-Hit Knockout! 
+                OHKO | ONE-HIT KNOCKOUT! 
                 </h3>
                 <h4 class="text-xl font-fragment font-extrabold">
-                    Earn <span class="green">$$$</span> for Creating Video Game
+                    Earn <span class="green">$$$</span> for Creating Anime & Video Game
                     Content
                 </h4>
             </NuxtLink>
             <div class="mt-4 text-neutral-900 font-bold font-fragment">
-                <NuxtLink to="https://twitter.com/ohko_org" target="_blank"
-                    >@OHKO_ORG</NuxtLink
-                >
+                <!-- <NuxtLink to="https://twitter.com/ohko_org" target="_blank" -->
+                <!--     >@OHKO_ORG</NuxtLink -->
+                <!-- > -->
                 <p>©2023 OHKO. All Rights Reserved.</p>
             </div>
         </div>

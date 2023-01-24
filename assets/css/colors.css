@@ -18,8 +18,13 @@
     --black: #000000;
 
     --infrared: #ff2147;
+    --radioactive: #44ff88;
 }
 
 .infrared {
     color: var(--infrared);
+}
+
+.radioactive {
+    color: var(--radioactive);
 }

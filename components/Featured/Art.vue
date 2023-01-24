@@ -1,8 +1,9 @@
 <template>
+    <h2 class="mt-10 text-5xl sm:text-6xl font-VCR uppercase" >Featured Articles</h2>
     <div class="flex flex-col items-center font-fragment" v-for="post in posts">
         <div
             id="post-block"
-            class="overflow-hidden transition-shadow duration-300 rounded-md text-left bg-neutral-200 dark:bg-neutral-800 border-2 border-black dark:border-white w-full py-10 px-5 shadow-xl mt-5 mb-5"
+            class="overflow-hidden transition-shadow duration-300 text-left border-b-2 border-black dark:border-white w-full py-10 px-5 mt-5 mb-5"
         >
             <section id="inner-post-container" class="flex items-center justify-between gap-5">
                 <!-- Featured Image -->

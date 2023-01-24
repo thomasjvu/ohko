@@ -60,8 +60,6 @@ const { getItems } = useDirectusItems()
 
 const posts = await getItems({ collection: 'articles' })
 
-// const title = 'Articles'
-
 useHead({
     title: 'Articles' + ' | OHKO'
 })

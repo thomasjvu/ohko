@@ -34,6 +34,7 @@
         "@formkit/auto-animate": "^1.0.0-beta.5",
         "@nuxt/content": "^2.3.0",
         "@nuxtclub/slugify": "^1.2.1",
-        "@tinymce/tinymce-vue": "^5.0.0"
+        "@tinymce/tinymce-vue": "^5.0.0",
+        "postscribe": "^2.0.8"
     }
 }
