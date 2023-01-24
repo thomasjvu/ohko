@@ -84,13 +84,4 @@ const handleSubmit = async () => {
 </script>
 
 <style>
-#username {
-    color: #ff2147;
-}
-#hello {
-    border: 2px solid #ff2147;
-}
-.inputvalue {
-    color: #ff2147;
-}
 </style>

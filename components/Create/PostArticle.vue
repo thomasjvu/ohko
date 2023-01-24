@@ -10,50 +10,32 @@
         <!--     /> -->
         <!--     User Created -->
         <!-- </label> -->
-        <label class="text-2xl dark:text-neutral-100 font-fragment">
+        <label class="text-xl text-neutral-500 font-fragment">
             Title:
             <input
                 v-model="title"
                 type="text"
-                class="w-full rounded-md text-2xl text-black font-vcr"
+                class="w-full text-2xl text-neutral-900 dark:text-neutral-100 font-vcr p-5 my-5"
                 ref="title"
                 id="title"
                 autocomplete="off"
                 required
             />
-            <p class="text-lg">
-                Your "Title" is...: <span class="input-value">{{ title }}</span>
-            </p>
         </label>
-        <!-- <label class="text-2xl dark:text-neutral-100 font-fragment"> -->
-        <!--     Slug -->
-        <!--     <input -->
-        <!--         type="text" -->
-        <!--         v-model="slug" -->
-        <!--         class="w-full rounded-md text-2xl text-black p-2 border border-black" -->
-        <!--         ref="slug" -->
-        <!--         id="slug" -->
-        <!--         autocomplete="off" -->
-        <!--         required -->
-        <!--     /> -->
-        <!--     <p> -->
-        <!--         your-title-slugified: <span class="input-value">{{ slug }}</span> -->
-        <!--     </p> -->
-        <!-- </label> -->
         <br />
-        <label class="text-2xl dark:text-neutral-100 font-fragment">
-            Description
+        <label class="text-xl text-neutral-500 font-fragment">
+            Description:
             <input
                 type="text"
                 v-model="description"
-                class="w-full rounded-md text-2xl text-black p-2 border border-black"
+                class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5"
                 ref="description"
                 id="description"
                 autocomplete="off"
                 required
             />
         </label>
-        <label class="text-2xl dark:text-neutral-100 font-fragment">
+        <label class="text-xl text-neutral-500 font-fragment">
             Content:
             <!-- <Editor -->
             <!--     v-model="content" class="w-full rounded text-black" ref="content" id="content" required -->
@@ -62,7 +44,7 @@
             <!--         plugins: 'lists link image table code help wordcount', -->
             <!--     }" -->
             <!-- /> -->
-            <textarea v-model="content" class="w-full rounded text-black" ref="content" id="content" autocomplete="off" required></textarea>
+            <textarea v-model="content" class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5" ref="content" id="content" autocomplete="off" required></textarea>
         </label>
         <!-- <label class="text-2xl dark:text-neutral-100 font-VCR"> -->
         <!--     Featured Image: -->
@@ -79,7 +61,7 @@
         <button
             id="submit-button"
             type="submit"
-            class="bg-white dark:bg-black rounded-md text-black dark:text-white p-3 border dark:border-white font-fragment text-3xl"
+            class="rounded-md text-black font-fragment text-3xl p-3"
         >
             Create Article
         </button>
@@ -143,7 +125,7 @@ export default {
                 slug: slugify(this.title),
                 description: this.description,
                 content: this.content,
-                featured_image: 'ac4b09ed-5aef-4115-a3a7-6ea188e8b007',
+                // featured_image: 'ac4b09ed-5aef-4115-a3a7-6ea188e8b007',
                 status: 'pending',
             }
             await articles.createOne(postData)
@@ -154,15 +136,29 @@ export default {
 </script>
 
 <style>
-.input-value {
-    color: #ff2147;
+input,
+textarea {
+
+    background: rgba(0, 0, 0, 0) !important;
+    border: 0;
+    border-radius: 0px !important;
+    border-bottom: 1px solid #797979;
+
 }
 
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: rgba(255, 33, 71, 1);
+    box-shadow: 0 0px 0px rgba(255, 33, 71, 1) inset, 0 0 0px rgba(255, 33, 71, 1);
+    outline: 0 none;
+}
+
+
 #submit-button {
+    color: black;
     background: #797979;
+    border: 0px;
 }
 #submit-button:hover {
-    color: white;
     background: #ff2147;
 }
 </style>

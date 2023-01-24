@@ -6,43 +6,44 @@
     </NuxtLink>
     <!-- End of Back to Feed -->
     <!-- Post Content -->
-    <div class="relative pt-96 pb-10 overflow-hidden shadow-xl rounded-2xl">
-        <img class="absolute inset-0 object-cover w-full h-full" :src="fileUrl(post.featured_image)" />
-        <div class="relative px-8">
-            <div class="relative text-lg font-medium font-fugaz md:flex-grow"></div>
+    <div v-if="post">
+        <div v-if="post.featured_image" class="relative pt-96 pb-10 overflow-hidden shadow-xl rounded-2xl">
+            <img class="absolute inset-0 object-cover w-full h-full" :src="fileUrl(post.featured_image)" />
+            <div class="relative px-8">
+            </div>
         </div>
-    </div>
-    <section id="post-description-container" class="p-5 mt-5 mb-5 bg-neutral-400 rounded-md darker font-fragment shadow-lg text-black">
-        <p class="text-3xl">
+        <h1 id="post-title" class="text-5xl sm:text-6xl my-5 font-bold drop-shadow-sm text-center dark:text-neutral-200 my-40">
+            {{ post.title }}
+        </h1>
+        <section id="post-description-container" class="p-5 mt-5 mb-5 bg-neutral-400 rounded-md darker font-fragment shadow-lg text-black">
+            <p class="text-3xl">
             {{ post.description }}
-        </p>
-    </section>
-    <h1 id="post-title" class="text-5xl sm:text-6xl my-5 font-bold drop-shadow-sm text-center dark:text-neutral-200">
-        {{ post.title }}
-    </h1>
-
-    <section id="post-content" class="font-fragment leading-loose text-2xl dark:text-neutral-200" v-html="post.content" />
-    <!-- End of Post Content -->
-    <!-- Start of Post Meta -->
-    <section class="post-meta flex flex-col items-center gap-5 mt-20">
-        <h4 class="text-md font-extrabold uppercase drop-shadow-sm dark:text-neutral-200">Created By @{{ post.user_created }}</h4>
-        <!-- Reaction Counts -->
-        <section class="reactions flex">
-            <section class="font-fragment flex flex-col items-center">
-                <Icon name="pixelarticons:mood-happy" size="2rem" />
-                <span>{{ post.positive }}</span>
-            </section>
-            <section class="font-fragment flex flex-col items-center">
-                <Icon name="pixelarticons:mood-neutral" size="2rem" />
-                <span>{{ post.neutral }}</span>
-            </section>
-            <section class="font-fragment flex flex-col items-center">
-                <Icon name="pixelarticons:mood-sad" size="2rem" />
-                <span>{{ post.negative }}</span>
-            </section>
+            </p>
         </section>
-        <!-- End of Reaction Counts -->
-    </section>
+
+        <section id="post-content" class="font-fragment leading-loose text-2xl dark:text-neutral-200" v-html="post.content" />
+            <!-- End of Post Content -->
+            <!-- Start of Post Meta -->
+            <section class="post-meta flex flex-col items-center gap-5 mt-20">
+                <h4 class="text-md font-extrabold uppercase drop-shadow-sm dark:text-neutral-200">Created By @{{ post.user_created }}</h4>
+                <!-- Reaction Counts -->
+                <section class="reactions flex">
+                    <section class="font-fragment flex flex-col items-center">
+                        <Icon name="pixelarticons:mood-happy" size="2rem" />
+                        <span>{{ post.positive }}</span>
+                    </section>
+                    <section class="font-fragment flex flex-col items-center">
+                        <Icon name="pixelarticons:mood-neutral" size="2rem" />
+                        <span>{{ post.neutral }}</span>
+                    </section>
+                    <section class="font-fragment flex flex-col items-center">
+                        <Icon name="pixelarticons:mood-sad" size="2rem" />
+                        <span>{{ post.negative }}</span>
+                    </section>
+                </section>
+                <!-- End of Reaction Counts -->
+            </section>
+    </div>
 </template>
 
 <script setup>

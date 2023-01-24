@@ -23,9 +23,8 @@ module.exports = {
                 green: colors.green,
                 red: colors.red,
                 rose: colors.rose,
-                stone: colors.stone,
                 neutral: colors.neutral,
-                'torch-red': {
+                'infrared': {
                     50: '#fff1f3',
                     100: '#ffdfe4',
                     200: '#ffc5cf',

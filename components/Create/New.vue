@@ -58,7 +58,4 @@ export default {
 </script>
 
 <style>
-.input-value {
-    color: #ff2147;
-}
 </style>

@@ -8,22 +8,23 @@
             <NuxtLink :to="`/articles/${post.slug}`" class="inline-block mt-3 mb-3 text-red transition-colors duration-200 font-VCR">
                 <section id="inner-post-container" class="flex items-center justify-between gap-5">
                     <!-- Featured Image -->
-                    <section id="image-container" class="w-5/12">
+                    <section v-if="post.featured_image" id="image-container" class="w-5/12">
                         <img class="object-cover w-full rounded" v-bind:src="'https://app.ohko.org/assets/' + post.featured_image" />
                     </section>
+                    <section v-else class="w-full"></section>
                     <!-- Content Meta -->
                     <section class="py-5 w-7/12">
                         <p class="mb-2 text-md font-semibold">
                             {{ new Date(post.date_created).toLocaleDateString() }}
                         </p>
-                        <h3 class="text-3xl font-VCR font-bold uppercase text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500">
+                        <h3 class="text-3xl font-VCR font-bold uppercase text-black hover:text-rose-500 dark:text-white dark:hover:text-rose-500">
                             {{ post.title }}
                         </h3>
                         <!-- Content Description -->
                         <p class="mb-2 font-fragment text-neutral-900 dark:text-neutral-100">
                             {{ post.description }}
                         </p>
-                        <p class="mb-2 font-fragment font-bold text-infrared">
+                        <p class="mb-2 font-fragment font-bold text-neutral-500">
                            By: @{{ post.user_created }}
                         </p>
                         <!-- <p class="mb-2 infrared">/articles/{{ post.slug }}</p> -->

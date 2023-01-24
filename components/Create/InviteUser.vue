@@ -50,15 +50,4 @@ export default {
 </script>
 
 <style>
-.input-value {
-    color: #ff2147;
-}
-
-#submit-button {
-    background: #ff2147;
-}
-#submit-button:hover {
-    color: white;
-    background: #797979;
-}
 </style>
