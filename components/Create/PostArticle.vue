@@ -25,21 +25,21 @@
                 Your "Title" is...: <span class="input-value">{{ title }}</span>
             </p>
         </label>
-        <label class="text-2xl dark:text-neutral-100 font-fragment">
-            Slug
-            <input
-                type="text"
-                v-model="slug"
-                class="w-full rounded-md text-2xl text-black p-2 border border-black"
-                ref="slug"
-                id="slug"
-                autocomplete="off"
-                required
-            />
-            <p>
-                your-title-slugified: <span class="input-value">{{ slug }}</span>
-            </p>
-        </label>
+        <!-- <label class="text-2xl dark:text-neutral-100 font-fragment"> -->
+        <!--     Slug -->
+        <!--     <input -->
+        <!--         type="text" -->
+        <!--         v-model="slug" -->
+        <!--         class="w-full rounded-md text-2xl text-black p-2 border border-black" -->
+        <!--         ref="slug" -->
+        <!--         id="slug" -->
+        <!--         autocomplete="off" -->
+        <!--         required -->
+        <!--     /> -->
+        <!--     <p> -->
+        <!--         your-title-slugified: <span class="input-value">{{ slug }}</span> -->
+        <!--     </p> -->
+        <!-- </label> -->
         <br />
         <label class="text-2xl dark:text-neutral-100 font-fragment">
             Description
@@ -76,7 +76,11 @@
         <!--         /> -->
         <!-- </label> -->
         <br />
-        <button id="submit-button" type="submit" class="bg-white dark:bg-black rounded-md text-black dark:text-white p-3 border dark:border-white font-fragment text-3xl">
+        <button
+            id="submit-button"
+            type="submit"
+            class="bg-white dark:bg-black rounded-md text-black dark:text-white p-3 border dark:border-white font-fragment text-3xl"
+        >
             Create Article
         </button>
     </form>
@@ -109,12 +113,26 @@ const articles = directus.items('articles')
 // const token = useDirectusToken()
 // console.log('token', token)
 
+// Slugify
+function slugify(str) {
+    // convert title to lowercase
+    str = str.toLowerCase()
+
+    // replace spaces with -
+    str = str.replace(/\s+/g, '-')
+
+    // replace & with "-and-"
+    str = str.replace(/&/g, '-and-')
+
+    // output the result
+    return str
+}
+
 export default {
     data() {
         return {
             title: '',
             description: '',
-            slug: '',
             content: '',
         }
     },
@@ -122,11 +140,11 @@ export default {
         async createOne() {
             const postData = {
                 title: this.title,
-                slug: this.slug,
+                slug: slugify(this.title),
                 description: this.description,
                 content: this.content,
-                featured_image: 'd55d9019-0e42-444e-8243-88aa91ef3629',
-                status: 'published',
+                featured_image: 'ac4b09ed-5aef-4115-a3a7-6ea188e8b007',
+                status: 'pending',
             }
             await articles.createOne(postData)
             window.location.replace('/articles')

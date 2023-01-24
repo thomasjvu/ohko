@@ -8,12 +8,7 @@ export default defineNuxtConfig({
     //     '/posts/**': { static: true },
     //   },
 
-    css: [
-        '~/assets/css/animations.css',
-        '~/assets/css/style.css',
-        '~/assets/css/colors.css',
-        '~/assets/css/fonts.css',
-    ],
+    css: ['~/assets/css/animations.css', '~/assets/css/style.css', '~/assets/css/colors.css', '~/assets/css/fonts.css'],
 
     modules: [
         '@nuxtjs/tailwindcss',
@@ -59,14 +54,7 @@ export default defineNuxtConfig({
             'process.env.DEBUG': false,
         },
         optimizeDeps: {
-            include: [
-                '@heroicons/vue/20/solid',
-                '@heroicons/vue/24/solid',
-                '@heroicons/vue/24/outline',
-                '@headlessui/vue',
-                'vue',
-                'pinia',
-            ],
+            include: ['@heroicons/vue/20/solid', '@heroicons/vue/24/solid', '@heroicons/vue/24/outline', '@headlessui/vue', 'vue', 'pinia'],
         },
     },
 })
