@@ -21,10 +21,10 @@
     --radioactive: #44ff88;
 }
 
-.infrared {
+.text-infrared {
     color: var(--infrared);
 }
 
-.radioactive {
+.text-radioactive {
     color: var(--radioactive);
 }
