@@ -37,14 +37,8 @@
         </label>
         <label class="text-xl text-neutral-500 font-fragment">
             Content:
-            <!-- <Editor -->
-            <!--     v-model="content" class="w-full rounded text-black" ref="content" id="content" required -->
-            <!--     api-key="no-api-key" -->
-            <!--     :init="{ -->
-            <!--         plugins: 'lists link image table code help wordcount', -->
-            <!--     }" -->
-            <!-- /> -->
-            <textarea v-model="content" class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5" ref="content" id="content" autocomplete="off" required></textarea>
+            <Editor v-model="content" />
+            <!-- <textarea v-model="content" class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5" ref="content" id="content" autocomplete="off" required></textarea> -->
         </label>
         <!-- <label class="text-2xl dark:text-neutral-100 font-VCR"> -->
         <!--     Featured Image: -->
@@ -69,7 +63,6 @@
 </template>
 
 <script setup>
-import Editor from '@tinymce/tinymce-vue'
 import { storeToRefs } from 'pinia'
 import { useAuth } from '~~/store/auth'
 
@@ -126,7 +119,7 @@ export default {
                 description: this.description,
                 content: this.content,
                 // featured_image: 'ac4b09ed-5aef-4115-a3a7-6ea188e8b007',
-                status: 'pending',
+                status: 'published',
             }
             await articles.createOne(postData)
             window.location.replace('/articles')
