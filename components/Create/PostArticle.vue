@@ -26,6 +26,27 @@
             <TextEditor v-model="content" class="text-neutral-900 dark:text-neutral-100"/>
             <!-- <textarea v-model="content" class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5" ref="content" id="content" autocomplete="off" required></textarea> -->
         </label>
+
+        <section id="create-article-meta" class="flex justify-around items-center">
+            <label class="text-xl font-fragment">
+                Category
+                <select v-model="category" name="category" id="category">
+                    <option value="anime">Anime</option>
+                    <option value="video game">Video Game</option>
+                    <option value="original">Original</option>
+                </select>
+            </label>
+            <label class="text-xl font-fragment">
+                Tags:
+                <select v-model="tags" name="tags" id="tags" multiple>
+                    <option value="nintendo">Nintendo</option>
+                    <option value="playstation">Playstation</option>
+                    <option value="xbox">Xbox</option>
+                    <option value="pc">PC</option>
+                    <option value="mobile">Mobile</option>
+                </select>
+            </label>
+        </section>
         <!-- <label class="text-2xl dark:text-neutral-100 font-VCR"> -->
         <!--     Featured Image: -->
         <!--     <input -->
@@ -89,6 +110,7 @@ export default {
             title: '',
             description: '',
             content: '',
+            tags: '',
         }
     },
     methods: {
@@ -98,6 +120,8 @@ export default {
                 slug: slugify(this.title),
                 description: this.description,
                 content: this.content,
+                category: this.category,
+                tags: this.tags,
                 featured_image: 'c5e5a102-44bc-4995-bacc-f33aae0c0b25',
                 status: 'published',
             }

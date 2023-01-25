@@ -11,7 +11,7 @@
             <img class="absolute inset-0 object-cover w-full h-full" :src="fileUrl(post.featured_image)" />
             <div class="relative px-8"></div>
         </div>
-        <h1 id="post-title" class="text-5xl sm:text-6xl my-16 font-bold drop-shadow-sm text-center dark:text-neutral-200">
+        <h1 id="post-title" class="font-VCR font-bold uppercase text-5xl sm:text-6xl my-16 drop-shadow-sm text-center dark:text-neutral-200">
             {{ post.title }}
         </h1>
         <section
@@ -53,8 +53,8 @@
 
         <!-- Edit & Delete buttons for the players who created the post -->
         <section id="post-buttons" class="flex justify-end mt-20">
-            <Icon name="pixelarticons:trash" width="30" height="30" />
-            <Icon name="pixelarticons:edit-box" width="30" height="30" />
+            <Icon id="trash-btn" name="pixelarticons:trash" width="30" height="30" />
+            <Icon id="edit-btn" name="pixelarticons:edit-box" width="30" height="30" />
         </section>
     </div>
 </template>

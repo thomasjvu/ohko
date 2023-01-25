@@ -42,16 +42,6 @@ export default {
                 this.enableScroll()
             }
         },
-        disableScroll() {
-            document.body.addEventListener('wheel', (e) => {
-                e.preventDefault()
-            })
-        },
-        enableScroll() {
-            document.body.addEventListener('wheel', (e) => {
-                e.preventDefault()
-            })
-        },
     }
 }
 </script>
@@ -70,6 +60,7 @@ export default {
 
 #close-icon,
 #menu-icon {
+    z-index: 999;
     cursor: pointer;
 }
 #close-icon:hover,

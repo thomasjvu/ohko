@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     //     '/posts/**': { static: true },
     //   },
 
-    css: ['~/assets/css/animations.css', '~/assets/css/style.css', '~/assets/css/colors.css', '~/assets/css/fonts.css'],
+    css: ['~/assets/css/animations.css', '~/assets/css/style.css', '~/assets/css/colors.css', '~/assets/css/fonts.css', '~/assets/css/icons.css'],
 
     modules: [
         '@nuxtjs/tailwindcss',

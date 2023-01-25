@@ -1,0 +1,13 @@
+#edit-icon {
+    cursor: pointer;
+}
+#edit-icon:hover {
+    color: var(--infrared);
+}
+
+#trash-icon {
+    cursor: pointer;
+}
+#trash-icon:hover {
+    color: var(--infrared);
+}

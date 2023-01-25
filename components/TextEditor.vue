@@ -47,24 +47,24 @@ export default {
 }
 
 .ProseMirror h1 {
-    line-height: 5rem;
+    line-height: 6rem;
 }
 .ProseMirror h2 {
-    line-height: 4rem;
+    line-height: 5rem;
 }
 .ProseMirror h3 {
-    line-height: 3rem;
+    line-height: 4rem;
 }
 .ProseMirror h4 {
-    line-height: 2rem;
+    line-height: 3rem;
 }
 .ProseMirror h5 {
-    line-height: 1.75rem;
+    line-height: 2rem;
 }
 .ProseMirror h6 {
-    line-height: 1.5rem;
+    line-height: 1.75rem;
 }
 .ProseMirror p {
-    line-height: 1.5rem;
+    line-height: 2rem;
 }
 </style>
