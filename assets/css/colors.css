@@ -36,6 +36,9 @@
 .text-radioactive {
     color: var(--radioactive);
 }
+.bg-radioactive {
+    color: var(--radioactive);
+}
 
 
 /* Sunflower */

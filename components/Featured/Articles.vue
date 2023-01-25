@@ -33,14 +33,16 @@
                         <!-- Post Tags -->
                         <div class="mt-5 flex flex-row flex-wrap gap-2">
                             <section v-for="tag in post.tags" class="post-tags inline">
-                                <span class="mb-2 font-fragment font-bold bg-infrared text-neutral-900 text-md p-2 rounded">
-                                    {{ tag }}
+                                <span class="font-fragment font-bold bg-infrared text-neutral-900 text-lg p-2 rounded leading-10">
+                                    #{{ tag }}
                                 </span>
                             </section>
                         </div>
+
+                        <!-- Post Slug --> 
                         <!-- <p class="mb-2 infrared">/articles/{{ post.slug }}</p> -->
-                        <!-- End of Content Description -->
-                        <!-- Reaction Counts -->
+
+                        <!-- Hearts -->
                         <section class="reactions flex justify-end mt-4">
                             <section class="font-fragment flex flex-col items-center">
                                 <Icon name="pixelarticons:heart" size="2rem" class="text-infrared" />

@@ -44,6 +44,12 @@
             <!-- End of Reaction Counts -->
         </section>
 
+        <!-- Post Tags -->
+        <div class="mt-5 flex flex-row flex-wrap gap-2">
+            <section v-for="tag in post.tags" class="post-tags inline">
+                <span class="font-fragment font-bold bg-infrared text-neutral-900 text-lg p-2 rounded leading-10"> #{{ tag }} </span>
+            </section>
+        </div>
 
         <!-- Edit & Delete buttons for the players who created the post -->
         <section id="post-buttons" class="flex justify-end mt-20">
@@ -70,13 +76,11 @@ const {
 } = await useAsyncData(
     path,
     () => {
-        console.log('postdata', post)
-        console.log('datapost', data)
         return $directus.items('articles').readByQuery({ filter: { slug: { _eq: params.slug } }, limit: 1 })
     },
     {
         transform: (data) => data.data[0],
-        pick: ['title', 'content', 'description', 'featured_image', 'user_created', 'slug', 'positive', 'negative', 'neutral'],
+        pick: ['title', 'content', 'description', 'featured_image', 'user_created', 'slug', 'positive', 'negative', 'neutral', 'tags', 'status'],
     }
 )
 </script>
