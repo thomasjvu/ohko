@@ -19,19 +19,31 @@
                         <h3 class="text-3xl font-VCR font-bold uppercase text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500">
                             {{ post.title }}
                         </h3>
+
                         <!-- Content Description -->
-                        <p class="mb-2 font-fragment text-neutral-900 dark:text-neutral-100">
-                            {{ post.description }}
-                        </p>
-                        <p class="mb-2 font-fragment font-bold text-infrared">
-                           By: @{{ post.user_created }}
-                        </p>
+                        <!-- <p class="mb-2 font-fragment text-neutral-900 dark:text-neutral-100 text-md"> -->
+                        <!--     {{ post.description }} -->
+                        <!-- </p> -->
+
+                        <!-- User Created -->
+                        <!-- <p class="mb-2 font-fragment font-bold text-infrared text-sm"> -->
+                        <!-- By: @{{ post.user_created }} -->
+                        <!-- </p> -->
+
+                        <!-- Post Tags -->
+                        <div class="mt-5 flex flex-row flex-wrap gap-2">
+                            <section v-for="tag in post.tags" class="post-tags inline">
+                                <span class="mb-2 font-fragment font-bold bg-infrared text-neutral-900 text-md p-2 rounded">
+                                    {{ tag }}
+                                </span>
+                            </section>
+                        </div>
                         <!-- <p class="mb-2 infrared">/articles/{{ post.slug }}</p> -->
                         <!-- End of Content Description -->
                         <!-- Reaction Counts -->
                         <section class="reactions flex justify-end mt-4">
                             <section class="font-fragment flex flex-col items-center">
-                                <Icon name="pixelarticons:heart" size="2rem" class="text-infrared"/>
+                                <Icon name="pixelarticons:heart" size="2rem" class="text-infrared" />
                                 <span class="text-infrared text-lg font-VCR">{{ post.hearts.length }}</span>
                             </section>
                         </section>

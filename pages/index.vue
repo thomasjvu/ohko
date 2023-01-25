@@ -2,10 +2,10 @@
     <div>
         <!-- <Hero /> -->
         <!-- <AlertsDemo /> -->
-        <FeaturedArt />
+        <!-- <FeaturedArt /> -->
         <FeaturedArticles />
-        <FeaturedArtworks />
-        <FeaturedCosplays />
+        <!-- <FeaturedArtworks /> -->
+        <!-- <FeaturedCosplays /> -->
     </div>
 </template>
 

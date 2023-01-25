@@ -1,8 +1,8 @@
 /* ***************** 
  * Tailwind Colors *
  * *****************
- * Stone :
  * Neutral :
+ * Rose : 500
  *******************/
 
 
@@ -19,12 +19,23 @@
 
     --infrared: #ff2147;
     --radioactive: #44ff88;
+    --sunflower: #ffbb33;
 }
 
+
+/* Infrared */
 .text-infrared {
     color: var(--infrared);
 }
+.bg-infrared {
+    background: var(--infrared);
+}
 
+
+/* Radioactive */
 .text-radioactive {
     color: var(--radioactive);
 }
+
+
+/* Sunflower */

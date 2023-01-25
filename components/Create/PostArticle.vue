@@ -21,9 +21,9 @@
                 required
             />
         </label>
-        <label class="text-xl text-neutral-500 font-fragment">
+        <label class="text-xl font-fragment">
             Content:
-            <Editor v-model="content" class="text-neutral-900 dark:text-neutral-100 p-5 my-5"/>
+            <TextEditor v-model="content" class="text-neutral-900 dark:text-neutral-100"/>
             <!-- <textarea v-model="content" class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5" ref="content" id="content" autocomplete="off" required></textarea> -->
         </label>
         <!-- <label class="text-2xl dark:text-neutral-100 font-VCR"> -->
@@ -108,13 +108,14 @@ export default {
 }
 </script>
 
-<style>
+<style scope>
 input,
-textarea {
+textarea,
+#text-editor {
     background: rgba(0, 0, 0, 0) !important;
     border: 0;
     border-radius: 0px !important;
-    border-bottom: 1px solid #797979;
+    border-bottom: 1px solid #64748b;
 }
 
 textarea:focus,
@@ -137,7 +138,5 @@ input[type]:focus,
     background: #ff2147;
 }
 
-.ProseMirror {
-    height: 300px;
-}
+
 </style>
