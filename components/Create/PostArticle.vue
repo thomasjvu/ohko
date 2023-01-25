@@ -1,23 +1,11 @@
 <template>
     <form @submit.prevent="createOne" class="flex flex-col font-fragment gap-2">
-        <!-- <label> -->
-        <!--     <input -->
-        <!--             v-model="user_created" -->
-        <!--             type="text" -->
-        <!--             ref="user_created" -->
-        <!--             id="user_created" -->
-        <!--             class="w-full rounded-md text-2xl text-black font-vcr" -->
-        <!--     /> -->
-        <!--     User Created -->
-        <!-- </label> -->
         <label class="text-xl text-neutral-500 font-fragment">
             Title:
             <input
                 v-model="title"
                 type="text"
                 class="w-full text-2xl text-neutral-900 dark:text-neutral-100 font-vcr p-5 my-5"
-                ref="title"
-                id="title"
                 autocomplete="off"
                 required
             />
@@ -29,15 +17,13 @@
                 type="text"
                 v-model="description"
                 class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5"
-                ref="description"
-                id="description"
                 autocomplete="off"
                 required
             />
         </label>
         <label class="text-xl text-neutral-500 font-fragment">
             Content:
-            <Editor v-model="content" />
+            <Editor v-model="content" class="text-neutral-900 dark:text-neutral-100 p-5 my-5"/>
             <!-- <textarea v-model="content" class="w-full text-2xl text-neutral-900 dark:text-neutral-100 p-5 my-5" ref="content" id="content" autocomplete="off" required></textarea> -->
         </label>
         <!-- <label class="text-2xl dark:text-neutral-100 font-VCR"> -->
@@ -52,13 +38,7 @@
         <!--         /> -->
         <!-- </label> -->
         <br />
-        <button
-            id="submit-button"
-            type="submit"
-            class="rounded-md text-black font-fragment text-3xl p-3"
-        >
-            Create Article
-        </button>
+        <button id="submit-button" type="submit" class="rounded-md text-black font-fragment text-3xl p-3 mt-10">Create Article</button>
     </form>
 </template>
 
@@ -118,7 +98,7 @@ export default {
                 slug: slugify(this.title),
                 description: this.description,
                 content: this.content,
-                // featured_image: 'ac4b09ed-5aef-4115-a3a7-6ea188e8b007',
+                featured_image: 'c5e5a102-44bc-4995-bacc-f33aae0c0b25',
                 status: 'published',
             }
             await articles.createOne(postData)
@@ -131,20 +111,22 @@ export default {
 <style>
 input,
 textarea {
-
     background: rgba(0, 0, 0, 0) !important;
     border: 0;
     border-radius: 0px !important;
     border-bottom: 1px solid #797979;
-
 }
 
-textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+textarea:focus,
+input:focus,
+input[type]:focus,
+.uneditable-input:focus,
+.ProseMirror:focus,
+#text-editor:focus {
     border-color: rgba(255, 33, 71, 1);
     box-shadow: 0 0px 0px rgba(255, 33, 71, 1) inset, 0 0 0px rgba(255, 33, 71, 1);
     outline: 0 none;
 }
-
 
 #submit-button {
     color: black;
@@ -153,5 +135,9 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 }
 #submit-button:hover {
     background: #ff2147;
+}
+
+.ProseMirror {
+    height: 300px;
 }
 </style>

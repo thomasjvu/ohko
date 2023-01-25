@@ -7,15 +7,15 @@
     <!-- End of Back to Feed -->
     <!-- Post Content -->
     <div v-if="post">
-        <div v-if="post.featured_image" class="relative pt-96 pb-10 overflow-hidden shadow-xl rounded-2xl">
+        <div v-if="post.featured_image" class="relative pt-96 pb-40 overflow-hidden shadow-xl rounded-2xl">
             <img class="absolute inset-0 object-cover w-full h-full" :src="fileUrl(post.featured_image)" />
             <div class="relative px-8">
             </div>
         </div>
-        <h1 id="post-title" class="text-5xl sm:text-6xl my-5 font-bold drop-shadow-sm text-center dark:text-neutral-200 my-40">
+        <h1 id="post-title" class="text-5xl sm:text-6xl my-20 font-bold drop-shadow-sm text-center dark:text-neutral-200">
             {{ post.title }}
         </h1>
-        <section id="post-description-container" class="p-5 mt-5 mb-5 bg-neutral-400 rounded-md darker font-fragment shadow-lg text-black">
+        <section id="post-description-container" class="p-5 mt-5 mb-5 bg-neutral-400 rounded-md darker font-fragment shadow-lg text-neutral-800">
             <p class="text-3xl">
             {{ post.description }}
             </p>
@@ -24,8 +24,8 @@
         <section id="post-content" class="font-fragment leading-loose text-2xl dark:text-neutral-200" v-html="post.content" />
             <!-- End of Post Content -->
             <!-- Start of Post Meta -->
-            <section class="post-meta flex flex-col items-center gap-5 mt-20">
-                <h4 class="text-md font-extrabold uppercase drop-shadow-sm dark:text-neutral-200">Created By @{{ post.user_created }}</h4>
+            <section class="post-meta flex flex-col items-center gap-5 mt-20 bg-neutral-400 rounded-xl">
+                <h4 class="text-md font-extrabold uppercase drop-shadow-sm dark:text-neutral-800">Created By @{{ post.user_created }}</h4>
                 <!-- Reaction Counts -->
                 <section class="reactions flex">
                     <section class="font-fragment flex flex-col items-center">
