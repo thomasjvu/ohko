@@ -8,30 +8,30 @@
             <input
                 v-model="username"
                 type="text"
-                class="w-full rounded text-black"
+                class="w-full rounded text-neutral-900 dark:text-neutral-100 text-2xl"
                 ref="username"
                 id="username"
                 required
             />
-            <p class="">
-                Confirm Username:
-                <span class="input-value">{{ username }}</span>
-            </p>
+            <!-- <p class=""> -->
+            <!--     Confirm Username: -->
+            <!--     <span class="input-value">{{ username }}</span> -->
+            <!-- </p> -->
         </label>
         <label>
             Email
             <input
                 v-model="email"
                 type="email"
-                class="w-full rounded text-black"
+                class="w-full rounded text-neutral-900 dark:text-neutral-100 text-2xl"
                 ref="email"
                 id="email"
                 required
             />
-            <p class="">
-                Confirm Email Address:
-                <span class="input-value">{{ email }}</span>
-            </p>
+            <!-- <p class=""> -->
+            <!--     Confirm Email Address: -->
+            <!--     <span class="input-value">{{ email }}</span> -->
+            <!-- </p> -->
         </label>
         <label>
             Password
@@ -47,11 +47,11 @@
         <button
             id="submit-button"
             type="submit"
-            class="bg-white dark:bg-black rounded text-black dark:text-white p-3 border dark:border-white"
+            class="bg-infrared rounded text-neutral-900 text-2xl p-3"
         >
             Signup
         </button>
-        <p ref="error"></p>
+            <p v-if="error" ref="error">{{error.response}}</p>
     </form>
 </template>
 
@@ -72,9 +72,7 @@ export default {
                     window.location.replace('/login');
                 })
                 .catch((error) => {
-                    console.error(
-                        'Yikes! The form could not be submitted. Maybe this email address is already being used?'
-                    )
+                    console.error(error.response)
                 })
         },
         async formRequest() {
@@ -84,8 +82,8 @@ export default {
                     username: this.username,
                     email: this.email,
                     password: this.password,
-                    role: '5c7daea1-e1b1-45f1-9e1b-b03eacd90adf',
-                    avatar: 'a121da83-d975-4443-bc9b-26f21d2e3083'
+                    role: '39973430-ce48-4e97-b2d3-46efced08c7d',
+                    avatar: '2f52a2ee-d0db-4392-998d-ceb795a110cf'
                 },
             })
         },
@@ -93,5 +91,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+input {
+    background: rgba(0, 0, 0, 0);
+    border: 0px;
+    border-radius: 0;
+    border-bottom: 1px solid #797979;
+}
+
+input:focus {
+    outline: none;
+}
+
 </style>

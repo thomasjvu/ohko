@@ -1,9 +1,9 @@
 <template>
     <Logo />
-    <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
+    <div class="mt-10">
         <h1
             id="page-title"
-            class="mb-4 font-fugaz font-bold uppercase text-4xl sm:text-5xl text-black dark:text-white text-center"
+            class="mb-4 font-VCR font-bold uppercase text-5xl sm:text-6xl text-neutral-900 dark:text-neutral-100 text-center"
         >
         {{ title }}
         </h1>

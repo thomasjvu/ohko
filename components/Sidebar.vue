@@ -22,31 +22,31 @@
                 <!--     > -->
                 <!-- </li> -->
                 <li>
-                    <a class="font-fragment side-cat" href="#">Art</a>
+                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#">Art</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="/articles"
+                    <a class="font-fragment side-cat bg-platinum" href="/articles"
                         >Articles</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="#">Guides</a>
+                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#">Guides</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="#">Memes</a>
+                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#">Memes</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="#"
+                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#"
                         >Reviews</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="#"
+                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#"
                         >Cosplay</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat" href="#"
+                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#"
                         >Fan-Fiction</a
                     >
                 </li>
@@ -54,7 +54,7 @@
         </nav>
         <section class="sidebar-footer">
             <section>
-                <h3 class="font-fugaz text-center">
+                <h3 class="font-VCR font-bold text-center">
                     OHKO
                 </h3>
             </section>
@@ -84,7 +84,6 @@
 }
 
 .sidebar h3 {
-    font-size: 1.5vw;
 }
 
 .sidebar img {
@@ -141,7 +140,6 @@
 /* Sidebar Categories */
 .side-cat {
     color: #111;
-    background: #797979;
     padding: 10px;
     border-radius: 5px;
     text-align: left;
@@ -169,12 +167,12 @@
 .signup-btn {
     font-size: 0.65vw;
     width: 4vw !important;
-    background: #797979 !important; /*fix this later */
+    background: var(--dark-platinum) !important; /*fix this later */
     text-align: center;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .sidebar {
         display: none;
         visibility: hidden;

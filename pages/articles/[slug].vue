@@ -23,25 +23,10 @@
 
         <section id="post-content" class="font-fragment leading-loose text-2xl dark:text-neutral-200" v-html="post.content" />
         <!-- End of Post Content -->
+
         <!-- Start of Post Meta -->
-        <section class="post-meta flex flex-col items-center gap-5 mt-1/4 bg-neutral-400 rounded-xl">
-            <h4 class="text-md font-extrabold uppercase drop-shadow-sm dark:text-neutral-800">Created By @{{ post.user_created }}</h4>
-            <!-- Reaction Counts -->
-            <section class="reactions flex">
-                <section class="font-fragment flex flex-col items-center">
-                    <Icon name="pixelarticons:mood-happy" size="2rem" />
-                    <span>{{ post.positive }}</span>
-                </section>
-                <section class="font-fragment flex flex-col items-center">
-                    <Icon name="pixelarticons:mood-neutral" size="2rem" />
-                    <span>{{ post.neutral }}</span>
-                </section>
-                <section class="font-fragment flex flex-col items-center">
-                    <Icon name="pixelarticons:mood-sad" size="2rem" />
-                    <span>{{ post.negative }}</span>
-                </section>
-            </section>
-            <!-- End of Reaction Counts -->
+        <section class="post-meta flex flex-col items-center gap-5 mt-1/4 bg-neutral-300 rounded-xl p-5">
+            <h4 class="text-md font-fragment font-extrabold uppercase drop-shadow-sm text-neutral-900">Created By @{{ post.user_created }}</h4>
         </section>
 
         <!-- Post Tags -->
@@ -50,6 +35,14 @@
                 <span class="font-fragment font-bold bg-infrared text-neutral-900 text-lg p-2 rounded leading-10"> #{{ tag }} </span>
             </section>
         </div>
+
+        <!-- Hearts -->
+        <section class="flex justify-end mt-4">
+            <section class="font-fragment flex flex-col items-center">
+                <Icon name="pixelarticons:heart" size="2rem" class="text-infrared" />
+                <span v-if="post.hearts" class="text-infrared text-lg font-VCR">{{ post.hearts.length }}</span>
+            </section>
+        </section>
 
         <!-- Edit & Delete buttons for the players who created the post -->
         <section id="post-buttons" class="flex justify-end mt-20">

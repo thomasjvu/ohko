@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VLabel v-if="label" :label="label" class="font-fragment" />
+    <VLabel v-if="label" :label="label" class="font-fragment text-2xl" />
     <div>
       <input
         :value="modelValue"
@@ -53,6 +53,7 @@ const props = defineProps({
     background: #f8f8ff;
     color: black;
     width: 100%;
+    font-size: 2rem;
 
     font-family: 'Fragment Mono', monospace;
 }

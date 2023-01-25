@@ -1,7 +1,7 @@
 /* ***************** 
  * Tailwind Colors *
  * *****************
- * Neutral :
+ * Neutral : 100, 900
  * Rose : 500
  *******************/
 
@@ -22,6 +22,21 @@
     --sunflower: #ffbb33;
 }
 
+/* Platinum */
+.text-platinum {
+    color: var(--platinum);
+}
+.bg-platinum {
+    background: var(--platinum);
+}
+
+/* Dark Platinum */
+.text-dark-platinum {
+    color: var(--dark-platinum);
+}
+.bg-dark-platinum {
+    background: var(--dark-platinum);
+}
 
 /* Infrared */
 .text-infrared {
@@ -31,7 +46,6 @@
     background: var(--infrared);
 }
 
-
 /* Radioactive */
 .text-radioactive {
     color: var(--radioactive);
@@ -39,6 +53,5 @@
 .bg-radioactive {
     color: var(--radioactive);
 }
-
 
 /* Sunflower */

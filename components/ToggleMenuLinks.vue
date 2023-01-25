@@ -3,11 +3,11 @@
         <NuxtLink class="menu-link" to="/">Home</NuxtLink>
         <NuxtLink class="menu-link" to="/about">About</NuxtLink>
         <NuxtLink class="menu-link" to="/account">Account</NuxtLink>
-        <NuxtLink class="menu-link" to="/articles">Articles</NuxtLink>
-        <NuxtLink class="menu-link" to="/reviews">Reviews</NuxtLink>
-        <NuxtLink class="menu-link" to="/guides">Guides</NuxtLink>
-        <NuxtLink class="menu-link" to="/memes">Memes</NuxtLink>
-        <NuxtLink class="menu-link" to="/store">Store</NuxtLink>
+        <NuxtLink class="menu-link" to="/create/article">Create</NuxtLink>
+        <NuxtLink class="menu-link line-through" to="#">Articles</NuxtLink>
+        <NuxtLink class="menu-link line-through" to="#">Reviews</NuxtLink>
+        <NuxtLink class="menu-link line-through" to="#">Guides</NuxtLink>
+        <NuxtLink class="menu-link line-through" to="#">Memes</NuxtLink>
         <NuxtLink id="login-menu-link" class="menu-link" to="/login">Login</NuxtLink>
     </section>
 </template>

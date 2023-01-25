@@ -7,15 +7,17 @@
         >
             <NuxtLink :to="`/articles/${post.slug}`" class="inline-block mt-3 mb-3 text-red transition-colors duration-200 font-VCR">
                 <section id="inner-post-container" class="flex items-center justify-between gap-5">
-                    <!-- Featured Image -->
-                    <section id="image-container" class="w-5/12">
+                    <!-- Featured Image (Left Section) -->
+                    <section id="image-container" class="w-4/12 mr-10">
                         <img class="object-cover w-full rounded" v-bind:src="'https://app.ohko.org/assets/' + post.featured_image" />
                     </section>
-                    <!-- Content Meta -->
-                    <section class="py-5 w-7/12">
+                    <!-- Content Meta (Right Section) -->
+                    <section class="py-5 w-8/12">
+                        <!-- Content Date -->
                         <p class="mb-2 text-md font-semibold">
                             {{ new Date(post.date_created).toLocaleDateString() }}
                         </p>
+                        <!-- Content Title -->
                         <h3 class="text-3xl font-VCR font-bold uppercase text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500">
                             {{ post.title }}
                         </h3>
@@ -29,6 +31,13 @@
                         <!-- <p class="mb-2 font-fragment font-bold text-infrared text-sm"> -->
                         <!-- By: @{{ post.user_created }} -->
                         <!-- </p> -->
+
+                        <!-- Post Tags -->
+                        <div class="mt-5 flex flex-row flex-wrap gap-2">
+                                <span class="font-fragment font-bold bg-neutral-300 text-neutral-900 text-lg px-2 rounded leading-10">
+                                    Category: {{ post.category }}
+                                </span>
+                        </div>
 
                         <!-- Post Tags -->
                         <div class="mt-5 flex flex-row flex-wrap gap-2">
@@ -49,8 +58,6 @@
                                 <span class="text-infrared text-lg font-VCR">{{ post.hearts.length }}</span>
                             </section>
                         </section>
-                        <!-- End of Reaction Counts -->
-                        <!-- Beginning of Tags -->
                     </section>
                 </section>
             </NuxtLink>

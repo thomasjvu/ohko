@@ -10,17 +10,17 @@
             <VAlert
                 v-if="error"
                 type="error"
-                class="mt-5 mb-5 text-2xl font-fragment"
+                class="mt-5 mb-5"
             >
                 Error: {{ error }}
             </VAlert>
-            <div v-if="loading" class="flex items-center justify-center flex-1">
-                <VLoading class="w-24 h-24 text-primary-600 mt-5" />
+            <div v-if="loading" class="flex items-center justify-center">
+                <VLoading class="w-24 h-24 mt-5" />
             </div>
             <div class="space-y-4" v-if="!loading">
                 <VInput
                     id="email-input"
-                    class="text-2xl mt-5"
+                    class="text-2xl mt-5 dark:text-neutral-100"
                     v-model="email"
                     name="email"
                     type="email"
@@ -30,7 +30,7 @@
                 />
                 <VInput
                     id="password-input"
-                    class="text-2xl mt-5"
+                    class="text-2xl mt-5 dark:text-neutral-100"
                     v-model="password"
                     name="password"
                     type="password"
@@ -95,11 +95,4 @@ async function login() {
 </script>
 
 <style>
-/*
-#email-input,
-#password-input {
-    font-family: 'Fragment Mono', monospace;
-    font-size: 4rem;
-}
-*/
 </style>

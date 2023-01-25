@@ -20,7 +20,7 @@ main {
     margin-left: 10%;
 }
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     main {
         margin-left: 0%;
     }

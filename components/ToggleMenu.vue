@@ -17,9 +17,8 @@
                 size="3rem"
             ></Icon>
         </section>
-        <!-- <VLogoTransparent /> -->
         <nav class="font-fragment">
-            <VAccountLinks />
+            <AccountLinks />
             <ToggleMenuLinks />
             <SocialLinks />
         </nav>
