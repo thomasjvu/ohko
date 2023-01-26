@@ -6,7 +6,7 @@
             </section>
             <section class="profile-img flex justify-center">
                 <img
-                    class="w-40 h-40 -mt-20 rounded-full border-2 border-neutral-700 dark:border-neutral-300 border-50 shadow-xl"
+                    class="w-40 h-40 -mt-20 rounded-full border-2 border-neutral-700 border-50 shadow-md"
                     :src="fileUrl(user.avatar)"
                 />
             </section>
@@ -21,53 +21,81 @@
 
         <div id="profile-sections" class="flex justify-center m-20 gap-40">
             <section id="profile-section-1" class="w-1/4 flex flex-col gap-5">
+                <section id="profile-biography" class="bg-infrared dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
+                    <h4 class="text-4xl font-bold text-center">{{ user.description }}</h4>
+                </section>
                 <section id="profile-biography" class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                    <h4 class="font-bold text-center text-4xl">Biography</h4>
-                    <p class="text-md text-center mt-3">{{ user.description }}</p>
+                    <h4 class="font-bold text-center text-4xl">Social Links</h4>
                     <section id="profile-social-links" class="flex flex-col">
-                        <NuxtLink :to="`${user.twitch_link}`" class="mt-10 flex gap-5" target="_blank">
-                            <span class="font-bold">Twitch:</span>
-                            <span>{{user.twitch_link}}</span>
+                        <NuxtLink
+                            v-if="user.twitch_handle"
+                            :to="`https://twitch.tv/${user.twitch_handle}`"
+                            class="mt-10 flex items-center gap-5"
+                            target="_blank"
+                        >
+                            <img src="../assets/icon/Twitch.png" />
+                            <span class="font-bold text-xl">Twitch:</span>
+                            <span class="text-xl">@{{ user.twitch_handle }}</span>
                         </NuxtLink>
-                        <NuxtLink :to="`${user.twitter_link}`" class="mt-10" target="_blank">Twitter {{ user.twitter_link }}</NuxtLink>
-                        <NuxtLink :to="`${user.website_link}`" class="mt-10" target="_blank">Website {{ user.website_link }}</NuxtLink>
+                        <NuxtLink
+                            v-if="user.twitter_handle"
+                            :to="`https://twitter.com/${user.twitter_handle}`"
+                            class="mt-10 flex items-center gap-5"
+                            target="_blank"
+                        >
+                            <img src="../assets/icon/Twitter.png" />
+                            <span class="font-bold text-xl">Twitter:</span>
+                            <span class="text-xl">@{{ user.twitter_handle }}</span>
+                        </NuxtLink>
+                        <NuxtLink :to="`${user.website_link}`" class="mt-10 flex items-center gap-5" target="_blank">
+                            <img src="../assets/icon/Exclamation.png" />
+                            <span class="font-bold text-xl">Website:</span>
+                            <span class="text-xl">{{ user.website_link }}</span>
+                        </NuxtLink>
                     </section>
                 </section>
                 <section id="profile-biography" class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                    <h4 class="font-bold text-center text-4xl">Biography</h4>
-                    <p class="text-md text-center">{{ user.description }}</p>
-                </section>
-                <section id="profile-biography" class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                    <h4 class="font-bold text-center text-4xl">Biography</h4>
-                    <p class="text-md text-center">{{ user.description }}</p>
+                    <h4 class="font-bold text-center text-4xl">Allies</h4>
                 </section>
             </section>
 
-            <section id="profile-section-2" class="w-2/4 bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                <h4 class="text-center font-bold">Status Updates</h4>
+            <section id="profile-section-2" class="w-2/4 bg-neutral-800 text-neutral-100 border border-neutral-700 rounded-lg p-20 font-fragment">
+                <h3 class="text-center font-bold">Content Created</h3>
+                <div class="flex items-center font-fragment" v-for="article in articles">
+                    <div v-if="article.user_created === user.id" class="article-container w-full my-5 border-neutral-700 border-b-2 pb-10">
+                        <NuxtLink :to="`/article/${article.slug}`" class="flex flex-col items-center">
+                            <section id="article-image-container" class="w-3/12 mr-10">
+                                <img class="object-cover w-full h-48 rounded" v-bind:src="'https://app.ohko.org/assets/' + article.featured_image" />
+                            </section>
+                            <section class="anime-info-container w-8/12">
+                                <h4 class="text-md font-fragment uppercase text-center mt-5">{{ article.title }}</h4>
+                            </section>
+                        </NuxtLink>
+                    </div>
+                </div>
             </section>
 
             <section id="profile-section-3" class="w-1/4 bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                <h4 class="text-center font-bold">Sponsors</h4>
+                <h3 class="text-center font-bold text-5xl">Sponsors</h3>
+                <div v-for="sponsor in user.sponsors">
+                    <div class="sponsor-container my-10">
+                        <p class="font-bold">{{sponsor.sponsor_name}}</p>
+                        <NuxtLink class="text-2xl" to="{{sponsor.sponsor_link}}">{{sponsor.sponsor_link}}</NuxtLink>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
 </template>
 
 <script>
-/*
-data() {
-    return {
-        selectedOption: '',
-    }
-}
-*/
 </script>
 
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useAuth } from '~~/store/auth'
 
+// Set Authentication
 const auth = useAuth()
 const { fileUrl } = useFiles()
 const { isLoggedIn, user } = storeToRefs(auth)
@@ -78,6 +106,11 @@ definePageMeta({
     layout: 'profile',
 })
 
+// Get User Articles
+const { getItems } = useDirectusItems()
+
+const articles = await getItems({ collection: 'articles' })
+
 // Define the page title
 const pageTitle = 'Account'
 
@@ -86,7 +119,7 @@ useHead({
 })
 </script>
 
-<style>
+<style scoped>
 @media (max-width: 1000px) {
     #profile-sections {
         display: flex;
