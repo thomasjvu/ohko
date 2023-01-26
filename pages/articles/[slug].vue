@@ -49,6 +49,7 @@
             <Icon id="trash-btn" name="pixelarticons:trash" width="30" height="30" />
             <Icon id="edit-btn" name="pixelarticons:edit-box" width="30" height="30" />
         </section>
+
     </div>
 </template>
 
@@ -76,6 +77,8 @@ const {
         pick: ['title', 'content', 'description', 'featured_image', 'user_created', 'slug', 'positive', 'negative', 'neutral', 'tags', 'status'],
     }
 )
+
+
 </script>
 
 <style></style>

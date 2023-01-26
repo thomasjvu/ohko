@@ -89,21 +89,6 @@ const articles = directus.items('articles')
 // const token = useDirectusToken()
 // console.log('token', token)
 
-// Slugify
-function slugify(str) {
-    // convert title to lowercase
-    str = str.toLowerCase()
-
-    // replace spaces with -
-    str = str.replace(/\s+/g, '-')
-
-    // replace & with "-and-"
-    str = str.replace(/&/g, '-and-')
-
-    // output the result
-    return str
-}
-
 export default {
     data() {
         return {
