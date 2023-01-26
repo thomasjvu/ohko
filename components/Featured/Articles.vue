@@ -1,5 +1,5 @@
 <template>
-    <h2 class="mt-10 text-5xl sm:text-6xl font-VCR uppercase text-center dark:text-neutral-100">Featured Articles</h2>
+    <h2 class="mt-10 text-5xl sm:text-6xl font-VCR uppercase dark:text-neutral-100">Articles</h2>
     <div class="flex flex-col items-center font-fragment" v-for="post in posts">
         <div
             id="post-block"

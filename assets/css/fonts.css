@@ -19,6 +19,15 @@
     src: url('~/assets/fonts/vcr-osd-mono.ttf');
 }
 
+@font-face {
+    font-family: 'Ark';
+    src: url('~/assets/fonts/ark-pixel.ttf');
+}
+
+.font-ark {
+    font-family: 'Ark', monospace;
+}
+
 .font-fugaz {
     font-family: 'Fugaz One', sans-serif;
 }
@@ -34,6 +43,7 @@
 .font-VCR {
     font-family: 'VCR OSD Mono', 'Fragment Mono', 'Lucida Console',  monospace;
 }
+
 
 /* Headings & Other Text */
 h1 {

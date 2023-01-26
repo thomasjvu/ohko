@@ -17,9 +17,26 @@
     --darker: #111111;
     --black: #000000;
 
+    --piracy: #002147;
     --infrared: #ff2147;
-    --radioactive: #44ff88;
+    --radioactive: #00ff47;
     --sunflower: #ffbb33;
+}
+
+/* Ghost */
+.text-ghost{
+    color: var(--ghost);
+}
+.bg-ghost{
+    background: var(--ghost);
+}
+
+/* Latte */
+.text-latte{
+    color: var(--latte);
+}
+.bg-latte{
+    background: var(--latte);
 }
 
 /* Platinum */
@@ -38,6 +55,14 @@
     background: var(--dark-platinum);
 }
 
+/* Piracy */
+.text-piracy {
+    color: var(--piracy);
+}
+.bg-piracy {
+    background: var(--piracy);
+}
+
 /* Infrared */
 .text-infrared {
     color: var(--infrared);
@@ -51,7 +76,13 @@
     color: var(--radioactive);
 }
 .bg-radioactive {
-    color: var(--radioactive);
+    background: var(--radioactive);
 }
 
 /* Sunflower */
+.text-sunflower {
+    color: var(--sunflower);
+}
+.bg-sunflower {
+    background: var(--sunflower);
+}

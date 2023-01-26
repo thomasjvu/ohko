@@ -25,8 +25,7 @@
         <div class="flex items-center justify-end p-4 space-x-2">
             <ModalsMyProfile />
             <NuxtLink
-                to="https://ohko.org/"
-                target="_blank"
+                to="/monetization"
                 class="p-1 mt-2 dark:text-black"
             >
                 <Icon name="pixelarticons:coin" size="1.75rem" />

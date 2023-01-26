@@ -1,29 +1,39 @@
 <template>
     <div class="">
+        <div class="header">
+            <section class="cover">
+                <img class="w-screen h-96" :src="fileUrl(user.cover)" />
+            </section>
+            <section class="profile-img flex justify-center">
+                <img class="w-40 h-40 -mt-20 rounded-full border-2 border-neutral-900 border-50 shadow-xl" :src="fileUrl(user.avatar)" />
+            </section>
+            <section id="profile-details" class="flex flex-col items-center justify-center gap-5 font-fragment mt-3">
+                <p class="text-4xl">@{{ user.username }}</p>
+                <section class="flex items-center gap-2">
+                    <!-- <Icon name="pixelarticons:loader" /> -->
+                    <p class="text-2xl text-infrared font-VCR">{{ user.rank.toUpperCase() }}</p>
+                </section>
+            </section>
+        </div>
+        <div class="flex">
+            <section>
+            </section>
+            <section>
+            </section>
+            <section>
+            </section>
+        </div>
         <div class="space-y-12">
             <!-- User Data -->
-            <div
-                class="flex flex-col items-start bg-neutral-200 p-10 rounded-md border border-neutral-900"
-            >
+            <div class="flex flex-col items-start bg-neutral-200 p-10 rounded-md border border-neutral-900">
                 <div class="flex items-center justify-center">
-                    <img
-                        class="w-40 h-40 mr-8 rounded-full border-primary-300 border-50"
-                        :src="fileUrl(user.avatar)"
-                    />
+                    <img class="w-40 h-40 mr-8 rounded-full border-primary-300 border-50" :src="fileUrl(user.avatar)" />
                     <div class="">
-                        <p
-                            class="text-4xl font-bold font-fragment dark:text-white"
-                        >
-                            Hello, @{{ user.username }}!
-                        </p>
-                        <p
-                            class="text-sm font-medium font-fragment text-neutral-800"
-                        >
+                        <p class="text-4xl font-bold font-fragment dark:text-white">Hello, @{{ user.username }}!</p>
+                        <p class="text-sm font-medium font-fragment text-neutral-800">
                             {{ user.email }}
                         </p>
-                        <p
-                            class="text-sm font-medium font-fragment text-neutral-900 uppercase"
-                        >
+                        <p class="text-sm font-medium font-fragment text-neutral-900 uppercase">
                             {{ user.rank }}
                         </p>
                     </div>
@@ -31,35 +41,24 @@
             </div>
             <!-- End of Profile Card -->
             <!-- Start of Followers Card -->
-            <div
-                class="flex flex-col items-start bg-neutral-200 p-10 rounded-md border border-neutral-900"
-            >
-                <h3 class="text-2xl font-fragment">Biography: </h3>
+            <div class="flex flex-col items-start bg-neutral-200 p-10 rounded-md border border-neutral-900">
+                <h3 class="text-2xl font-fragment">Biography:</h3>
                 <p>{{ user.following }}</p>
-                <h3 class="text-2xl font-fragment">Something: </h3>
+                <h3 class="text-2xl font-fragment">Something:</h3>
                 <p>{{ user.followers }}</p>
             </div>
             <!-- Endof Followers Card -->
             <!-- Start of Followers Card -->
-            <div
-                class="flex flex-col items-start bg-neutral-200 p-10 rounded-md border border-neutral-900"
-            >
-                <h3 class="text-2xl font-fragment">Following: </h3>
+            <div class="flex flex-col items-start bg-neutral-200 p-10 rounded-md border border-neutral-900">
+                <h3 class="text-2xl font-fragment">Following:</h3>
                 <p>{{ user.following }}</p>
-                <h3 class="text-2xl font-fragment">Followers: </h3>
+                <h3 class="text-2xl font-fragment">Followers:</h3>
                 <p>{{ user.followers }}</p>
             </div>
             <!-- Endof Followers Card -->
-            <div
-                v-if="isLoggedIn"
-                class="flex flex-col items-center gap-5 bg-neutral-200 p-20 rounded-md border border-neutral-900"
-            >
-                <h2 class="text-5xl font-VCR text-center uppercase">
-                    Ready to Create?
-                </h2>
-                <div
-                    class="flex flex-col sm:flex-row justify-between gap-5 font-fragment"
-                >
+            <div v-if="isLoggedIn" class="flex flex-col items-center gap-5 bg-neutral-200 p-20 rounded-md border border-neutral-900">
+                <h2 class="text-5xl font-VCR text-center uppercase">Ready to Create?</h2>
+                <div class="flex flex-col sm:flex-row justify-between gap-5 font-fragment">
                     <CreatePostArticle />
                     <!-- <select v-model="selectedOption"> -->
                     <!--     <option value="article">Article</option> -->
@@ -77,13 +76,7 @@
                     <!-- Logout Button -->
                 </div>
             </div>
-            <VButton
-                variant="primary"
-                @click="auth.logout()"
-                class="w-1/4 text-2xl"
-            >
-                Logout</VButton
-            >
+            <VButton variant="primary" @click="auth.logout()" class="w-1/4 text-2xl"> Logout</VButton>
         </div>
     </div>
 </template>
@@ -109,6 +102,7 @@ const { isLoggedIn, user } = storeToRefs(auth)
 // Set middleware
 definePageMeta({
     middleware: 'auth',
+    layout: 'profile',
 })
 
 // Define the page title

@@ -1,6 +1,7 @@
 <template>
     <div>
         <Logo />
+        <h1 class="text-center font-VCR uppercase my-10">Featured</h1>
         <!-- <Hero /> -->
         <!-- <AlertsDemo /> -->
         <!-- <FeaturedArt /> -->

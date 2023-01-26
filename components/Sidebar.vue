@@ -1,5 +1,5 @@
 <template>
-    <section class="sidebar">
+    <section class="sidebar shadow-2xl">
         <nav>
             <a href="/" class="flex flex-center items-center justify-center align-center">
                 <img class="grow" src="../assets/img/ohko-transparent.png" />
@@ -9,12 +9,12 @@
                     <a class="font-fragment side-more" href="#">
                         <Icon
                             class="sidebar-icon"
-                            name="ph:magnifying-glass-fill"
+                            name="pixelarticons:search"
                         />Search...</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-create" href="/create/article">Create</a>
+                    <a class="font-VCR side-create" href="/create/article">Create</a>
                 </li>
                 <!-- <li> -->
                 <!--     <a class="font-fragment side-more" href="/explore" -->
@@ -22,42 +22,44 @@
                 <!--     > -->
                 <!-- </li> -->
                 <li>
-                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#">Art</a>
+                    <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Art</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat bg-platinum" href="/articles"
+                    <a class="font-VCR side-cat bg-platinum" href="/articles"
                         >Articles</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#">Guides</a>
+                    <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Guides</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#">Memes</a>
+                    <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Memes</a>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#"
+                    <a class="font-VCR side-cat bg-dark-platinum line-through" href="#"
                         >Reviews</a
                     >
                 </li>
                 <li>
-                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#"
-                        >Cosplay</a
-                    >
+                    <NuxtLink class="font-VCR side-cat bg-dark-platinum text-neutral-200" to="#">Fan-Fiction</NuxtLink>
                 </li>
                 <li>
-                    <a class="font-fragment side-cat bg-dark-platinum line-through" href="#"
-                        >Fan-Fiction</a
-                    >
+                    <NuxtLink class="font-VCR side-cat bg-piracy text-neutral-200" to="/anime">Anime</NuxtLink>
                 </li>
+                <li>
+                    <NuxtLink class="font-VCR side-cat bg-infrared text-neutral-200" to="/videogames">Video Games</NuxtLink>
+                </li>
+                <!-- <li> -->
+                <!--     <NuxtLink class="font-VCR side-cat bg-radioactive text-neutral-200" to="/originals">Originals</NuxtLink> -->
+                <!-- </li> -->
             </ul>
         </nav>
         <section class="sidebar-footer">
-            <section>
-                <h3 class="font-VCR font-bold text-center">
-                    OHKO
-                </h3>
-            </section>
+            <!-- <section> -->
+            <!--     <h3 class="font-VCR font-bold text-center"> -->
+            <!--         OHKO -->
+            <!--     </h3> -->
+            <!-- </section> -->
             <section class="sidebar-account">
                 <a href="/login" class="btn login-btn uppercase">Account</a>
                 <a href="/signup" class="btn signup-btn uppercase">Signup</a>
@@ -71,40 +73,38 @@
 <style>
 .sidebar {
     background: var(--darker);
-    color: white;
     position: fixed;
-    width: 10%;
-    max-width: 10%;
-    height: 100%;
+    width: 20rem;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-flow: column;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .sidebar h3 {
 }
 
 .sidebar img {
-    width: 5vw;
+    width: 10rem;
     margin: 0 auto;
 }
 
 .sidebar ul {
-    font-size: 1vw;
+    font-size: 1.75rem;
 }
 
 .sidebar a {
     display: inline-block;
-    width: 8vw;
+    width: 16rem;
     margin: 10px 0;
 }
 
 /*Sidebar Icons */
 .sidebar-icon {
-    font-size: 0.75vw;
-    margin-right: 0.25vw;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 /* Sidebar Create */
@@ -139,7 +139,6 @@
 
 /* Sidebar Categories */
 .side-cat {
-    color: #111;
     padding: 10px;
     border-radius: 5px;
     text-align: left;
@@ -149,26 +148,34 @@
     background: #e5e4e2;
 }
 
-/* Fix Buttons Later */
-
 .sidebar-account {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5vw;
+    gap: 1rem;
 }
 
+/* Account Buttons */
+
 .login-btn {
-    font-size: 0.65vw;
-    width: 4vw !important;
+    font-size: 1.3rem;
+    width: 7.5rem !important; /* fix pls */
+    color: var(--dark) !important; /* fix pls */
+    background: var(--platinum) !important; /* fix pls */
     text-align: center;
 }
 
 .signup-btn {
-    font-size: 0.65vw;
-    width: 4vw !important;
-    background: var(--dark-platinum) !important; /*fix this later */
+    font-size: 1.3rem;
+    width: 7.5rem !important; /* fix pls */
+    color: var(--dark) !important; /* fix pls */
+    background: var(--dark-platinum) !important; /* fix pls */
     text-align: center;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    background: var(--infrared) !important; /* fix pls */
 }
 
 /* Responsive */
