@@ -9,7 +9,17 @@
     </main>
 </template>
 
-<script setup></script>
+<script setup>
+
+/* Authentication */
+import { storeToRefs } from 'pinia'
+import { useAuth } from '~~/store/auth'
+
+const auth = useAuth()
+const { fileUrl } = useFiles()
+const { isLoggedIn, user } = storeToRefs(auth)
+
+</script>
 
 <style>
 main {

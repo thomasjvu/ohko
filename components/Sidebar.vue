@@ -6,12 +6,7 @@
             </a>
             <ul class="">
                 <li>
-                    <a class="font-fragment side-more" href="#">
-                        <Icon
-                            class="sidebar-icon"
-                            name="pixelarticons:search"
-                        />Search...</a
-                    >
+                    <a class="font-fragment side-more" href="#"> <Icon class="sidebar-icon" name="pixelarticons:search" />Search...</a>
                 </li>
                 <li>
                     <a class="font-VCR side-create" href="/create/article">Create</a>
@@ -25,9 +20,7 @@
                     <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Art</a>
                 </li>
                 <li>
-                    <a class="font-VCR side-cat bg-platinum" href="/articles"
-                        >Articles</a
-                    >
+                    <a class="font-VCR side-cat bg-platinum" href="/articles">Articles</a>
                 </li>
                 <li>
                     <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Guides</a>
@@ -36,9 +29,7 @@
                     <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Memes</a>
                 </li>
                 <li>
-                    <a class="font-VCR side-cat bg-dark-platinum line-through" href="#"
-                        >Reviews</a
-                    >
+                    <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Reviews</a>
                 </li>
                 <li>
                     <NuxtLink class="font-VCR side-cat bg-dark-platinum text-neutral-200" to="#">Fan-Fiction</NuxtLink>
@@ -61,14 +52,24 @@
             <!--     </h3> -->
             <!-- </section> -->
             <section class="sidebar-account">
-                <a href="/login" class="btn login-btn uppercase">Account</a>
-                <a href="/signup" class="btn signup-btn uppercase">Signup</a>
+                <a v-if="!isLoggedIn" href="/login" class="btn login-btn uppercase">Login</a>
+                <a v-if="!isLoggedIn" href="/signup" class="btn signup-btn uppercase">Signup</a>
+
+                <a v-if="isLoggedIn" @click="auth.logout()" class="btn logout-btn uppercase">Logout</a>
+                <a v-if="isLoggedIn" href="/account" class="btn account-btn uppercase">Account</a>
             </section>
         </section>
     </section>
 </template>
 
-<script></script>
+<script setup>
+import { storeToRefs } from 'pinia'
+import { useAuth } from '~~/store/auth'
+
+const auth = useAuth()
+const { fileUrl } = useFiles()
+const { isLoggedIn, user } = storeToRefs(auth)
+</script>
 
 <style>
 .sidebar {
@@ -157,7 +158,8 @@
 
 /* Account Buttons */
 
-.login-btn {
+.login-btn,
+.logout-btn {
     font-size: 1.3rem;
     width: 7.5rem !important; /* fix pls */
     color: var(--dark) !important; /* fix pls */
@@ -165,7 +167,8 @@
     text-align: center;
 }
 
-.signup-btn {
+.signup-btn,
+.account-btn {
     font-size: 1.3rem;
     width: 7.5rem !important; /* fix pls */
     color: var(--dark) !important; /* fix pls */
@@ -174,7 +177,9 @@
 }
 
 .login-btn:hover,
-.signup-btn:hover {
+.signup-btn:hover,
+.account-btn:hover,
+.logout-btn:hover {
     background: var(--infrared) !important; /* fix pls */
 }
 

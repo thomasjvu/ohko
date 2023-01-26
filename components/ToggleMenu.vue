@@ -2,8 +2,8 @@
     <section id="menu-btn-container" class="">
         <Icon
             id="menu-icon"
-            class="text-neutral-900 dark:text-neutral-100"
-            name="pixelarticons:align-justify"
+            class="text-neutral-200 bg-neutral-700 rounded-full p-1"
+            name="pixelarticons:loader"
             @click="toggleMenu"
             size="3rem"
         ></Icon>
@@ -12,7 +12,8 @@
         <section class="close-btn-container">
             <Icon
                 id="close-icon"
-                name="pixelarticons:align-right"
+                class="text-neutral-200 bg-neutral-700 rounded-full p-1"
+                name="pixelarticons:loader"
                 @click="toggleMenu"
                 size="3rem"
             ></Icon>
