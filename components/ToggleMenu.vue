@@ -2,7 +2,7 @@
     <section id="menu-btn-container" class="">
         <Icon
             id="menu-icon"
-            class="text-neutral-200 bg-neutral-700 rounded-full p-1"
+            class="text-neutral-200 bg-neutral-700 hover:bg-infrared rounded-full p-1"
             name="pixelarticons:loader"
             @click="toggleMenu"
             size="3rem"
@@ -12,7 +12,7 @@
         <section class="close-btn-container">
             <Icon
                 id="close-icon"
-                class="text-neutral-200 bg-neutral-700 rounded-full p-1"
+                class="text-neutral-200 bg-neutral-700 hover:bg-infrared rounded-full p-1"
                 name="pixelarticons:loader"
                 @click="toggleMenu"
                 size="3rem"

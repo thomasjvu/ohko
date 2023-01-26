@@ -20,7 +20,7 @@
         </div>
 
         <div id="profile-sections" class="flex justify-center m-20 gap-40">
-            <section id="profile-section-1" class="w-1/4 flex flex-col gap-5">
+            <section id="profile-section-1" class="w-1/4 flex flex-col gap-10">
                 <section id="profile-biography" class="bg-infrared dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
                     <h4 class="text-4xl font-bold text-center">{{ user.description }}</h4>
                 </section>
@@ -75,14 +75,19 @@
                 </div>
             </section>
 
-            <section id="profile-section-3" class="w-1/4 bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                <h3 class="text-center font-bold text-5xl">Sponsors</h3>
-                <div v-for="sponsor in user.sponsors">
-                    <div class="sponsor-container my-10">
-                        <p class="font-bold">{{sponsor.sponsor_name}}</p>
-                        <NuxtLink class="text-2xl" to="{{sponsor.sponsor_link}}">{{sponsor.sponsor_link}}</NuxtLink>
+            <section id="profile-section-3" class="w-1/4 flex flex-col gap-10">
+                <section>
+                    <AdsDefault />
+                </section>
+                <section class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
+                    <h3 class="text-center font-bold text-5xl">Sponsors</h3>
+                    <div v-for="sponsor in user.sponsors">
+                        <div class="sponsor-container my-10">
+                            <p class="font-bold">{{sponsor.sponsor_name}}</p>
+                            <NuxtLink class="text-2xl" to="{{sponsor.sponsor_link}}">{{sponsor.sponsor_link}}</NuxtLink>
+                        </div>
                     </div>
-                </div>
+                </section>
             </section>
         </div>
     </div>

@@ -52,11 +52,11 @@
             <!--     </h3> -->
             <!-- </section> -->
             <section class="sidebar-account">
-                <a v-if="!isLoggedIn" href="/login" class="btn login-btn uppercase">Login</a>
                 <a v-if="!isLoggedIn" href="/signup" class="btn signup-btn uppercase">Signup</a>
+                <a v-if="!isLoggedIn" href="/login" class="btn login-btn uppercase">Login</a>
 
-                <a v-if="isLoggedIn" @click="auth.logout()" class="btn logout-btn uppercase">Logout</a>
                 <a v-if="isLoggedIn" href="/account" class="btn account-btn uppercase">Account</a>
+                <a v-if="isLoggedIn" @click="auth.logout()" class="btn logout-btn uppercase">Logout</a>
             </section>
         </section>
     </section>
