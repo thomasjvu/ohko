@@ -59,11 +59,13 @@
                 </section>
             </section>
 
-            <section id="profile-section-2" class="w-2/4 bg-neutral-800 text-neutral-100 border border-neutral-700 rounded-lg p-20 font-fragment">
-                <h3 class="text-center font-bold">Content Created</h3>
-                <div class="flex items-center font-fragment" v-for="article in articles">
-                    <div v-if="article.user_created === user.id" class="article-container w-full my-5 border-neutral-700 border-b-2 pb-10">
-                        <NuxtLink :to="`/article/${article.slug}`" class="flex flex-col items-center">
+            <section id="profile-section-2" class="w-2/4">
+                <div class="bg-infrared rounded-lg text-neutral-900 p-5 font-VCR font-bold uppercase">
+                    <h3 class="text-center font-bold">Content Created</h3>
+                </div>
+                <div v-for="article in articles">
+                    <div v-if="article.user_created === user.id" class="w-full flex flex-col gap-5 mt-5 article-container bg-neutral-800 text-neutral-100 border border-neutral-700 rounded-lg p-20 font-fragment">
+                        <NuxtLink :to="`/article/${article.slug}`" class="flex items-center">
                             <section id="article-image-container" class="w-3/12 mr-10">
                                 <img class="object-cover w-full h-48 rounded" v-bind:src="'https://app.ohko.org/assets/' + article.featured_image" />
                             </section>
