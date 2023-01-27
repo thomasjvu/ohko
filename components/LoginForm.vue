@@ -38,7 +38,7 @@
                     required
                 />
                 <div class="flex items-center justify-end space-x-4">
-                    <!-- <VButton type="button" @click="loadDemoUser()">Load Demo User</VButton> -->
+                    <VButton type="button" @click="loadDemoUser()">Load Demo User</VButton>
                     <VButton
                         type="submit"
                         variant="primary"

@@ -21,7 +21,7 @@
                         <p class="mb-2 text-xs font-semibold post-date">
                             {{ new Date(post.date_created).toLocaleDateString() }}
                         </p>
-                        <NuxtLink :to="`/review/${post.slug}`" class="inline-block mt-3 mb-3 text-red transition-colors duration-200 font-fugaz"
+                        <NuxtLink :to="`/reviews/${post.slug}`" class="inline-block mt-3 mb-3 text-red transition-colors duration-200 font-fugaz"
                             ><h3 class="text-2xl font-bold leading-5 post-title text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500">
                                 {{ post.title }}
                             </h3></NuxtLink
@@ -31,7 +31,7 @@
                             {{ post.description }}
                         </p>
                         <!-- Content Slug -->
-                        <p class="mb-2 infrared">/{{ post.slug }}</p>
+                        <p class="mb-2 infrared">/reviews/{{ post.slug }}</p>
                         <!-- Content Reaction Counts -->
                         <section class="reactions flex">
                             <section class="font-fragment flex flex-col items-center">

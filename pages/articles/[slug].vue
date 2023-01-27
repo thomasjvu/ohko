@@ -46,10 +46,9 @@
 
         <!-- Edit & Delete buttons for the players who created the post -->
         <section id="post-buttons" class="flex justify-end mt-20">
-            <Icon id="trash-btn" name="pixelarticons:trash" width="30" height="30" />
+            <Icon @click="deleteOne" id="trash-btn" name="pixelarticons:trash" width="30" height="30" />
             <Icon id="edit-btn" name="pixelarticons:edit-box" width="30" height="30" />
         </section>
-
     </div>
 </template>
 
@@ -74,11 +73,54 @@ const {
     },
     {
         transform: (data) => data.data[0],
-        pick: ['title', 'content', 'description', 'featured_image', 'user_created', 'slug', 'positive', 'negative', 'neutral', 'tags', 'status'],
+        pick: [
+            'id',
+            'title',
+            'content',
+            'description',
+            'featured_image',
+            'user_created',
+            'slug',
+            'positive',
+            'negative',
+            'neutral',
+            'tags',
+            'status',
+        ],
     }
 )
 
+// Delete Article
+/*
+const { deleteItems } = useDirectusItems()
 
+const deleteArticles = async () => {
+    try {
+        const items = []
+        await deleteItems({ collection: 'articles', items })
+    } catch (e) {}
+}
+*/
+</script>
+
+<script>
+// Delete Stuff
+/*
+import { Directus } from '@directus/sdk'
+
+// const config = useRuntimeConfig()
+const directus = new Directus('https://app.ohko.org')
+const articles = directus.items('articles')
+
+export default {
+    methods: {
+        async deleteOne() {
+            await articles.deleteOne(id)
+            window.location.replace('/articles')
+        },
+    },
+}
+*/
 </script>
 
 <style></style>

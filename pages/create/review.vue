@@ -1,9 +1,9 @@
 <template>
     <div>
         <Logo />
-        <h1 id="page-title" class="my-10 font-VCR font-bold uppercase text-4xl sm:text-6xl text-center text-infrared">New Article</h1>
+        <h1 id="page-title" class="my-10 font-VCR font-bold uppercase text-4xl sm:text-6xl text-center text-infrared">New Review</h1>
         <!-- <Authenticate /> -->
-        <CreatePostArticle />
+        <CreatePostReview />
     </div>
 </template>
 
@@ -16,12 +16,12 @@ const { fileUrl } = useFiles()
 const { isLoggedIn, user } = storeToRefs(auth)
 
 // Only authenticated users
-definePageMeta({
-    middleware: 'auth',
-})
+// definePageMeta({
+    // middleware: 'auth',
+// })
 
 // Set Page Title
-const title = 'Create Article'
+const title = 'Create Review'
 useHead({
     title: title + ' | OHKO',
 })

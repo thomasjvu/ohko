@@ -2,7 +2,7 @@
     <div class="">
         <div class="header">
             <section id="profile-cover">
-                <img class="w-screen h-96" :src="fileUrl(user.cover)" />
+                <img class="w-screen h-96 object-cover" :src="fileUrl(user.cover)" />
             </section>
             <section class="profile-img flex justify-center">
                 <img
@@ -86,7 +86,7 @@
                     <div v-for="sponsor in user.sponsors">
                         <div class="sponsor-container my-10">
                             <p class="font-bold">{{sponsor.sponsor_name}}</p>
-                            <NuxtLink class="text-2xl" to="{{sponsor.sponsor_link}}">{{sponsor.sponsor_link}}</NuxtLink>
+                            <NuxtLink class="text-2xl" to="`${sponsor.sponsor_link}}`">{{sponsor.sponsor_link}}</NuxtLink>
                         </div>
                     </div>
                 </section>

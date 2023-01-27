@@ -73,9 +73,6 @@ const { isLoggedIn, user } = storeToRefs(auth)
 
 console.log('loggedin user', user)
 
-definePageMeta({
-    middleware: 'auth',
-})
 </script>
 
 <script>

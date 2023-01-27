@@ -23,13 +23,13 @@
                     <a class="font-VCR side-cat bg-platinum" href="/articles">Articles</a>
                 </li>
                 <li>
+                    <a class="font-VCR side-cat bg-platinum" href="/reviews">Reviews</a>
+                </li>
+                <li>
                     <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Guides</a>
                 </li>
                 <li>
                     <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Memes</a>
-                </li>
-                <li>
-                    <a class="font-VCR side-cat bg-dark-platinum line-through" href="#">Reviews</a>
                 </li>
                 <li>
                     <NuxtLink class="font-VCR side-cat bg-dark-platinum text-neutral-200" to="#">Fan-Fiction</NuxtLink>

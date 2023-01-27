@@ -34,6 +34,7 @@
         </section>
         <h4 class="text-sm font-extrabold uppercase drop-shadow-sm">
             Created By @{{ review.user_created }}
+            Created By @{{ review.creator_name }}
         </h4>
 
         <section
@@ -85,10 +86,11 @@ const {
         transform: (data) => data.data[0],
         pick: [
             'title',
-            'content',
             'description',
+            'content',
             'featured_image',
             'user_created',
+            'creator_name',
             'rating',
             'tags',
             'slug',
