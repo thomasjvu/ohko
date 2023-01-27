@@ -21,7 +21,7 @@ const { isLoggedIn, user } = storeToRefs(auth)
 
 </script>
 
-<style>
+<style scoped>
 main {
     margin-left: 10rem;
 }

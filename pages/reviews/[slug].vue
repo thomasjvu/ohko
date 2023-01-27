@@ -1,61 +1,56 @@
 <template>
     <div>
-    <!-- Back to Feed -->
-    <NuxtLink class="flex items-center font-fragment font-bold uppercase mb-5 dark:text-neutral-200" to="/reviews">
-        <span class="mr-3 text-xl">←</span>
-        Back to Reviews
-    </NuxtLink>
-        <div class="relative pt-48 pb-10 overflow-hidden shadow-xl rounded-2xl">
-            <img
-                class="absolute inset-0 object-cover w-full h-full"
-                :src="fileUrl(review.featured_image)"
-            />
-            <div class="absolute inset-0 bg-primary-500 mix-blend-multiply" />
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-600 via-primary-600 opacity-80"
-            />
+        <!-- Back to Feed -->
+        <NuxtLink class="flex items-center font-fragment font-bold uppercase mb-5 dark:text-neutral-200" to="/reviews">
+            <span class="mr-3 text-xl">←</span>
+            Back to Reviews
+        </NuxtLink>
+
+        <!-- Featured Image -->
+        <div class="relative pt-96 pb-40 overflow-hidden shadow-xl rounded-2xl">
+            <img class="absolute inset-0 object-cover w-full h-full" :src="fileUrl(review.featured_image)" />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-600 via-primary-600 opacity-80" />
             <div class="relative px-8">
-                <div
-                    class="relative text-lg font-medium ghost font-fugaz md:flex-grow"
-                >
-                    <h1 id="post-title" class="text-6xl font-bold drop-shadow-sm">
-                        {{ review.title }}
-                    </h1>
-                </div>
+                <div class="relative text-lg font-medium ghost font-fugaz md:flex-grow"></div>
             </div>
         </div>
-        <section id="short-content" class="px-5 py-5 bg-infrared rounded-md darker font-fragment shadow-lg">
-            <p class="text-sm font-extrabold drop-shadow-sm">
-            {{ review.description }}
-            </p>
-        </section>
-        <h4 class="text-sm font-extrabold uppercase drop-shadow-sm">
-            Created By @{{ review.player }}
-        </h4>
-        <span>userid: {{ review.user_created }}</span>
 
+        <!-- Review Title -->
+        <h1 id="review-title" class="text-6xl font-fragment font-bold drop-shadow-sm my-10 text-center">
+            {{ review.title }}
+        </h1>
+
+        <!-- Review Description -->
         <section
-            id="player-review-content"
-            class="font-fragment leading-loose"
-            v-html="review.content"
-        />
+            id="review-description-container"
+            class="p-5 my-10 darker font-fragment italic border-y-2 dark:border-neutral-400 text-neutral-900 dark:text-neutral-400"
+        >
+            <p class="text-3xl">" {{ review.description }} "</p>
+        </section>
 
+        <!-- Review Content -->
+        <section id="player-review-content" class="font-fragment leading-loose" v-html="review.content" />
 
-        <section id="player-rating" class="flex items-center flex-col">
-            <h4 class="font-fugaz mb-5 text-xl text-center">Rating:</h4>
-            <section
-                id="rating"
-                class="flex items-center justify-center shadow-md"
-            >
-                <span
-                    id="rating-amount"
-                    class="text-xl font-extrabold text-white font-fugaz"
-                    >{{ review.rating }} / 100</span
-                >
+        <!-- Review Rating -->
+        <section id="player-rating" class="flex items-center flex-col border-y-2 p-5 my-10 dark:border-neutral-400 dark:text-neutral-400">
+            <h4 class="font-VCR mb-5 text-3xl uppercase text-center">Rating</h4>
+            <section id="rating" class="flex items-center justify-center shadow-md">
+                <span id="rating-amount" class="text-4xl text-infrared font-extrabold font-VCR">{{ review.rating }} / 100</span>
             </section>
         </section>
 
-        <VFooter />
+        <!-- Player Details -->
+        <section>
+            <NuxtLink to="#" class="flex items-center gap-10 my-10">
+                <img
+                    v-bind:src="'https://app.ohko.org/assets/' + review.player_avatar"
+                    width="100"
+                    class="rounded-full border p-1 dark:border-neutral-700"
+                />
+                <h4 class="font-extrabold uppercase drop-shadow-sm">Created By @{{ review.player }}</h4>
+            </NuxtLink>
+        </section>
+        <!-- The End -->
     </div>
 </template>
 
@@ -76,45 +71,17 @@ const {
 } = await useAsyncData(
     path,
     () => {
-        return $directus
-            .items('reviews')
-            .readByQuery({ filter: { slug: { _eq: params.slug } }, limit: 1 })
+        return $directus.items('reviews').readByQuery({ filter: { slug: { _eq: params.slug } }, limit: 1 })
     },
     {
         transform: (data) => data.data[0],
-        pick: [
-            'title',
-            'description',
-            'content',
-            'featured_image',
-            'player',
-            'creator_name',
-            'rating',
-            'tags',
-            'slug',
-            'id',
-        ],
+        pick: ['title', 'description', 'content', 'featured_image', 'player', 'player_avatar', 'creator_name', 'rating', 'tags', 'slug', 'id'],
     }
 )
 
 useHead({
     title: review.title,
 })
-
 </script>
 
-<style>
-#post-title {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #212121;
-}
-
-#rating {
-    background: #ff2147;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-
-    border: 2px solid black;
-}
-</style>
+<style></style>

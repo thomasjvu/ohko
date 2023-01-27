@@ -1,10 +1,12 @@
 <template>
+
     <!-- Back to Feed -->
     <NuxtLink class="flex items-center font-fragment font-bold uppercase mb-5 dark:text-neutral-200" to="/articles">
         <span class="mr-3 text-xl">←</span>
         Back to Articles
     </NuxtLink>
     <!-- End of Back to Feed -->
+
     <!-- Post Content -->
     <div v-if="post">
         <div v-if="post.featured_image" class="relative pt-96 pb-40 overflow-hidden shadow-xl rounded-2xl">

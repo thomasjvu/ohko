@@ -19,7 +19,7 @@ export default {
 
     mounted() {
         this.editor = new Editor({
-            content: '',
+            content: '<p>Start creating! You can use Markdown here...👾</p>',
             extensions: [StarterKit],
             onUpdate: () => {
                 this.$emit('update:modelValue', this.editor.getHTML())

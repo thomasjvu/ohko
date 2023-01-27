@@ -115,6 +115,7 @@ async function createOne() {
             tags: tags.value,
             user_created: auth.user.id,
             player: auth.user.username,
+            player_avatar: auth.user.avatar,
             featured_image: 'c5e5a102-44bc-4995-bacc-f33aae0c0b25',
             status: 'published',
             moderated: false
