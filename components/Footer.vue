@@ -29,7 +29,7 @@
             <section class="footer-social-links flex items-center justify-between uppercase">
                 <p class="font-VCR">Socials:</p>
                 <section class="font-fragment">
-                    <NuxtLink to="https://discord.com/ohko_org" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Discord ]</NuxtLink>
+                    <NuxtLink to="https://discord.gg/77h3N3gfrW" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Discord ]</NuxtLink>
                     <NuxtLink to="https://twitch.tv/ohko_org" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Twitch ]</NuxtLink>
                     <NuxtLink to="https://twitter.com/ohko_org" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Twitter ]</NuxtLink>
                 </section>

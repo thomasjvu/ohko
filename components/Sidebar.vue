@@ -7,13 +7,13 @@
             <ul class="sidebar-links">
                 <!-- Search -->
                 <li class="sidebar-link">
-                    <NuxtLink class="side-cat font-VCR bg-neutral-100 px-5 rounded-lg text-left" to="#">
+                    <NuxtLink to="#" class="side-cat font-VCR bg-neutral-100 px-5 rounded-lg text-left">
                         <span> <Icon class="sidebar-icon" name="pixelarticons:search" />Search...</span>
                     </NuxtLink>
                 </li>
                 <!-- Create -->
                 <li class="sidebar-link">
-                    <NuxtLink class="side-cat font-VCR bg-infrared px-5 rounded-lg text-left">
+                    <NuxtLink to="/create" class="side-cat font-VCR bg-infrared px-5 rounded-lg text-left">
                         <span>
                             <Icon name="pixelarticons:plus" class="" />
                             Create
