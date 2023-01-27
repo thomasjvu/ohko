@@ -45,10 +45,10 @@
         </section>
 
         <!-- Edit & Delete buttons for the players who created the post -->
-        <section id="post-buttons" class="flex justify-end mt-20">
-            <Icon @click="deleteOne" id="trash-btn" name="pixelarticons:trash" width="30" height="30" />
-            <Icon id="edit-btn" name="pixelarticons:edit-box" width="30" height="30" />
-        </section>
+        <!-- <section id="post-buttons" class="flex justify-end mt-20"> -->
+        <!--     <Icon @click="deleteOne" id="trash-btn" name="pixelarticons:trash" width="30" height="30" /> -->
+        <!--     <Icon id="edit-btn" name="pixelarticons:edit-box" width="30" height="30" /> -->
+        <!-- </section> -->
     </div>
 </template>
 

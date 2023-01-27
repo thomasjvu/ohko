@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="start()">
+    <form @submit.prevent="start">
         <VAlert v-if="error" type="error" class="mb-4"> Error: {{ error }} </VAlert>
         <div v-if="loading" class="flex items-center justify-center flex-1">
             <VLoading class="w-24 h-24 text-primary-600" />

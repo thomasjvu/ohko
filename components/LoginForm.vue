@@ -66,11 +66,11 @@ const password = ref()
 const error = ref(null)
 const loading = ref(false)
 
-const config = useRuntimeConfig()
+const runtimeConfig = useRuntimeConfig()
 
 function loadDemoUser() {
-    email.value = config.demoUsername
-    password.value = config.demoPassword
+    email.value = runtimeConfig.demoUsername
+    password.value = runtimeConfig.demoPassword
 }
 
 async function login() {
