@@ -81,6 +81,20 @@ export const useAuth = defineStore('auth', {
         console.log(e)
       }
     },
+    // async createOne() {
+    //   const { $directus } = useNuxtApp()
+    //   try {
+    //     // Try to fetch the user data
+    //     const user = await $directus.users.me.read({
+    //       fields: ['*'],
+    //     })
+    //     // Update the auth store with the user data
+    //     this.loggedIn = true
+    //     this.user = user
+    //   } catch (e) {
+    //     console.log(e)
+    //   }
+    // },
     async resetState() {
       this.$reset()
     },

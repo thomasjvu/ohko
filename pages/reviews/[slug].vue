@@ -1,13 +1,10 @@
 <template>
-    <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
-        <NuxtLink
-            class="flex items-center font-fragment font-bold uppercase text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-200"
-            to="/"
-        >
-            <span class="mr-2 text-xl">←</span>
-            Back to Reviews
-        </NuxtLink>
-        <VLogo />
+    <div>
+    <!-- Back to Feed -->
+    <NuxtLink class="flex items-center font-fragment font-bold uppercase mb-5 dark:text-neutral-200" to="/reviews">
+        <span class="mr-3 text-xl">←</span>
+        Back to Reviews
+    </NuxtLink>
         <div class="relative pt-48 pb-10 overflow-hidden shadow-xl rounded-2xl">
             <img
                 class="absolute inset-0 object-cover w-full h-full"
@@ -33,9 +30,9 @@
             </p>
         </section>
         <h4 class="text-sm font-extrabold uppercase drop-shadow-sm">
-            Created By @{{ review.user_created }}
-            Created By @{{ review.creator_name }}
+            Created By @{{ review.player }}
         </h4>
+        <span>userid: {{ review.user_created }}</span>
 
         <section
             id="author-review"
@@ -89,7 +86,7 @@ const {
             'description',
             'content',
             'featured_image',
-            'user_created',
+            'player',
             'creator_name',
             'rating',
             'tags',
