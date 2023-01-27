@@ -1,7 +1,7 @@
 <template>
     <div>
         <Logo />
-        <h1 id="page-title" class="my-10 font-VCR font-bold uppercase text-4xl sm:text-6xl text-center text-infrared">New Review</h1>
+        <h1 id="page-title" class="my-10 font-fugaz font-bold uppercase text-4xl sm:text-6xl text-center text-neutral-900 dark:text-neutral-100">New Review</h1>
         <!-- <Authenticate /> -->
         <CreatePostReview />
     </div>
@@ -16,9 +16,9 @@ const { fileUrl } = useFiles()
 const { isLoggedIn, user } = storeToRefs(auth)
 
 // Only authenticated users
-// definePageMeta({
-    // middleware: 'auth',
-// })
+definePageMeta({
+    middleware: 'auth',
+})
 
 // Set Page Title
 const title = 'Create Review'
@@ -27,4 +27,5 @@ useHead({
 })
 </script>
 
-<script></script>
+<style>
+</style>

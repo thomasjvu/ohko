@@ -1,16 +1,23 @@
 <template>
-    <VHeader />
-    <div class="relative max-w-4xl px-6 pt-12 pb-12 mx-auto space-y-8">
+    <div class="">
         <div class="max-w-screen-sm sm:text-center sm:mx-auto flex items-center flex-col justify-center">
             <h1 id="page-title" class="mb-4 font-fugaz font-bold uppercase text-7xl sm:text-8xl text-black dark:text-white">Reviews</h1>
-            <h2 class="text-3xl md:text-3xl sm:px-4 font-fragment bold">
-                One-hit
-                <span class="knockout text-red">Knockout!</span> Media Platform
+            <h2 class="font-fragment font-bold text-2xl sm:text-3xl text-neutral-700 dark:text-neutral-400">
+                OHKO (One-hit Knockout)
             </h2>
+        </div>
+        <div class="flex justify-end items-center my-10">
+            <NuxtLink to="/create/review">
+                <!-- <span class="font-fragment text-3xl">New Review</span> -->
+                <Icon name="pixelarticons:notes-plus" width="25" height="25" color="var(--infrared)"/>
+            </NuxtLink>
         </div>
         <!-- Post Blocks -->
         <div class="flex flex-col items-center font-fragment" v-for="post in posts">
-            <div id="post-block" class="overflow-hidden transition-shadow duration-300 rounded-md text-left bg-white dark:bg-black border-2 border-black w-full py-10 px-5 shadow-xl">
+            <div
+                id="post-block"
+                class="overflow-hidden transition-shadow duration-300 text-left border-b-2 dark:border-neutral-700 w-full py-10"
+            >
                 <section id="inner-post-container" class="flex items-center justify-between gap-5">
                     <!-- Featured Image -->
                     <section id="image-container" class="w-5/12">
@@ -22,36 +29,23 @@
                             {{ new Date(post.date_created).toLocaleDateString() }}
                         </p>
                         <NuxtLink :to="`/reviews/${post.slug}`" class="inline-block mt-3 mb-3 text-red transition-colors duration-200 font-fugaz"
-                            ><h3 class="text-2xl font-bold leading-5 post-title text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500">
+                            ><h3
+                                class="text-4xl font-bold leading-5 post-title text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500"
+                            >
                                 {{ post.title }}
                             </h3></NuxtLink
                         >
                         <!-- Content Description -->
-                        <p class="mb-2 text-black">
+                        <p class="mb-2 text-md text-neutral-700 dark:text-neutral-400">
                             {{ post.description }}
                         </p>
-                        <!-- Content Slug -->
-                        <p class="mb-2 infrared">/reviews/{{ post.slug }}</p>
                         <!-- Content Reaction Counts -->
-                        <section class="reactions flex">
-                            <section class="font-fragment flex flex-col items-center">
-                                <Icon name="pixelarticons:mood-happy" size="2rem" />
-                                <span>5</span>
-                            </section>
-                            <section class="font-fragment flex flex-col items-center">
-                                <Icon name="pixelarticons:mood-neutral" size="2rem" />
-                                <span>3</span>
-                            </section>
-                            <section class="font-fragment flex flex-col items-center">
-                                <Icon name="pixelarticons:mood-sad" size="2rem" />
-                                <span>1</span>
-                            </section>
-                        </section>
+                        <!-- End of Content Reaction Counts -->
                     </section>
                 </section>
             </div>
         </div>
-        <VFooter />
+        <!-- Post Blocks -->
     </div>
 </template>
 
@@ -68,13 +62,8 @@ useHead({
 </script>
 
 <style>
-#page-title {
-}
-
-/* Post List */
-
 .post-title {
-    font-family: 'Fugaz One', 'Arial', sans-serif;
+    font-family: 'Fugaz One', sans-serif;
 }
 
 .post-date {

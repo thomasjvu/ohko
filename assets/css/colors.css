@@ -5,9 +5,7 @@
  * Rose : 500
  *******************/
 
-
 :root {
-    --white: #ffffff;
     --ghost: #f3f3f3;
     --platinum: #e5e4e2;
     --latte: #fff8e7;
@@ -15,12 +13,27 @@
     --dark-platinum: #797979;
     --dark: #212121;
     --darker: #111111;
-    --black: #000000;
 
     --piracy: #002147;
     --infrared: #ff2147;
     --radioactive: #00ff47;
     --sunflower: #ffbb33;
+}
+
+/* Dark */
+.text-dark{
+    color: var(--dark);
+}
+.bg-dark{
+    background: var(--dark);
+}
+
+/* Darker */
+.text-darker{
+    color: var(--darker);
+}
+.bg-darker{
+    background: var(--darker);
 }
 
 /* Ghost */

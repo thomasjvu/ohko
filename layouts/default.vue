@@ -8,5 +8,12 @@
 </template>
 
 <script>
-
 </script>
+
+<style>
+#page-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+</style>

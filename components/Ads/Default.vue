@@ -6,6 +6,9 @@
             <img src="https://www.awin1.com/cshow.php?s=2625793&v=6745&q=387922&r=676699" class="rounded-lg" />
         </a>
         <!-- END ADVERTISER: Pop In A Box US from awin.com -->
+        <p class="text-center font-fragment mt-5">
+            When another user purchases here, you receive 70% revenue!
+        </p>
     </section>
 </template>
 

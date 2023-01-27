@@ -28,7 +28,7 @@ main {
 /* Responsive */
 @media (max-width: 1000px) {
     main {
-        margin-left: 0%;
+        margin-left: 0rem;
     }
 }
 </style>

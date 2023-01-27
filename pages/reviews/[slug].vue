@@ -35,12 +35,13 @@
         <span>userid: {{ review.user_created }}</span>
 
         <section
-            id="author-review"
+            id="player-review-content"
             class="font-fragment leading-loose"
             v-html="review.content"
         />
 
-        <section id="author-rating" class="flex items-center flex-col">
+
+        <section id="player-rating" class="flex items-center flex-col">
             <h4 class="font-fugaz mb-5 text-xl text-center">Rating:</h4>
             <section
                 id="rating"
@@ -49,7 +50,7 @@
                 <span
                     id="rating-amount"
                     class="text-xl font-extrabold text-white font-fugaz"
-                    >{{ review.rating }} / 10</span
+                    >{{ review.rating }} / 100</span
                 >
             </section>
         </section>

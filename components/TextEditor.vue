@@ -19,7 +19,7 @@ export default {
 
     mounted() {
         this.editor = new Editor({
-            content: '<p>Start creating, here! 👾</p>',
+            content: '',
             extensions: [StarterKit],
             onUpdate: () => {
                 this.$emit('update:modelValue', this.editor.getHTML())

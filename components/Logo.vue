@@ -2,8 +2,9 @@
     <div id="logo" class="">
         <NuxtLink to="/" class="flex justify-center">
             <img
+                id="logo-img"
                 src="~/assets/img/ohko-logo.jpg"
-                class="w-1/4 sm:w-2/12 rounded-md border-2 border-black dark:border-white shadow-md"
+                class="rounded-md border-2 border-neutral-900 dark:border-neutral-700 shadow-md"
             />
         </NuxtLink>
     </div>
@@ -11,4 +12,8 @@
 
 <script></script>
 
-<style></style>
+<style>
+#logo-img {
+    width: 10rem;
+}
+</style>
