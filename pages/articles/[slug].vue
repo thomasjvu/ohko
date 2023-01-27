@@ -1,5 +1,4 @@
 <template>
-
     <!-- Back to Feed -->
     <NuxtLink class="flex items-center font-fragment font-bold uppercase mb-5 dark:text-neutral-200" to="/articles">
         <span class="mr-3 text-xl">←</span>

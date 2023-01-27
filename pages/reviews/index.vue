@@ -26,6 +26,7 @@
                         </p>
                         <NuxtLink :to="`/reviews/${post.slug}`" class="inline-block mt-3 mb-3 text-red transition-colors duration-200 font-fugaz"
                             ><h3
+                                     id="post-title"
                                 class="text-4xl font-fragment font-bold uppercase leading-10 text-black hover:text-stone-500 dark:text-white dark:hover:text-stone-500"
                             >
                                 {{ post.title }}
@@ -109,12 +110,15 @@ useHead({
         width: 100%;
     }
     #post-image-container {
-        width: 50%;
+        width: 60%;
     }
     #post-content-container {
         display: flex;
         flex-flow: column;
         width: 100%;
+    }
+    #post-title {
+        text-align: center;
     }
 }
 </style>

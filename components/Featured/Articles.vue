@@ -32,23 +32,21 @@
                         <!-- By: @{{ post.user_created }} -->
                         <!-- </p> -->
 
-                        <!-- Post Tags -->
+                        <!-- Post Category -->
                         <div class="mt-5 flex flex-row flex-wrap gap-2">
-                                <span class="font-fragment font-bold bg-neutral-300 text-neutral-900 text-lg px-2 rounded leading-10">
-                                    Category: {{ post.category }}
-                                </span>
+                            <span class="font-fragment font-bold bg-neutral-300 text-neutral-900 text-lg px-2 rounded leading-10">
+                                Category: {{ post.category }}
+                            </span>
                         </div>
 
                         <!-- Post Tags -->
                         <div class="mt-5 flex flex-row flex-wrap gap-2">
                             <section v-for="tag in post.tags" class="post-tags inline">
-                                <span class="font-fragment font-bold bg-infrared text-neutral-900 text-lg p-2 rounded leading-10">
-                                    #{{ tag }}
-                                </span>
+                                <span class="font-fragment font-bold bg-infrared text-neutral-900 text-lg p-2 rounded leading-10"> #{{ tag }} </span>
                             </section>
                         </div>
 
-                        <!-- Post Slug --> 
+                        <!-- Post Slug -->
                         <!-- <p class="mb-2 infrared">/articles/{{ post.slug }}</p> -->
 
                         <!-- Hearts -->
