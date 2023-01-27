@@ -18,7 +18,7 @@
                 size="3rem"
             ></Icon>
         </section>
-        <nav class="font-fragment">
+        <nav class="font-VCR">
             <AccountLinks />
             <ToggleMenuLinks />
             <SocialLinks />
@@ -26,6 +26,23 @@
     </div>
 </template>
 
+<script setup>
+
+/*
+// Convert to Script Setup
+let showMenu = ref(false)
+
+function toggleMenu() {
+    this.showMenu = !this.showMenu
+    if (this.showMenu) {
+        this.disableScroll()
+    } else {
+        this.enableScroll()
+    }
+}
+*/
+
+</script>
 <script>
 export default {
     data() {
@@ -65,7 +82,7 @@ export default {
 }
 #close-icon:hover,
 #menu-icon:hover {
-    color: #ff2147;
+    background: var(--infrared);
 }
 
 #menu {
@@ -103,7 +120,7 @@ nav {
     align-items: center;
     justify-items: center;
     flex-flow: column;
-    gap: 15px;
+    gap: 10px;
     text-transform: uppercase;
     text-align: center;
 }
