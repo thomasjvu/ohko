@@ -57,7 +57,7 @@ const props = defineProps({
     cursor: pointer;
     border-radius: 5px;
 
-    font-family: 'Fragment Mono', monospace;
+    font-family: 'VCR OSD Mono', monospace;
 
 }
 

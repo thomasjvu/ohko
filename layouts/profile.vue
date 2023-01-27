@@ -14,10 +14,10 @@ export default {
 
 <style>
 main {
-    margin-left: 10rem;
+    margin-left: 20rem;
 }
 /* Responsive */
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     main {
         margin-left: 0%;
     }

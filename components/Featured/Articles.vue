@@ -1,5 +1,4 @@
 <template>
-    <h2 class="mt-10 text-5xl sm:text-6xl font-VCR uppercase dark:text-neutral-100">Articles</h2>
     <div class="flex flex-col items-center font-fragment" v-for="post in posts">
         <div
             id="post-block"
@@ -22,15 +21,8 @@
                             {{ post.title }}
                         </h3>
 
-                        <!-- Content Description -->
-                        <!-- <p class="mb-2 font-fragment text-neutral-900 dark:text-neutral-100 text-md"> -->
-                        <!--     {{ post.description }} -->
-                        <!-- </p> -->
 
                         <!-- User Created -->
-                        <!-- <p class="mb-2 font-fragment font-bold text-infrared text-sm"> -->
-                        <!-- By: @{{ post.user_created }} -->
-                        <!-- </p> -->
 
                         <!-- Post Category -->
                         <div class="mt-5 flex flex-row flex-wrap gap-2">
