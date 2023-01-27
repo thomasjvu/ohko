@@ -3,7 +3,7 @@
     <div class="mt-10">
         <h1
             id="page-title"
-            class="mb-4 font-VCR font-bold uppercase text-5xl sm:text-6xl text-neutral-900 dark:text-neutral-100 text-center"
+            class="my-10 font-fugaz font-bold uppercase text-5xl sm:text-6xl text-neutral-900 dark:text-neutral-100 text-center"
         >
         {{ title }}
         </h1>

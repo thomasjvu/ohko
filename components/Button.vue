@@ -67,7 +67,7 @@ const props = defineProps({
     padding: 5px 10px;
 
     border-radius: 5px;
-    font-family: 'Fragment Mono', monospace;
+    font-family: 'VCR OSD Mono', monospace;
 }
 
 </style>

@@ -1,7 +1,8 @@
 <template>
     <div>
         <Logo />
-        <h1 class="text-center uppercase font-VCR text-5xl sm:text-6xl mt-10 dark:text-neutral-100">Login </h1>
+        <h1 class="font-fugaz text-center text-5xl sm:text-6xl text-neutral-900 dark:text-neutral-100 uppercase my-10">Login</h1>
+        <!-- Figure out authentication differences later -->
         <!-- <Authenticate /> -->
         <LoginForm />
     </div>

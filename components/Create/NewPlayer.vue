@@ -1,57 +1,31 @@
 <template>
-    <form
-        @submit.prevent="createPlayer"
-        class="flex flex-col font-fragment gap-2"
-    >
-        <label>
+    <form @submit.prevent="createPlayer" class="flex flex-col font-fragment gap-20">
+        <!-- Username -->
+        <label class="uppercase">
             Username
             <input
                 v-model="username"
                 type="text"
-                class="w-full rounded text-neutral-900 dark:text-neutral-100 text-2xl"
-                ref="username"
-                id="username"
+                class="normal w-full rounded text-neutral-900 dark:text-neutral-100 text-2xl mt-10"
+                maxlength="12"
                 required
             />
-            <!-- <p class=""> -->
-            <!--     Confirm Username: -->
-            <!--     <span class="input-value">{{ username }}</span> -->
-            <!-- </p> -->
         </label>
-        <label>
+        <label class="uppercase">
             Email
-            <input
-                v-model="email"
-                type="email"
-                class="w-full rounded text-neutral-900 dark:text-neutral-100 text-2xl"
-                ref="email"
-                id="email"
-                required
-            />
-            <!-- <p class=""> -->
-            <!--     Confirm Email Address: -->
-            <!--     <span class="input-value">{{ email }}</span> -->
-            <!-- </p> -->
+            <input v-model="email" type="email" class="normal w-full rounded text-neutral-900 dark:text-neutral-100 text-2xl mt-10" required />
         </label>
-        <label>
+        <!-- Password -->
+        <label class="uppercase">
             Password
-            <input
-                v-model="password"
-                type="password"
-                class="w-full rounded text-black"
-                ref="password"
-                id="password"
-                required
-            />
+            <input v-model="password" type="password" class="normal w-full rounded text-neutral-900 dark:text-neutral-100 mt-10" required />
         </label>
-        <button
-            id="submit-button"
-            type="submit"
-            class="bg-infrared rounded text-neutral-900 text-2xl p-3"
-        >
+        <!-- Submit -->
+        <button id="submit-button" type="submit" class="font-VCR font-bold text-3xl text-neutral-900 uppercase bg-infrared rounded-lg my-10 p-5">
             Signup
         </button>
-            <p v-if="error" ref="error">{{error.response}}</p>
+        <!-- Error Handling -->
+        <p v-if="error" ref="error">{{ error.response }}</p>
     </form>
 </template>
 
@@ -68,8 +42,8 @@ export default {
         createPlayer() {
             this.formRequest()
                 .then((result) => {
-                    console.log('Congrats! You have been signed-up.')
-                    window.location.replace('/login');
+                    console.log('Congrats! You have been signed-up. Please sign in.')
+                    window.location.replace('/login')
                 })
                 .catch((error) => {
                     console.error(error.response)
@@ -84,7 +58,7 @@ export default {
                     password: this.password,
                     cover: 'c5e5a102-44bc-4995-bacc-f33aae0c0b25',
                     role: '39973430-ce48-4e97-b2d3-46efced08c7d',
-                    avatar: '2f52a2ee-d0db-4392-998d-ceb795a110cf'
+                    avatar: '2f52a2ee-d0db-4392-998d-ceb795a110cf',
                 },
             })
         },
@@ -93,16 +67,10 @@ export default {
 </script>
 
 <style scoped>
-
 input {
     background: rgba(0, 0, 0, 0);
     border: 0px;
     border-radius: 0;
     border-bottom: 1px solid #797979;
 }
-
-input:focus {
-    outline: none;
-}
-
 </style>

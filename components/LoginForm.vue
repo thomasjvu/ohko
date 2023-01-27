@@ -1,52 +1,39 @@
 <template>
+    <!-- For when Player is logged in -->
     <div v-if="isLoggedIn" class="flex flex-col items-center gap-10">
-        <h2 class="font-VCR text-4xl mt-20 text-center font-bold uppercase">Hello there, @{{user.username}}</h2>
+        <h2 class="font-VCR text-4xl mt-20 text-center font-bold uppercase">Hello there, @{{ user.username }}</h2>
         <p class="font-fragment text-4xl text-center">You are already logged in!</p>
         <NuxtLink to="/account" class="btn font-fragment text-2xl">View Account</NuxtLink>
-        <Icon name="pixelarticons:mood-happy" width="50" height="50" />
     </div>
+    <!-- For when Player is not logged in -->
     <div v-if="!isLoggedIn">
-        <form @submit.prevent="login">
-            <VAlert
-                v-if="error"
-                type="error"
-                class="mt-5 mb-5"
-            >
-                Error: {{ error }}
-            </VAlert>
+        <VAlert v-if="error" type="error" class="mt-5 mb-5 font-fragment"> Error: {{ error }} </VAlert>
+        <!-- Login form -->
+        <form @submit.prevent="login" class="flex flex-col gap-20 font-fragment">
             <div v-if="loading" class="flex items-center justify-center">
-                <VLoading class="w-24 h-24 mt-5" />
+                <Loading class="w-24 h-24 mt-5" />
             </div>
             <div class="space-y-4" v-if="!loading">
-                <VInput
-                    id="email-input"
-                    class="text-2xl mt-5 dark:text-neutral-100"
-                    v-model="email"
-                    name="email"
-                    type="email"
-                    label="Email address"
-                    placeholder="demo@ohko.org"
-                    required
-                />
-                <VInput
-                    id="password-input"
-                    class="text-2xl mt-5 dark:text-neutral-100"
-                    v-model="password"
-                    name="password"
-                    type="password"
-                    label="Password"
-                    required
-                />
-                <div class="flex items-center justify-end space-x-4">
-                    <VButton type="button" @click="loadDemoUser()">Load Demo User</VButton>
-                    <VButton
-                        type="submit"
-                        variant="primary"
-                        :disabled="!email || !password"
-                    >
-                        <span>Login</span>
-                    </VButton>
-                </div>
+                <!-- Email -->
+                <label class="uppercase text-neutral-400">
+                    Email
+                    <input
+                        v-model="email"
+                        type="email"
+                        class="normal w-full rounded text-neutral-900 dark:text-neutral-100 text-2xl my-10"
+                        required
+                    />
+                </label>
+                <!-- Password -->
+                <label class="uppercase text-neutral-400">
+                    Password
+                    <input v-model="password" type="password" class="normal w-full rounded text-neutral-900 dark:text-neutral-100 my-10" required />
+                </label>
+                <!-- Buttons -->
+                <section class="flex items-center justify-end space-x-4">
+                    <Button type="button" @click="loadDemoUser()" class="font-VCR uppercase text-lg">Load Demo User</Button>
+                    <Button type="submit" variant="primary" :disabled="!email || !password" class="font-VCR uppercase text-lg">Login</Button>
+                </section>
             </div>
         </form>
     </div>
@@ -94,5 +81,11 @@ async function login() {
 }
 </script>
 
-<style>
+<style scoped>
+input {
+    background: rgba(0, 0, 0, 0);
+    border: 0px;
+    border-radius: 0;
+    border-bottom: 1px solid #797979;
+}
 </style>
