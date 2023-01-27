@@ -13,14 +13,14 @@
         <!-- Post Blocks -->
         <div class="flex flex-col items-center font-fragment" v-for="post in posts">
             <div id="post-block" class="overflow-hidden transition-shadow duration-300 text-left border-b-2 dark:border-neutral-700 w-full py-10">
-                <section id="inner-post-container" class="flex items-center justify-between gap-10">
+                <section id="post-inner-container" class="flex items-center justify-between gap-10">
                     <!-- Featured Image -->
-                    <section id="image-container" class="w-4/12">
+                    <section id="post-image-container" class="w-4/12">
                         <img class="object-cover w-full rounded" v-bind:src="'https://app.ohko.org/assets/' + post.featured_image" />
                     </section>
                     <!-- End of Featured Image -->
                     <!-- Content Meta -->
-                    <section class="py-5 w-8/12">
+                    <section id="post-content-container" class="py-5 w-8/12">
                         <p class="mb-2 text-sm post-date">
                             {{ new Date(post.date_created).toLocaleDateString() }}
                         </p>
@@ -97,5 +97,24 @@ useHead({
 .post-date {
     color: #797979;
     font-family: 'Fragment Mono';
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    #post-inner-container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #post-image-container {
+        width: 50%;
+    }
+    #post-content-container {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+    }
 }
 </style>
