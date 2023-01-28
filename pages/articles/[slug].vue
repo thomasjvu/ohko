@@ -1,55 +1,51 @@
 <template>
-    <!-- Back to Feed -->
-    <NuxtLink class="flex items-center font-fragment font-bold uppercase mb-5 dark:text-neutral-200" to="/articles">
-        <span class="mr-3 text-xl">←</span>
-        Back to Articles
-    </NuxtLink>
-    <!-- End of Back to Feed -->
+    <div>
+        <!-- Back to Feed -->
+        <NuxtLink class="flex items-center font-fragment font-bold uppercase mb-5 dark:text-neutral-200" to="/articles">
+            <span class="mr-3 text-xl">←</span>
+            Back to Articles
+        </NuxtLink>
 
-    <!-- Post Content -->
-    <div v-if="post">
-        <div v-if="post.featured_image" class="relative pt-96 pb-40 overflow-hidden shadow-xl rounded-2xl">
+        <!-- Featured Image -->
+        <div class="relative pt-96 pb-40 overflow-hidden shadow-xl rounded-2xl">
             <img class="absolute inset-0 object-cover w-full h-full" :src="fileUrl(post.featured_image)" />
-            <div class="relative px-8"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-600 via-primary-600 opacity-80" />
+            <div class="relative px-8">
+                <div class="relative text-lg font-medium ghost font-fugaz md:flex-grow"></div>
+            </div>
         </div>
-        <h1 id="post-title" class="font-VCR font-bold uppercase text-5xl sm:text-6xl my-16 drop-shadow-sm text-center dark:text-neutral-200">
+
+        <!-- Article Title -->
+        <h1 id="post-title" class="text-6xl font-fragment font-bold drop-shadow-sm my-10 text-center">
             {{ post.title }}
         </h1>
+
+        <!-- Article Description -->
         <section
             id="post-description-container"
-            class="p-5 mt-10 mb-10 darker font-fragment italic border-y-2 text-neutral-900 dark:text-neutral-100"
+            class="p-5 my-10 darker font-fragment italic border-y-2 dark:border-neutral-400 text-neutral-900 dark:text-neutral-400"
         >
             <p class="text-3xl">" {{ post.description }} "</p>
         </section>
 
-        <section id="post-content" class="font-fragment leading-loose text-2xl dark:text-neutral-200" v-html="post.content" />
-        <!-- End of Post Content -->
+        <!-- Article Content -->
+        <section id="player-post-content" class="font-fragment leading-loose" v-html="post.content" />
 
-        <!-- Start of Post Meta -->
-        <section class="post-meta flex flex-col items-center gap-5 mt-1/4 bg-neutral-300 rounded-xl p-5">
-            <h4 class="text-md font-fragment font-extrabold uppercase drop-shadow-sm text-neutral-900">Created By @{{ post.user_created }}</h4>
+        <!-- Player Details -->
+        <section>
+            <NuxtLink to="#" class="flex items-center gap-10 my-10">
+                <img
+                    v-bind:src="'https://app.ohko.org/assets/' + post.player_avatar"
+                    width="100"
+                    class="rounded-full border p-1 dark:border-neutral-700"
+                />
+                <h4 class="font-extrabold uppercase drop-shadow-sm">Created By @{{ post.player }}</h4>
+            </NuxtLink>
         </section>
 
-        <!-- Post Tags -->
-        <div class="mt-5 flex flex-row flex-wrap gap-2">
-            <section v-for="tag in post.tags" class="post-tags inline">
-                <span class="font-fragment font-bold bg-infrared text-neutral-900 text-lg p-2 rounded leading-10"> #{{ tag }} </span>
-            </section>
-        </div>
-
-        <!-- Hearts -->
-        <section class="flex justify-end mt-4">
-            <section class="font-fragment flex flex-col items-center">
-                <Icon name="pixelarticons:heart" size="2rem" class="text-infrared" />
-                <span v-if="post.hearts" class="text-infrared text-lg font-VCR">{{ post.hearts.length }}</span>
-            </section>
-        </section>
-
-        <!-- Edit & Delete buttons for the players who created the post -->
-        <!-- <section id="post-buttons" class="flex justify-end mt-20"> -->
-        <!--     <Icon @click="deleteOne" id="trash-btn" name="pixelarticons:trash" width="30" height="30" /> -->
-        <!--     <Icon id="edit-btn" name="pixelarticons:edit-box" width="30" height="30" /> -->
-        <!-- </section> -->
+        <!-- Default Advertisement -->
+        <AdsDefault />
+        <!-- The End -->
     </div>
 </template>
 
@@ -81,6 +77,9 @@ const {
             'description',
             'featured_image',
             'user_created',
+            'player',
+            'player_avatar',
+            'player_name',
             'slug',
             'positive',
             'negative',
