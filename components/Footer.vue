@@ -8,7 +8,7 @@
                     <h3 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-neutral-100 font-VCR mb-2">OHKO | ONE-HIT KNOCKOUT!</h3>
                 </NuxtLink>
                 <h4 class="text-xl font-fragment font-extrabold text-neutral-900 dark:text-neutral-300">
-                    Create Content, Earn <span class="text-radioactive">$$$</span>
+                    Create Content. Earn <span class="text-radioactive">$$$</span>. Repeat.
                 </h4>
                 <div class="mt-4 font-bold font-fragment">
                     <p class="text-neutral-900 dark:text-neutral-300">©2023 OHKO.</p>

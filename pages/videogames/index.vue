@@ -38,12 +38,21 @@
     <div>
         <h2 class="uppercase font-VCR">All Games</h2>
         <section class="flex flex-col items-center justify-center font-fragment" v-for="videogame in videogames">
-            <section class="flex items-center videogame-container w-full my-5">
-                <section id="videogame-image-container" class="w-4/12 mr-10">
+            <section v-if="videogame.status === 'published'" class="flex items-center videogame-container w-full my-5">
+                <section id="videogame-image-container" class="w-3/12 mr-10">
                     <img class="object-cover w-full rounded" v-bind:src="'https://app.ohko.org/assets/' + videogame.featured_image" />
                 </section>
                 <section id="videogame-details-container">
                     <h4>{{ videogame.title }}</h4>
+                    <!-- <span>{{ videogame.consoles }}</span> -->
+                    <section class="videogame-consoles" v-for="platform in videogame.platforms">
+                        <span v-if="platform === '22863f8c-6ac6-4751-8ab5-77eb79c31751' " class="text-infrared">
+                            Nintendo DS
+                        </span>
+                        <span v-if="platform === '5773716f-01b8-49a6-a55b-110f99347999' " class="text-infrared">
+                            Nintendo Switch
+                        </span>
+                    </section>
                 </section>
             </section>
         </section>
@@ -53,10 +62,13 @@
 <script setup>
 const { getItems } = useDirectusItems()
 
-const videogames = await getItems({ collection: 'videogames' })
+const videogames = await getItems({ collection: 'video_games' })
+const platforms = await getItems({ collection: 'platforms' })
+
+const title = 'Video Games'
 
 useHead({
-    title: 'Anime' + ' | OHKO',
+    title: title + ' | OHKO',
 })
 </script>
 

@@ -39,6 +39,7 @@
             </section>
         </section>
 
+
         <!-- Player Details -->
         <section>
             <NuxtLink to="#" class="flex items-center gap-10 my-10">
@@ -50,6 +51,9 @@
                 <h4 class="font-extrabold uppercase drop-shadow-sm">Created By @{{ review.player }}</h4>
             </NuxtLink>
         </section>
+
+        <!-- Default Advertisement -->
+        <AdsDefault />
         <!-- The End -->
     </div>
 </template>
