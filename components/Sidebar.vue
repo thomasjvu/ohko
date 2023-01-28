@@ -42,13 +42,13 @@
                 <div class="border-b border-neutral-700 my-5 mx-5"></div>
                 <!-- Type: Anime -->
                 <li class="sidebar-link">
-                    <NuxtLink to="/anime" class="side-cat font-VCR bg-sunflower rounded-lg text-left px-5">
+                    <NuxtLink to="#" class="side-cat font-VCR bg-sunflower rounded-lg text-left px-5">
                         <span> Anime </span>
                     </NuxtLink>
                 </li>
                 <!-- Type: Videogames -->
                 <li class="sidebar-link">
-                    <NuxtLink to="/videogames" class="side-cat font-VCR bg-infrared rounded-lg text-left px-5">
+                    <NuxtLink to="#" class="side-cat font-VCR bg-infrared rounded-lg text-left px-5">
                         <span> Videogames </span>
                     </NuxtLink>
                 </li>

@@ -7,7 +7,8 @@
         <NuxtLink class="menu-link bg-neutral-700 text-neutral-100 rounded-lg" to="reviews">Reviews</NuxtLink>
         <NuxtLink class="menu-link bg-neutral-800 text-neutral-700 rounded-lg line-through" to="#">Guides</NuxtLink>
         <NuxtLink class="menu-link bg-neutral-800 text-neutral-700 rounded-lg line-through" to="#">Memes</NuxtLink>
-        <NuxtLink id="login-menu-link" class="menu-link" to="/login">Login</NuxtLink>
+        <NuxtLink id="login-menu-link" class="menu-link" to="/account">Account</NuxtLink>
+        <NuxtLink v-if="isLoggedIn" @click="auth.logout()" class="menu-link">Logout</NuxtLink>
     </section>
 </template>
 
