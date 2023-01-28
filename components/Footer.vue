@@ -8,7 +8,7 @@
                     <h3 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-neutral-100 font-VCR mb-2">OHKO | ONE-HIT KNOCKOUT!</h3>
                 </NuxtLink>
                 <h4 class="text-xl font-fragment font-extrabold text-neutral-900 dark:text-neutral-300">
-                    Earn <span class="text-radioactive">$$$</span> for Your Video Game Content
+                    Create Content, Earn <span class="text-radioactive">$$$</span>
                 </h4>
                 <div class="mt-4 font-bold font-fragment">
                     <p class="text-neutral-900 dark:text-neutral-300">©2023 OHKO.</p>
@@ -16,7 +16,7 @@
             </section>
 
             <!-- Right-Side -->
-            <section class="flex items-center justify-end p-4 space-x-2">
+            <section class="flex items-center justify-end px-4 pb-4 space-x-2">
                 <ModalsMyProfile />
                 <NuxtLink to="/monetization" class="p-1 mt-2 dark:text-neutral-100">
                     <Icon name="pixelarticons:coin" size="1.75rem" />
@@ -26,20 +26,20 @@
         </div>
         <!-- Secondary Container -->
         <div class="my-5 text-neutral-400 dark:text-neutral-700">
-            <section class="footer-social-links flex items-center justify-between uppercase">
-                <p class="font-VCR">Socials:</p>
-                <section class="font-fragment">
-                    <NuxtLink to="https://discord.gg/77h3N3gfrW" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Discord ]</NuxtLink>
-                    <NuxtLink to="https://twitch.tv/ohko_org" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Twitch ]</NuxtLink>
-                    <NuxtLink to="https://twitter.com/ohko_org" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Twitter ]</NuxtLink>
-                </section>
-            </section>
             <section class="footer-company-links flex items-center justify-between uppercase">
                 <p class="font-VCR">Company:</p>
                 <section class="font-fragment">
                     <NuxtLink to="#" class="hover:text-neutral-700 dark:hover:text-neutral-100 ml-5">/ Store</NuxtLink>
                     <NuxtLink to="#" class="hover:text-neutral-700 dark:hover:text-neutral-100 ml-5">/ Careers</NuxtLink>
                     <NuxtLink to="#" class="hover:text-neutral-700 dark:hover:text-neutral-100 ml-5">/ Job Board</NuxtLink>
+                </section>
+            </section>
+            <section class="footer-social-links flex items-center justify-between uppercase">
+                <p class="font-VCR">Socials:</p>
+                <section class="font-fragment">
+                    <NuxtLink to="https://discord.gg/77h3N3gfrW" target="_blank" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Discord ]</NuxtLink>
+                    <NuxtLink to="https://twitch.tv/ohko_org" target="_blank" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Twitch ]</NuxtLink>
+                    <NuxtLink to="https://twitter.com/ohko_org" target="_blank" class="ml-5 hover:text-neutral-700 dark:hover:text-neutral-100">[ Twitter ]</NuxtLink>
                 </section>
             </section>
             <!-- <section class="footer-company-links flex items-center justify-between uppercase"> -->
