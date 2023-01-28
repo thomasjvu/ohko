@@ -56,6 +56,7 @@ export default {
                     username: this.username,
                     email: this.email,
                     password: this.password,
+                    rank: "C-Class",
                     cover: 'c5e5a102-44bc-4995-bacc-f33aae0c0b25',
                     role: '39973430-ce48-4e97-b2d3-46efced08c7d',
                     avatar: '2f52a2ee-d0db-4392-998d-ceb795a110cf',

@@ -1,61 +1,85 @@
 <template>
-    <div class="">
+    <div class="profile-page-container">
+        <!-- Profile Header -->
         <div class="header">
+            <!-- Profile Cover -->
             <section id="profile-cover">
                 <img class="w-screen h-96 object-cover" :src="fileUrl(user.cover)" />
             </section>
+            <!-- Profile Image -->
             <section class="profile-img flex justify-center">
                 <img class="w-40 h-40 -mt-20 rounded-full border-2 border-neutral-700 border-50 shadow-md" :src="fileUrl(user.avatar)" />
             </section>
+            <!-- Profile Details -->
             <section id="profile-details" class="flex flex-col items-center justify-center gap-5 font-fragment mt-3">
                 <p class="text-4xl font-bold">@{{ user.username }}</p>
                 <section class="flex items-center gap-2">
-                    <!-- <Icon name="pixelarticons:loader" /> -->
+                    <!-- Player Rank -->
                     <p class="text-3xl bg-infrared px-5 py-2 rounded-lg font-VCR">{{ user.rank.toUpperCase() }}</p>
+                    <!-- Player Roles -->
+                    <p
+                        v-if="user.role === '39973430-ce48-4e97-b2d3-46efced08c7d'"
+                        class="text-3xl bg-neutral-400 px-5 py-2 rounded-lg font-VCR uppercase"
+                    >
+                        Player
+                    </p>
+                    <!-- <p v-if="user.role === '39973430-ce48-4e97-b2d3-46efced08c7d'" class="text-3xl bg-neutral-400 px-5 py-2 rounded-lg font-VCR uppercase">Admin</p> -->
+                    <!-- <p v-if="user.role === '39973430-ce48-4e97-b2d3-46efced08c7d'" class="text-3xl bg-neutral-400 px-5 py-2 rounded-lg font-VCR uppercase">Moderator</p> -->
                 </section>
             </section>
         </div>
 
         <div id="profile-sections" class="flex justify-center m-20 gap-40">
+            <!-- Profile Section (1) -->
             <section id="profile-section-1" class="w-1/4 flex flex-col gap-10">
-                <section id="profile-biography" class="bg-infrared dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                    <h4 class="text-4xl font-bold text-center">{{ user.description }}</h4>
+                <section id="profile-biography" class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-10 font-fragment">
+                    <h4 v-if="user.description" class="text-3xl text-center">{{ user.description }}</h4>
+                    <h4 v-else class="text-3xl font-bold text-center">Description</h4>
                 </section>
-                <section id="profile-biography" class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                    <h4 class="font-bold text-center text-4xl">Social Links</h4>
-                    <section id="profile-social-links" class="flex flex-col">
-                        <NuxtLink
-                            v-if="user.twitch_handle"
-                            :to="`https://twitch.tv/${user.twitch_handle}`"
-                            class="mt-10 flex items-center gap-5"
-                            target="_blank"
-                        >
-                            <img src="../assets/icon/Twitch.png" />
-                            <span class="font-bold text-xl">Twitch:</span>
-                            <span class="text-xl">@{{ user.twitch_handle }}</span>
-                        </NuxtLink>
-                        <NuxtLink
-                            v-if="user.twitter_handle"
-                            :to="`https://twitter.com/${user.twitter_handle}`"
-                            class="mt-10 flex items-center gap-5"
-                            target="_blank"
-                        >
-                            <img src="../assets/icon/Twitter.png" />
-                            <span class="font-bold text-xl">Twitter:</span>
-                            <span class="text-xl">@{{ user.twitter_handle }}</span>
-                        </NuxtLink>
-                        <NuxtLink :to="`${user.website_link}`" class="mt-10 flex items-center gap-5" target="_blank">
-                            <img src="../assets/icon/Exclamation.png" />
-                            <span class="font-bold text-xl">Website:</span>
-                            <span class="text-xl">{{ user.website_link }}</span>
-                        </NuxtLink>
-                    </section>
+
+                <!-- Profile Social Links -->
+                <section
+                    id="profile-social-links"
+                    class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-10 font-fragment flex flex-col"
+                >
+                    <h4 class="font-bold text-center text-3xl">Social Links</h4>
+                    <!-- Twitch Profile -->
+                    <NuxtLink
+                        v-if="user.twitch_handle"
+                        :to="`https://twitch.tv/${user.twitch_handle}`"
+                        class="mt-10 flex items-center gap-5"
+                        target="_blank"
+                    >
+                        <img src="../assets/icon/Twitch.png" />
+                        <span class="font-bold text-lg">Twitch:</span>
+                        <span class="text-lg">@{{ user.twitch_handle }}</span>
+                    </NuxtLink>
+                    <!-- Twitter Profile -->
+                    <NuxtLink
+                        v-if="user.twitter_handle"
+                        :to="`https://twitter.com/${user.twitter_handle}`"
+                        class="mt-10 flex items-center gap-5"
+                        target="_blank"
+                    >
+                        <img src="../assets/icon/Twitter.png" />
+                        <span class="font-bold text-lg">Twitter:</span>
+                        <span class="text-lg">@{{ user.twitter_handle }}</span>
+                    </NuxtLink>
+                    <!-- Website Profile -->
+                    <NuxtLink v-if="user.website_link" :to="`${user.website_link}`" class="mt-10 flex items-center gap-5" target="_blank">
+                        <img src="../assets/icon/Exclamation.png" />
+                        <!-- <span class="font-bold text-lg">Website:</span> -->
+                        <span class="text-lg">{{ user.website_link }}</span>
+                    </NuxtLink>
                 </section>
-                <section id="profile-biography" class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
-                    <h4 class="font-bold text-center text-4xl">Allies</h4>
+
+                <!-- Profile Allies -->
+                <section id="profile-allies" class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
+                    <h4 class="font-bold text-center text-3xl">Allies</h4>
                 </section>
             </section>
 
+            <!-- Profile Section (2) -->
             <section id="profile-section-2" class="w-2/4">
                 <section class="bg-infrared rounded-lg text-neutral-900 p-5 font-VCR font-bold uppercase">
                     <h3 class="text-center font-bold">Content Created</h3>
@@ -94,10 +118,13 @@
                 </section>
             </section>
 
+            <!-- Profile Section 3 -->
             <section id="profile-section-3" class="w-1/4 flex flex-col gap-10">
+                <!-- Main Advertisement -->
                 <section>
                     <AdsDefault />
                 </section>
+                <!-- Player Sponsors -->
                 <section class="bg-neutral-300 dark:bg-neutral-700 border border-neutral-700 rounded-lg p-20 font-fragment">
                     <h3 class="text-center font-bold text-5xl">Sponsors</h3>
                     <div v-for="sponsor in user.sponsors">
