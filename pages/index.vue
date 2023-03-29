@@ -5,9 +5,8 @@
             <!-- <h1 id="page-title" class="mb-4 font-fugaz font-bold uppercase text-7xl sm:text-8xl text-neutral-900 dark:text-neutral-100 text-center"> -->
             <!--     Featured -->
             <!-- </h1> -->
-            <!-- <Hero /> -->
-            <!-- <AlertsDemo /> -->
             <!-- <FeaturedArt /> -->
+            <CarouselMain />
             <FeaturedArticles />
             <FeaturedReviews />
             <!-- <FeaturedArtworks /> -->

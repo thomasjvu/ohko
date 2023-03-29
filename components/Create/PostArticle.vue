@@ -62,7 +62,7 @@
         <!--         /> -->
         <!-- </label> -->
         <br />
-        <button id="submit-button" type="submit" class="rounded-md text-black font-fragment text-3xl p-3 mt-10">Create Article</button>
+        <button id="submit-button" type="submit" class="rounded-md text-black font-fragment text-3xl p-3 my-10">Create Article</button>
     </form>
 </template>
 
@@ -75,7 +75,6 @@ import { Directus } from '@directus/sdk'
 const auth = useAuth()
 const { fileUrl } = useFiles()
 const { isLoggedIn, user } = storeToRefs(auth)
-
 
 const runtimeConfig = useRuntimeConfig()
 const directus = new Directus(runtimeConfig.directusUrl)

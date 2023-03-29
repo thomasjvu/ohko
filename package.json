@@ -43,6 +43,7 @@
         "less-loader": "^11.1.0",
         "nuxt-directus": "^3.2.2",
         "postscribe": "^2.0.8",
-        "vue-select": "^4.0.0-beta.6"
+        "vue-select": "^4.0.0-beta.6",
+        "vue3-carousel": "^0.2.14"
     }
 }
