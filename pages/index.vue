@@ -6,7 +6,7 @@
             <!--     Featured -->
             <!-- </h1> -->
             <!-- <FeaturedArt /> -->
-            <CarouselMain />
+            <!-- <CarouselMain /> -->
             <FeaturedArticles />
             <FeaturedReviews />
             <!-- <FeaturedArtworks /> -->
