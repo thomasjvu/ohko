@@ -1,12 +1,12 @@
 <template>
     <Sidebar />
     <ToggleMenu />
-    <main class="bg-neutral-100 dark:bg-neutral-900">
+    <div class="bg-neutral-100 dark:bg-neutral-900">
         <NuxtLayout>
             <NuxtLoadingIndicator color="repeating-linear-gradient(to right,#ff2147 0%,#ffbb33 100%)" />
             <NuxtPage />
         </NuxtLayout>
-    </main>
+    </div>
 </template>
 
 <script setup>
