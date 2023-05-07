@@ -1,14 +1,8 @@
 <template>
-    <div class="">
+    <div class="featured-reviews">
         <div class="flex items-center flex-col justify-center my-10">
-            <h1 id="page-title" class="my-10 mb-4 font-fugaz font-bold uppercase text-7xl sm:text-8xl text-neutral-900 dark:text-neutral-100">Reviews</h1>
+            <Title title="Reviews" />
             <!-- <HeaderSubtitle /> -->
-        </div>
-        <div class="flex justify-end items-center my-10">
-            <NuxtLink to="/create/review">
-                <!-- <span class="font-fragment text-3xl">New Review</span> -->
-                <Icon name="pixelarticons:notes-plus" width="25" height="25" color="var(--infrared)" id="new-review" />
-            </NuxtLink>
         </div>
         <!-- Post Blocks -->
         <div class="flex flex-col items-center font-fragment" v-for="post in posts">
@@ -91,15 +85,9 @@ const { getItems } = useDirectusItems()
 
 const posts = await getItems({ collection: 'reviews' })
 // const posts = await getItems({ collection: 'reviews' }).readByQuery({ sort: ['id'] })
-
-const title = 'Reviews'
-
-useHead({
-    title: title + ' | OHKO',
-})
 </script>
 
-<style>
+<style scoped>
 
 #new-review:hover {
     color: var(--dark-platinum);

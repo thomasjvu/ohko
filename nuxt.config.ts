@@ -12,9 +12,7 @@ export default defineNuxtConfig({
 
     modules: [
         '@nuxtjs/tailwindcss',
-        // https://pinia.esm.dev
         '@pinia/nuxt',
-        // https://vueuse.org/
         '@vueuse/nuxt',
         'nuxt-icon',
         'nuxt-directus',
